@@ -11,6 +11,7 @@ import { NewsCard } from "@/components/news-card"
 import { SiteFooter } from "@/components/site-footer"
 import { BrandLogo } from "@/components/brand-logo"
 import { DirectorsQuote } from "@/components/directors-quote"
+import { InstagramReel } from "@/components/instagram-reel"
 import { CastGallery } from "@/components/cast-gallery"
 import { ActorPage } from "@/components/actor-page"
 import { SecretWarsSection } from "@/components/secret-wars-section"
@@ -30,6 +31,7 @@ import {
   GALLERY,
   HERO_IMAGE,
   JACKMAN_PREDICTION,
+  JACKMAN_REEL,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -338,6 +340,7 @@ export default function App() {
               הודעות רשמיות מסומנות בירוק. דיווחים ושמועות מסומנים אחרת, כדי שיהיה קל להבדיל ביניהם.
             </SectionHeading>
             <DirectorsQuote {...JACKMAN_PREDICTION} photo={photos[JACKMAN_PREDICTION.photoKey]} />
+            <InstagramReel {...JACKMAN_REEL} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">

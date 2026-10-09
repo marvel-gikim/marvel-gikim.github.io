@@ -33,6 +33,7 @@ const S = {
   swInfinity: { label: "Wikipedia · Infinity (2013)", url: "https://en.wikipedia.org/wiki/Infinity_(comic_book)" },
   swForeword: { label: "JustWatch", url: "https://guides.justwatch.com/mx/hermanos-russo-spoiler-avengers-doomsday-secret-wars" },
   jackmanPrediction: { label: "Yahoo Entertainment", url: "https://www.yahoo.com/entertainment/movies/articles/hugh-jackman-predicted-avengers-doomsday-001707519.html" },
+  jackmanInstagram: { label: "Instagram · יו ג׳קמן", url: "https://www.instagram.com/reel/DcEFVJ6R-A1/" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -368,6 +369,16 @@ export const JACKMAN_PREDICTION = {
   photoKey: "jackman",
   photoLabelHe: "יו ג׳קמן",
   source: S.jackmanPrediction,
+}
+
+export const JACKMAN_REEL = {
+  reelId: "DcEFVJ6R-A1",
+  titleHe: "הסרטון של יו ג׳קמן מכנס D23",
+  textHe:
+    "בסרטון שפורסם בעמוד הרשמי של יו ג׳קמן, הוא ״מציע את עזרתו״ לצוות של דומסדיי, וריאן ריינולדס נשמע ברקע. הסרטון רשמי, אבל השתתפות שלהם בסרט עוד לא אושרה, ולכן זה מסומן כשמועה.",
+  accountHe: "יו ג׳קמן",
+  status: "rumor" as const,
+  sources: [S.jackmanInstagram, S.jackman],
 }
 
 // ===== News =====
