@@ -326,11 +326,11 @@
   "rdj-alt": {
     "file": "./cast/rdj-alt.jpg",
     "width": 640,
-    "height": 771,
+    "height": 853,
     "author": "nagi usano",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr._-_2019_Disney_Legends_Awards_Ceremony_-_D23_EXPO_2019_(cropped2).jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr._-_2019_Disney_Legends_Awards_Ceremony_-_D23_EXPO_2019_(cropped_3).jpg"
   },
   "stan-alt": {
     "file": "./cast/stan-alt.jpg",
@@ -358,5 +358,14 @@
     "license": "Public domain",
     "licenseUrl": "",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Evans_in_2019.jpg"
+  },
+  "maguire-alt": {
+    "file": "./cast/maguire-alt.jpg",
+    "width": 613,
+    "height": 900,
+    "author": "Eva Rinaldi",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tobey_Maguire_3,_2013.jpg"
   }
 }
