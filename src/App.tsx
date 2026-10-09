@@ -18,6 +18,7 @@ import { ActorPage } from "@/components/actor-page"
 import { SecretWarsSection } from "@/components/secret-wars-section"
 import { AboutPageSection } from "@/components/about-page-section"
 import { TicketsPromo } from "@/components/tickets-promo"
+import { PushCheck } from "@/components/push-check"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute, useHashRoute } from "@/hooks/use-actor-route"
 import { MyArticlesSection } from "@/components/my-articles-section"
@@ -419,6 +420,8 @@ export default function App() {
       </main>
 
       <SiteFooter links={NAV_LINKS} lastReviewed={LAST_REVIEWED} socials={SOCIALS} />
+
+      <PushCheck />
 
       {activeArticle && <ArticlePage article={activeArticle} onClose={closeArticle} />}
 
