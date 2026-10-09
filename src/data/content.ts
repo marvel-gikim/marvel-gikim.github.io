@@ -34,6 +34,10 @@ const S = {
   swForeword: { label: "JustWatch", url: "https://guides.justwatch.com/mx/hermanos-russo-spoiler-avengers-doomsday-secret-wars" },
   jackmanPrediction: { label: "Yahoo Entertainment", url: "https://www.yahoo.com/entertainment/movies/articles/hugh-jackman-predicted-avengers-doomsday-001707519.html" },
   jackmanInstagram: { label: "Instagram · יו ג׳קמן", url: "https://www.instagram.com/reel/DcEFVJ6R-A1/" },
+  steveMjolnir: { label: "Popverse · סטיב עדיין ראוי", url: "https://www.thepopverse.com/movies-avengers-doomsday-chris-evans-steve-rogers-reveal-still-worthy-captain-america-thor-mjolnir" },
+  steveMjolnirFrame: { label: "Free Press Journal", url: "https://www.freepressjournal.in/entertainment/avengers-doomsday-trailer-teases-steve-rogers-lifting-mjlnir-once-again-how-captain-america-wields-thors-hammer" },
+  steveRumor: { label: "Toy People", url: "https://www.toy-people.com/en/?p=106948" },
+  steveTheories: { label: "ComicBookMovie · תיאוריות על סטיב", url: "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-trailer-spawns-wild-steve-rogers-and-crafty-character-editing-theories-a228932" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -102,6 +106,32 @@ export const GALLERY: GalleryImage[] = [
     provenance: "official",
     provenanceNoteHe: "פריים מחומרי הקידום הרשמיים של הסרט. המקור אומת על ידי מארוול גיקים. החותמת בזמן אינה ידועה.",
     focus: "60% 40%",
+  },
+  {
+    id: "frame-steve-mjolnir",
+    src: "./media/frame-steve-mjolnir.webp",
+    width: 1200,
+    height: 675,
+    altHe: "סטיב רוג׳רס, עם שיער ארוך וזקן, מחזיק את מיולניר, ות׳ור מושיט אליו יד",
+    captionHe: "סטיב רוג׳רס מחזיק שוב את מיולניר, הפטיש של ת׳ור.",
+    kind: "trailer-frame",
+    provenance: "official",
+    provenanceNoteHe: "פריים מהטריילר הרשמי (20 ביולי 2026), כפי שפורסם ב-Free Press Journal.",
+    source: S.steveMjolnirFrame,
+    focus: "30% 40%",
+  },
+  {
+    id: "frame-thor-offers-mjolnir",
+    src: "./media/frame-thor-offers-mjolnir.webp",
+    width: 1600,
+    height: 960,
+    altHe: "ת׳ור מושיט את מיולניר, וסטיב רוג׳רס פושט יד כדי לקרוא לפטיש",
+    captionHe: "רגע לפני: ת׳ור מושיט את מיולניר, וסטיב קורא לו אל ידו.",
+    kind: "trailer-frame",
+    provenance: "official",
+    provenanceNoteHe: "פריים מהטריילר הרשמי (20 ביולי 2026), כפי שפורסם ב-Popverse.",
+    source: S.steveMjolnir,
+    focus: "50% 40%",
   },
   {
     id: "frame-battlefield",
@@ -379,6 +409,35 @@ export const JACKMAN_REEL = {
   accountHe: "יו ג׳קמן",
   status: "rumor" as const,
   sources: [S.jackmanInstagram, S.jackman],
+}
+
+export const STEVE_RUMOR = {
+  titleHe: "השמועה: סטיב רוג׳רס הוא הסיבה שדום הגיע",
+  status: "rumor" as const,
+  frameIds: ["frame-thor-offers-mjolnir", "frame-steve-mjolnir"],
+  sceneHe:
+    "בטריילר הרשמי סטיב רוג׳רס, עם שיער ארוך וזקן, מושיט יד, ומיולניר עף מידו של ת׳ור היישר אליו. סטיב עדיין ראוי להרים את הפטיש, בדיוק כמו ב״סוף המשחק״.",
+  sceneSource: S.steveMjolnir,
+  blocks: [
+    {
+      titleHe: "מה אומרת השמועה",
+      textHe:
+        "לפי המדליף MyTimeToShineH, ההחלטה של סטיב בסוף ״סוף המשחק״, לחזור בזמן ולחיות עם פגי קרטר, היא מה שמניע את דום לפלוש ליקומים אחרים. לפי הגרסה הזאת, המסע בזמן גרם בעקיפין לתאונה שבה נהרגו אשתו וילדיו של דום, והשאירה אותו פגוע. בגרסאות אחרות זה ניסוי במעבדה שהשתבש, ולא תאונת דרכים.",
+      source: S.steveRumor,
+    },
+    {
+      titleHe: "למה היא תפסה",
+      textHe:
+        "בטריילר דום מאשים את הנוקמים שהם חיים ״חיים גנובים״, ובטיזר ראינו את סטיב בעבר, עם תינוק בידיים. מעריצים רבים מחברים בין השניים.",
+      source: S.steveTheories,
+    },
+    {
+      titleHe: "מה לא מסתדר",
+      textHe:
+        "״סוף המשחק״ קבע שמסע בזמן יוצר ציר זמן חדש ולא משנה את העבר. כדי שהשמועה תעבוד, צריך הסבר נוסף. מארוול לא אישרה שום פרט מהעלילה.",
+      source: S.steveTheories,
+    },
+  ],
 }
 
 // ===== News =====
