@@ -1,4 +1,4 @@
-import type { Character, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, Trailer } from "@/types/content"
+import type { Character, ComicChapter, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, Trailer } from "@/types/content"
 
 /** Date of the last manual content review. The site has no live data feed. */
 export const LAST_REVIEWED = "2026-10-09"
@@ -24,6 +24,12 @@ const S = {
   missingStars: { label: "Kino.de", url: "https://www.kino.de/film/avengers-doomsday-2026/news/mcu-chef-zerstreut-jetzt-grosse-sorge-der-marvel-fans-und-liefert-neuen-einblick-in-avengers-doomsday/" },
   russoQuote: { label: "ComicBasics", url: "https://www.comicbasics.com/?p=192199" },
   imdbCast: { label: "IMDb · הצוות הרשמי", url: "https://www.imdb.com/news/ni65203262/" },
+  swExplained: { label: "Marvel.com · מלחמות סודיות ועולם הקרב", url: "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained" },
+  swWiki: { label: "Wikipedia · Secret Wars (2015)", url: "https://en.wikipedia.org/wiki/Secret_Wars_(2015_comic_book)" },
+  swNinth: { label: "The Beat · גיליון תשיעי", url: "https://www.comicsbeat.com/secret-wars-espands-to-a-ninth-issue" },
+  swEnding: { label: "Popverse · הסוף של מלחמות סודיות", url: "https://www.thepopverse.com/comics-marvel-secret-wars-1984-2015-ending-explained-ultimate-universe-god-emperor-doom-jonathan-hickman" },
+  swMoleculeMan: { label: "Marvel.com · איש המולקולות", url: "https://www.marvel.com/characters/molecule-man" },
+  swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
 
@@ -35,6 +41,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "דמויות", href: "#characters" },
   { label: "טריילרים", href: "#trailers" },
   { label: "גלריה", href: "#gallery" },
+  { label: "הקומיקס", href: "#secret-wars" },
   { label: "עדכונים", href: "#news" },
   { label: "שאלות נפוצות", href: "#faq" },
 ]
@@ -410,5 +417,74 @@ export const FAQ: FaqItem[] = [
   { id: "plot", questionHe: "על מה הסרט?", answerHe: "לפי התקציר הרשמי, גיבורים משלושה יקומים שונים יוצאים למסלול התנגשות ופוגשים איום קיומי. מעבר לזה, פרטי העלילה עוד לא פורסמו.", source: S.synopsis },
   { id: "infinity-vision", questionHe: "מה זה Infinity Vision?", answerHe: "תו תקן חדש של דיסני לאולמות פרימיום גדולים. הוא לא טכנולוגיית הקרנה חדשה. הכרטיסים לאולמות האלה נמכרו ראשונים.", source: S.axios },
   { id: "next", questionHe: "מה מגיע אחרי דומסדיי?", answerHe: "״הנוקמים: מלחמות סודיות״, שמתוכנן ל-17 בדצמבר 2027.", source: S.secretWars },
+  { id: "comic", questionHe: "על איזה קומיקס מבוססים הסרטים?", answerHe: "האחים רוסו אמרו שהם שואבים השראה חופשית משני הקומיקסים בשם ״מלחמות סודיות״: המקורי מ-1984 והגרסה של ג׳ונתן היקמן מ-2015. הם הדגישו שהסרטים יספרו גרסה משלהם. פירוט על הקומיקס של היקמן יש בחלק ״הקומיקס״ באתר.", source: S.swRusso },
   { id: "official-site", questionHe: "האם זה אתר רשמי?", answerHe: "לא. זה אתר מעריצים עצמאי של קהילת מארוול גיקים, בלי קשר ל-Marvel או ל-Disney. כל מידע באתר מסומן לפי רמת האימות שלו, עם קישור למקור." },
 ]
+
+// ===== Secret Wars (2015) comic =====
+export const SECRET_WARS = {
+  facts: [
+    { value: "9", labelHe: "גיליונות" },
+    { value: "2015–2016", labelHe: "מאי 2015 עד ינואר 2016" },
+    { value: "ג׳ונתן היקמן", labelHe: "כתיבה" },
+    { value: "אסאד ריביץ׳", labelHe: "ציור" },
+  ],
+  introHe:
+    "״מלחמות סודיות״ של ג׳ונתן היקמן והמאייר אסאד ריביץ׳ היא אירוע קומיקס של מארוול בתשעה גיליונות. היא סוגרת את הסיפור שהיקמן בנה במשך כמה שנים בסדרות ״הנוקמים״ ו״הנוקמים החדשים״: יקומים שלמים מתנגשים זה בזה ונמחקים, עד שלא נשאר כלום חוץ מעולם אחד, שדוקטור דום שולט בו כאל.",
+  introSource: S.swExplained,
+  publicationHe:
+    "הגיליון הראשון יצא במאי 2015. התוכנית המקורית הייתה שמונה גיליונות, אבל באוגוסט 2015 מארוול הודיעה על גיליון תשיעי. בגלל עיכובים, הגיליון האחרון יצא רק בינואר 2016.",
+  publicationSources: [S.swNinth, S.swWiki],
+  chapters: [
+    {
+      id: "incursions",
+      titleHe: "ההתנגשויות",
+      textHe:
+        "יקומים מקבילים מתחילים להתנגש זה בזה, ובכל התנגשות כדור הארץ נמצא בנקודת הפגיעה. ריד ריצ׳רדס וקבוצת האילומינטי מנסים לעצור את זה, ומגלים שאין דרך אמיתית לנצח.",
+      source: S.swExplained,
+    },
+    {
+      id: "last-incursion",
+      titleHe: "ההתנגשות האחרונה",
+      textHe:
+        "בסוף נשארים רק שני יקומים: היקום המרכזי של מארוול והיקום האולטימטיבי. ריד בונה ״רפסודת הצלה״ שאמורה לשרוד את סוף היקום, אבל רואה את משפחתו נופלת ממנה אל הריק.",
+      source: S.swExplained,
+    },
+    {
+      id: "god-emperor",
+      titleHe: "האל הקיסר דום",
+      textHe:
+        "דוקטור דום, יחד עם דוקטור סטריינג׳, יוצא נגד הביונדרים, הישויות שעמדו מאחורי ההרס, וגונב את הכוח שלהם. משאריות היקומים שניצלו הוא בונה עולם חדש בשם ״עולם הקרב״ (Battleworld), ושולט בו כאל.",
+      source: S.swExplained,
+    },
+    {
+      id: "battleworld",
+      titleHe: "עולם הקרב",
+      textHe:
+        "עולם הקרב מחולק לממלכות, וכל אחת בנויה משבר של יקום או עלילה אחרים. סטריינג׳ משמש כ״שריף״ של דום, וחיל של ת׳ורים אוכף את החוק. דום לוקח את מקומו של ריד: הוא נשוי לסו סטורם ומגדל את ילדיה, ג׳וני סטורם הפך לשמש של העולם, ובן גרים הפך ל״חומה״ שמפרידה בין הממלכות לאזורי המוות.",
+      source: S.swExplained,
+    },
+    {
+      id: "survivors",
+      titleHe: "הניצולים מתעוררים",
+      textHe:
+        "ניצולים מהיקומים הישנים מתעוררים לתוך הסדר החדש, ביניהם הגיבורים מרפסודת ההצלה, ת׳אנוס והקבאל. האמת על מקור הכוח של דום היא סוד שמור, ומתברר שסטריינג׳ מצא את רפסודת הגיבורים כבר שמונה שנים קודם.",
+      source: S.swExplained,
+    },
+    {
+      id: "ending",
+      titleHe: "הסוף",
+      spoiler: true,
+      textHe:
+        "איש המולקולות, שדרכו עבר הכוח של הביונדרים, מנתק את דום מהכוח. דום וריד נלחמים כשווים, ודום מודה שריד היה עושה עבודה טובה יותר. איש המולקולות מעביר את הכוח לריד, וריד בונה מחדש את המולטיוורס, עולם אחרי עולם. הוא גם מרפא את פניו של דום.",
+      source: S.swEnding,
+    },
+  ] satisfies ComicChapter[],
+  filmLink: {
+    quoteHe: "אנחנו תמיד יוצרים גרסה משלנו לסיפור. אנחנו משתמשים בקומיקס כהשראה חופשית.",
+    quoteByHe: "ג׳ו רוסו, בראיון ל-TechRadar",
+    textHe:
+      "האחים רוסו אמרו שהם ישאבו השראה גם מ״מלחמות סודיות״ המקורי מ-1984 וגם מהגרסה של היקמן, שג׳ו רוסו כינה ״פנטסטית״. כמה מהעלילה של הקומיקס תגיע למסך? את זה עוד לא יודעים.",
+    source: S.swRusso,
+  },
+}

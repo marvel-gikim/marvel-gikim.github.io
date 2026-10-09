@@ -102,3 +102,11 @@ export interface NavLink {
   label: string
   href: `#${string}`
 }
+
+export interface ComicChapter {
+  id: string
+  titleHe: string
+  textHe: string
+  source: SourceLink
+  spoiler?: boolean
+}

@@ -13,6 +13,7 @@ import { BrandLogo } from "@/components/brand-logo"
 import { DirectorsQuote } from "@/components/directors-quote"
 import { CastGallery } from "@/components/cast-gallery"
 import { ActorPage } from "@/components/actor-page"
+import { SecretWarsSection } from "@/components/secret-wars-section"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute } from "@/hooks/use-actor-route"
 import { SourceLink } from "@/components/source-link"
@@ -327,6 +328,9 @@ export default function App() {
         </section>
 
         {/* ===== News ===== */}
+        {/* ===== Secret Wars comic ===== */}
+        <SecretWarsSection />
+
         <section id="news" aria-labelledby="news-title" className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading id="news-title" eyebrow="עדכונים" title="מה חדש בדרך לדומסדיי">
