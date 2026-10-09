@@ -349,5 +349,14 @@
     "license": "CC BY-SA 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hugh_Jackman_3380.jpg"
+  },
+  "evans-alt": {
+    "file": "./cast/evans-alt.jpg",
+    "width": 640,
+    "height": 821,
+    "author": "United States House of Representatives - Office of Don Young",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Evans_in_2019.jpg"
   }
 }
