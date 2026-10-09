@@ -18,6 +18,8 @@ export interface ResponsiveHeroBannerProps {
   secondaryButton?: { label: string; href: string }
   /** External ticket link, shown first and opened in a new tab */
   ticketsButton?: { label: string; href: string }
+  /** Extra content under the buttons (e.g. the notifications button) */
+  afterButtons?: ReactNode
   background: { src: string; alt: string; focus?: string; width: number; height: number }
   /** Verified facts shown in a compact row */
   infoItems?: HeroInfoItem[]
@@ -41,6 +43,7 @@ export function ResponsiveHeroBanner({
   primaryButton,
   secondaryButton,
   ticketsButton,
+  afterButtons,
   background,
   infoItems,
   aside,
@@ -141,6 +144,8 @@ export function ResponsiveHeroBanner({
               )}
             </div>
           )}
+
+          {afterButtons && <div className="mt-4 animate-fade-slide-in animation-delay-300">{afterButtons}</div>}
 
           {infoItems && infoItems.length > 0 && (
             <dl className="mt-12 grid animate-fade-slide-in animation-delay-400 grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">

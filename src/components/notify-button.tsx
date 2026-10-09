@@ -42,7 +42,17 @@ export function NotifyButton({ className, compact }: { className?: string; compa
     }
   }, [appName])
 
-  const subscribe = () =>
+  const subscribe = () => {
+    // If OneSignal hasn't loaded yet, ask the browser directly (keeps the click's user gesture);
+    // OneSignal subscribes the visitor automatically once it loads with permission granted.
+    const loaded = (window as Window & { OneSignal?: unknown }).OneSignal
+    if (!loaded && typeof Notification !== "undefined" && Notification.permission === "default") {
+      void Notification.requestPermission().then((p) => {
+        if (p === "granted") setState("subscribed")
+        else if (p === "denied") setState("denied")
+      })
+      return
+    }
     withOneSignal(async (os) => {
       await os.Notifications.requestPermission()
       if (os.Notifications.permission) {
@@ -52,6 +62,7 @@ export function NotifyButton({ className, compact }: { className?: string; compa
         setState("denied")
       }
     })
+  }
 
   const base = "inline-flex items-center gap-2 rounded-full px-6 py-3 font-black transition"
 
@@ -136,10 +147,9 @@ export function NotifyButton({ className, compact }: { className?: string; compa
     <button
       type="button"
       onClick={subscribe}
-      disabled={state === "loading"}
       className={cn(
         base,
-        "group cursor-pointer bg-brand text-primary-foreground shadow-[0_0_40px_-8px_rgb(70_214_44/0.8)] hover:-translate-y-0.5 hover:brightness-110 disabled:cursor-wait disabled:opacity-70",
+        "group cursor-pointer bg-brand text-primary-foreground shadow-[0_0_40px_-8px_rgb(70_214_44/0.8)] hover:-translate-y-0.5 hover:brightness-110",
         className,
       )}
     >

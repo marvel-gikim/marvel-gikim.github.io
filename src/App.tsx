@@ -19,6 +19,7 @@ import { SecretWarsSection } from "@/components/secret-wars-section"
 import { AboutPageSection } from "@/components/about-page-section"
 import { TicketsPromo } from "@/components/tickets-promo"
 import { PushCheck } from "@/components/push-check"
+import { NotifyButton } from "@/components/notify-button"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute, useHashRoute } from "@/hooks/use-actor-route"
 import { MyArticlesSection } from "@/components/my-articles-section"
@@ -164,6 +165,7 @@ export default function App() {
           title={FILM.titleHe}
           subtitle="כל המידע. כל הטריילרים. כל העדכונים."
           ticketsButton={{ label: "קנו כרטיסים בפלאנט", href: TICKETS.href }}
+          afterButtons={<NotifyButton className="w-full justify-center sm:w-auto" />}
           primaryButton={{ label: "צפו בטריילר", href: "#trailers" }}
           secondaryButton={{ label: "גלו את כל הפרטים", href: "#about" }}
           background={{ src: HERO_IMAGE.src, alt: HERO_IMAGE.altHe, focus: "50% 30%", width: HERO_IMAGE.width, height: HERO_IMAGE.height }}
