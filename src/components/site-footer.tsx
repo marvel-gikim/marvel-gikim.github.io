@@ -76,14 +76,21 @@ export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
           </p>
           <p>
             <span className="font-bold text-foreground/80">רוצים שנסיר משהו? </span>
-            אם יש לכם זכויות בתמונה או בחומר שמופיע כאן ואתם רוצים שנסיר אותו, שלחו לנו הודעה{" "}
+            אם יש לכם זכויות בתמונה או בחומר שמופיע כאן ואתם רוצים שנסיר אותו, כתבו לנו במייל{" "}
+            <a
+              href="mailto:marvelgikim@gmail.com?subject=%D7%91%D7%A7%D7%A9%D7%AA%20%D7%94%D7%A1%D7%A8%D7%94"
+              className="font-bold text-brand-pale underline decoration-brand/50 underline-offset-4 hover:decoration-brand-pale"
+            >
+              <bdi dir="ltr">marvelgikim@gmail.com</bdi>
+            </a>{" "}
+            או באינסטגרם{" "}
             <a
               href="https://www.instagram.com/marv.elgikim/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-brand-pale underline decoration-brand/50 underline-offset-4 hover:decoration-brand-pale"
             >
-              באינסטגרם <bdi dir="ltr">@marv.elgikim</bdi>
+              <bdi dir="ltr">@marv.elgikim</bdi>
             </a>
             , ונסיר אותו בהקדם.
           </p>
