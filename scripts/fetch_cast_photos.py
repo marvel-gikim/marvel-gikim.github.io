@@ -22,6 +22,12 @@ def get_json(params):
         return json.load(r)
 
 
+def commons(params):
+    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({**params, "format": "json", "formatversion": 2})
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+        return json.load(r)
+
+
 def clean(html):
     text = re.sub(r"<[^>]+>", "", html or "")
     return re.sub(r"\s+", " ", text).strip()
@@ -62,6 +68,42 @@ def main():
             missing.append(cid)
             print("miss", cid, title, e)
         time.sleep(0.4)
+    # Second, different photos (for quote cards), searched on Wikimedia Commons (all files there are free)
+    alt = json.load(open(os.path.join(ROOT, "scripts", "alt_photos.json"), encoding="utf-8"))
+    used = {c["sourceUrl"] for c in credits.values()}
+    for cid, person in alt.items():
+        try:
+            res = commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 40,
+                           "srsearch": f'intitle:"{person}" filetype:bitmap'})["query"]["search"]
+            for hit in res:
+                info = commons({"action": "query", "titles": hit["title"], "prop": "imageinfo",
+                                "iiprop": "url|extmetadata|size", "iiurlwidth": 640})["query"]["pages"][0]["imageinfo"][0]
+                if info.get("descriptionurl") in used or info["height"] < info["width"] or info["width"] < 800:
+                    continue  # want a different, portrait, decent-size photo
+                meta = info.get("extmetadata", {})
+                license_name = clean(meta.get("LicenseShortName", {}).get("value"))
+                if not license_name:
+                    continue
+                with urllib.request.urlopen(urllib.request.Request(info["thumburl"], headers=UA), timeout=60) as r:
+                    img = Image.open(io.BytesIO(r.read())).convert("RGB")
+                img.thumbnail((640, 900))
+                img.save(os.path.join(OUT, cid + ".jpg"), "JPEG", quality=85, optimize=True)
+                credits[cid] = {
+                    "file": f"./cast/{cid}.jpg",
+                    "width": img.width,
+                    "height": img.height,
+                    "author": clean(meta.get("Artist", {}).get("value")) or "לא צוין",
+                    "license": license_name,
+                    "licenseUrl": meta.get("LicenseUrl", {}).get("value", ""),
+                    "sourceUrl": info.get("descriptionurl", ""),
+                }
+                print("alt ", cid, hit["title"], license_name)
+                break
+            else:
+                missing.append(cid)
+        except Exception as e:
+            missing.append(cid)
+            print("miss", cid, e)
     json.dump(credits, open(os.path.join(OUT, "credits.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     shutil.rmtree(PUBLIC, ignore_errors=True)
     shutil.copytree(OUT, PUBLIC)

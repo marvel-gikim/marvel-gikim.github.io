@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/cast.json'
+      - 'scripts/alt_photos.json'
       - 'scripts/fetch_cast_photos.py'
       - 'scripts/media.json'
       - 'scripts/fetch_media.py'
