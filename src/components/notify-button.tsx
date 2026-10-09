@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react"
 import { Bell, BellOff, BellRing, Check, Share } from "lucide-react"
-import { isIOS, isStandalone, withOneSignal } from "@/lib/push"
+import { inAppBrowserName, isAndroid, isIOS, isStandalone, withOneSignal } from "@/lib/push"
 import { cn } from "@/lib/utils"
 
-type State = "loading" | "ready" | "subscribed" | "denied" | "ios-install" | "unsupported" | "blocked"
+type State = "in-app" | "loading" | "ready" | "subscribed" | "denied" | "ios-install" | "unsupported" | "blocked"
 
 /** "Get notified about new articles" button, backed by OneSignal web push. */
 export function NotifyButton({ className, compact }: { className?: string; compact?: boolean }) {
   const [state, setState] = useState<State>("loading")
 
+  const appName = inAppBrowserName()
+
   useEffect(() => {
+    // Opened from a link inside Instagram/TikTok/WhatsApp: those built-in browsers have no notifications
+    if (appName) {
+      setState("in-app")
+      return
+    }
     // iPhone/iPad only allow web push from a site added to the home screen
     if (isIOS() && !isStandalone()) {
       setState("ios-install")
@@ -33,7 +40,7 @@ export function NotifyButton({ className, compact }: { className?: string; compa
       alive = false
       window.clearTimeout(t)
     }
-  }, [])
+  }, [appName])
 
   const subscribe = () =>
     withOneSignal(async (os) => {
@@ -74,6 +81,21 @@ export function NotifyButton({ className, compact }: { className?: string; compa
         <Check aria-hidden className="size-5" />
         ההתראות פעילות. נעדכן אתכם על כל כתבה חדשה
       </p>
+    )
+  }
+  if (state === "in-app") {
+    const here = window.location.href.replace(/^https?:\/\//, "")
+    return (
+      <div className={cn("flex flex-col items-start gap-2 rounded-2xl border border-border bg-surface/70 px-4 py-3 text-sm leading-6 text-muted", className)}>
+        <span>
+          פתחתם את האתר מתוך {appName}, ושם אי אפשר לקבל התראות. פתחו אותו בדפדפן: לחצו על ⋮ או ⋯ בפינה ובחרו ״פתיחה בדפדפן״.
+        </span>
+        {isAndroid() && (
+          <a href={`intent://${here}#Intent;scheme=https;package=com.android.chrome;end`} className="font-bold text-brand-pale underline underline-offset-4">
+            פתיחה בכרום
+          </a>
+        )}
+      </div>
     )
   }
   if (state === "ios-install") {
