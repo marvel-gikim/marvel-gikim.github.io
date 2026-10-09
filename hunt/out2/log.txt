@@ -8,15 +8,58 @@ og thedirect https://images.thedirect.com/media/article_full/doomsuits.jpg (1280
   img thedirect-img7 https://images.thedirect.com/media/photos/doom6_godemperor.png (800, 450) alt=God Emperor Doom and Avengers Doomsday Lord Doom suit.
   img thedirect-img8 https://images.thedirect.com/media/photos/doom7_hellfiregala.png (800, 450) alt=Doctor Doom gold suit, Lord Doom Avengers Doomsday Funko.
   img thedirect-img9 https://images.thedirect.com/media/photos/doom8_fortnite.png (800, 450) alt=Doctor Doom in Fortnite, Lord Doom Funko.
+  img thedirect-img1 https://images.thedirect.com/media/article_full/doomsuits.jpg (1280, 720) alt=Doctor Doom suits in Avengers: Doomsday, Avengers: Doomsday logo
+  img thedirect-img2 https://images.thedirect.com/media/photos/doom1_gpckQmu.png (800, 800) alt=Avengers Doomsday, Lord Doom Funko figure.
+  img thedirect-img3 https://images.thedirect.com/media/photos/doom2_Fy5VQ5A.png (800, 800) alt=Avengers Doomsday, Lord Doom Funko figure in box.
+  img thedirect-img4 https://images.thedirect.com/media/photos/doom3_v5Q1a08.png (800, 450) alt=Avengers Doomsday, Doctor Doom battle suit and Lord Doom suit Funko.
+  img thedirect-img5 https://images.thedirect.com/media/photos/doom4_l9kREen.png (800, 450) alt=Avengers Doomsday, Doctor Doom battle suit and Lord Doom suit Funko.
+  img thedirect-img6 https://images.thedirect.com/media/photos/doom5_wiqvM41.png (800, 450) alt=Avengers Doomsday, all 3 Robert Downey Jr. Doctor Doom suits.
+  img thedirect-img7 https://images.thedirect.com/media/photos/doom6_godemperor.png (800, 450) alt=God Emperor Doom and Avengers Doomsday Lord Doom suit.
+  img thedirect-img8 https://images.thedirect.com/media/photos/doom7_hellfiregala.png (800, 450) alt=Doctor Doom gold suit, Lord Doom Avengers Doomsday Funko.
+  img thedirect-img9 https://images.thedirect.com/media/photos/doom8_fortnite.png (800, 450) alt=Doctor Doom in Fortnite, Lord Doom Funko.
 og technosports FAIL HTTP Error 403: Forbidden
 og cbm-sdcc https://comicbookmovie.com/images/articles/banners/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-ab229030.jpg (1500, 844)
+  img cbm-sdcc-img1 https://comicbookmovie.com/cdn-cgi/image/fit=cover,width=920,quality=85/images/articles/banners/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-ab229030.jpg (920, 517) alt=Avengers: Doomsday: Detailed Look At Doctor Doom&#39;s Costume At Comic-Con Reveals Hidden Details
   img cbm-sdcc-img1 https://comicbookmovie.com/cdn-cgi/image/fit=cover,width=920,quality=85/images/articles/banners/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-ab229030.jpg (920, 517) alt=Avengers: Doomsday: Detailed Look At Doctor Doom&#39;s Costume At Comic-Con Reveals Hidden Details
   img cbm-sdcc-img2 https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycmJlM2d2MXkxMHp2dHY1ZDI3eWljMTJveGxxMGl4ajQ1bmhnYnNlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bsmhVV8TgJHhxQqlLw/giphy.gif (480, 480) alt=User Comment Image
   img cbm-sdcc-img3 https://preview.redd.it/wich-adaptation-portrayal-of-doctor-dooms-face-do-you-v0-4uc96fupccmf1.jpg?width=640&crop=smart&auto=webp&s=0666d46dee2e92446dce84f5190733ab5f32c9b6 (640, 1098) alt=User Comment Image
   img cbm-sdcc-img4 https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWo4NTY4ajRiN2ZkZWgzenB0MjBpbmpjNWxibmI5ZDF6c2ZyMzRkZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/489creibaESJinxCSt/giphy.gif (480, 480) alt=User Comment Image
 og yahoo-toys https://s.yimg.com/lo/mysterio/api/f6c4fae00c382e71511b40ce8c92b304741d8ba1523460808346068612972766/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fmandatory_995%2F1c616747e6c53a4f18b76cead5eccc8a (1200, 675)
   img yahoo-toys-img1 https://s.yimg.com/lo/mysterio/api/c1e40c3c99549df6e947beb63a74feb26b547534b84940ae8900e25c7574146e/lightyear_networkapi/resizefill_w976%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fmandatory_995%2F1c616747e6c53a4f18b76cead5eccc8a (976, 549) alt=Doctor Doom&#x27;s Suit &amp; Thor&#x27;s Helmet Revealed by Avengers: Doomsday Toys
+  img yahoo-toys-img1 https://s.yimg.com/lo/mysterio/api/c1e40c3c99549df6e947beb63a74feb26b547534b84940ae8900e25c7574146e/lightyear_networkapi/resizefill_w976%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fmandatory_995%2F1c616747e6c53a4f18b76cead5eccc8a (976, 549) alt=Doctor Doom&#x27;s Suit &amp; Thor&#x27;s Helmet Revealed by Avengers: Doomsday Toys
+og shh-toys https://www.superherohype.com/wp-content/uploads/sites/4/2026/06/Avengers-Doomsday-1.jpg?resize=1200,630 (1200, 630)
+  img shh-toys-img1 https://www.superherohype.com/wp-content/uploads/sites/4/2026/06/Avengers-Doomsday-1.jpg?w=1024 (1024, 576) alt=Doctor Doom’s Suit &amp; Thor’s Helmet Revealed by Avengers: Doomsday Toys
+  img shh-toys-img1 https://www.superherohype.com/wp-content/uploads/sites/4/2026/06/Avengers-Doomsday-1.jpg?w=1024 (1024, 576) alt=Doctor Doom’s Suit &amp; Thor’s Helmet Revealed by Avengers: Doomsday Toys
+og shh-costume https://www.superherohype.com/wp-content/uploads/sites/4/2025/11/download-2025-11-19T110653.470.jpg?resize=1200,630 (1200, 630)
+  img shh-costume-img1 https://www.superherohype.com/wp-content/uploads/sites/4/2025/11/download-2025-11-19T110653.470.jpg?w=1024 (1024, 576) alt=Avengers: Doomsday Costume Photo Reveals Huge Doctor Doom MCU Fan Theory
+  img shh-costume-img1 https://www.superherohype.com/wp-content/uploads/sites/4/2025/11/download-2025-11-19T110653.470.jpg?w=1024 (1024, 576) alt=Avengers: Doomsday Costume Photo Reveals Huge Doctor Doom MCU Fan Theory
 og cbm-leaks https://comicbookmovie.com/images/articles/banners/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-ab228929.jpg (1500, 844)
+  img cbm-leaks-img1 https://comicbookmovie.com/cdn-cgi/image/fit=cover,width=920,quality=85/images/articles/banners/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-ab228929.jpg (920, 517) alt=Avengers: Doomsday: A Fresh Wave Of Leaks Reveal New Doctor Doom, Spider-Man, And X-Men Details
   img cbm-leaks-img1 https://comicbookmovie.com/cdn-cgi/image/fit=cover,width=920,quality=85/images/articles/banners/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-ab228929.jpg (920, 517) alt=Avengers: Doomsday: A Fresh Wave Of Leaks Reveal New Doctor Doom, Spider-Man, And X-Men Details
   img cbm-leaks-img2 https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ajNld3dyaWZxcmNoMHMwMWp0czYyNDNxd3lrZ2hqdnlsZmNpeTJ2OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WDMzHa7lVyufFV3Gbo/giphy.gif (480, 480) alt=User Comment Image
   img cbm-leaks-img3 https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWhmcHBnamcyaTVkeTVxcWhvMXZidHY0dDYxNHVydDQ2bWR5cjV5ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/j6lcseKs0SkdE8blnV/giphy.gif (480, 432) alt=User Comment Image
+og toypeople-1 https://img.toy-people.com/member/178483014033.jpg (1200, 675)
+  img toypeople-1-img1 https://img.toy-people.com/member/178483014033.jpg (1200, 675) alt=
+  img toypeople-1-img2 https://img.toy-people.com/member/178483018195.jpg (1169, 1031) alt=
+  img toypeople-1-img3 https://img.toy-people.com/member/178483019022.jpg (1170, 1016) alt=
+  img toypeople-1-img4 https://img.toy-people.com/member/178483020375.jpg (1169, 1122) alt=
+  img toypeople-1-img1 https://img.toy-people.com/member/178483014033.jpg (1200, 675) alt=
+  img toypeople-1-img2 https://img.toy-people.com/member/178483018195.jpg (1169, 1031) alt=
+  img toypeople-1-img3 https://img.toy-people.com/member/178483019022.jpg (1170, 1016) alt=
+  img toypeople-1-img4 https://img.toy-people.com/member/178483020375.jpg (1169, 1122) alt=
+og toypeople-2 https://img.toy-people.com/member/176224853476.webp (1200, 674)
+  img toypeople-2-img1 https://img.toy-people.com/member/176224853476.webp (1200, 674) alt=
+  img toypeople-2-img1 https://img.toy-people.com/member/176224853476.webp (1200, 674) alt=
+og toypeople-3 https://img.toy-people.com/member/178765616044.png (1200, 630)
+  img toypeople-3-img1 https://img.toy-people.com/member/178765616044.png (1200, 630) alt=
+  img toypeople-3-img2 https://img.toy-people.com/member/178764823226.jpg (777, 940) alt=
+  img toypeople-3-img3 https://img.toy-people.com/member/17876493601.jpg (831, 1074) alt=
+  img toypeople-3-img4 https://img.toy-people.com/member/178764951369.jpg (1170, 1356) alt=
+  img toypeople-3-img5 https://img.toy-people.com/member/178764952350.jpg (1200, 992) alt=
+  img toypeople-3-img6 https://img.toy-people.com/member/17876503599.jpg (1170, 1168) alt=
+  img toypeople-3-img1 https://img.toy-people.com/member/178765616044.png (1200, 630) alt=
+  img toypeople-3-img2 https://img.toy-people.com/member/178764823226.jpg (777, 940) alt=
+  img toypeople-3-img3 https://img.toy-people.com/member/17876493601.jpg (831, 1074) alt=
+  img toypeople-3-img4 https://img.toy-people.com/member/178764951369.jpg (1170, 1356) alt=
+  img toypeople-3-img5 https://img.toy-people.com/member/178764952350.jpg (1200, 992) alt=
+  img toypeople-3-img6 https://img.toy-people.com/member/17876503599.jpg (1170, 1168) alt=
