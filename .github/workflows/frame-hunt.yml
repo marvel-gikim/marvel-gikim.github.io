@@ -1,0 +1,20 @@
+name: Frame hunt
+on:
+  push:
+    branches: [frame-hunt]
+    paths: ['hunt/hunt.py', '.github/workflows/frame-hunt.yml']
+permissions:
+  contents: write
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pillow yt-dlp && sudo apt-get install -y ffmpeg >/dev/null
+      - run: python hunt/hunt.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hunt/out && git commit -m "Frame hunt results" && git push
