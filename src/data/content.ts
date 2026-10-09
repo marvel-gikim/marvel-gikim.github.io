@@ -32,6 +32,7 @@ const S = {
   swMadness: { label: "SYFY · הסוף של ״בממד הטירוף״", url: "https://www.syfy.com/syfy-wire/doctor-strange-multiverse-madness-ending-explained-clea-post-credits" },
   swInfinity: { label: "Wikipedia · Infinity (2013)", url: "https://en.wikipedia.org/wiki/Infinity_(comic_book)" },
   swForeword: { label: "JustWatch", url: "https://guides.justwatch.com/mx/hermanos-russo-spoiler-avengers-doomsday-secret-wars" },
+  jackmanPrediction: { label: "Yahoo Entertainment", url: "https://www.yahoo.com/entertainment/movies/articles/hugh-jackman-predicted-avengers-doomsday-001707519.html" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -357,6 +358,16 @@ export const DIRECTORS_QUOTE = {
   contextHe: "בשאלות ותשובות אחרי הקרנה של ״הנוקמים: סוף המשחק – הדרן״. ג׳ו רוסו נעדר מהאירוע.",
   photoKey: "russos",
   source: S.russoQuote,
+}
+
+export const JACKMAN_PREDICTION = {
+  quoteHe: "כמעט בלתי אפשרי להאמין שאין דרך להביא יחד את איירון מן, את כל דמויות הנוקמים, את וולברין, את דמויות האקס-מן ואת ספיידרמן.",
+  speakerHe: "יו ג׳קמן, ב-2013",
+  contextHe:
+    "בראיון לקידום ״וולברין״ (2013), כשהזכויות על האקס-מן עוד היו בידי פוקס, הנוקמים אצל מארוול וספיידרמן אצל סוני. הראיון עלה מחדש לאחרונה כ״תחזית״ לדומסדיי. בתרגום חופשי.",
+  photoKey: "jackman",
+  photoLabelHe: "יו ג׳קמן",
+  source: S.jackmanPrediction,
 }
 
 // ===== News =====

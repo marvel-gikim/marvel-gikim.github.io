@@ -29,6 +29,7 @@ import {
   FILM,
   GALLERY,
   HERO_IMAGE,
+  JACKMAN_PREDICTION,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -336,6 +337,7 @@ export default function App() {
             <SectionHeading id="news-title" eyebrow="עדכונים" title="מה חדש בדרך לדומסדיי">
               הודעות רשמיות מסומנות בירוק. דיווחים ושמועות מסומנים אחרת, כדי שיהיה קל להבדיל ביניהם.
             </SectionHeading>
+            <DirectorsQuote {...JACKMAN_PREDICTION} photo={photos[JACKMAN_PREDICTION.photoKey]} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">
