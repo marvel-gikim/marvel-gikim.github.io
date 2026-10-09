@@ -443,9 +443,53 @@ export const STEVE_RUMOR = {
   ],
 }
 
+export const DOOM_SUIT_IMAGES: GalleryImage[] = [
+  {
+    id: "doom-suit-battle",
+    src: "./media/doom-suit-battle.webp",
+    width: 256,
+    height: 450,
+    altHe: "דוקטור דום בחליפת הקרב: שריון ירוק-כסוף עם גלימה וברדס",
+    captionHe: "חליפת הקרב של דום, בתצוגה בכנס",
+    kind: "still",
+    provenance: "unverified",
+    provenanceNoteHe: "תצוגת תלבושות · פורסם ב-The Direct",
+    source: S.doomSuits,
+    focus: "50% 15%",
+  },
+  {
+    id: "doom-suit-d23",
+    src: "./media/doom-suit-d23.webp",
+    width: 254,
+    height: 450,
+    altHe: "דוקטור דום במעיל ארוך וגלימה, עם ברדס ומסכה, בתצוגה מול ויטראז׳",
+    captionHe: "החליפה שהוצגה בכנס D23",
+    kind: "still",
+    provenance: "unverified",
+    provenanceNoteHe: "תצוגה בכנס D23 · פורסם ב-The Direct",
+    source: S.doomSuits,
+    focus: "50% 15%",
+  },
+  {
+    id: "doom-suit-lord-funko",
+    src: "./media/doom-suit-lord-funko.webp",
+    width: 273,
+    height: 450,
+    altHe: "בובת פאנקו של ״לורד דום״ במדים ירוקים עם קישוטים מוזהבים",
+    captionHe: "בובת הפאנקו ״Lord Doom״",
+    kind: "still",
+    provenance: "unverified",
+    provenanceNoteHe: "בובת פאנקו · פורסם ב-The Direct",
+    source: S.doomSuits,
+    focus: "50% 40%",
+  },
+]
+
 export const DOOM_SUITS_RUMOR = {
   titleHe: "שלוש חליפות לדוקטור דום?",
   status: "report" as const,
+  frameLabels: ["ראשונה", "שנייה", "שלישית"],
+  frameAspect: [4, 5] as [number, number],
   sceneHe:
     "לפי דיווחים, רוברט דאוני ג׳וניור ילבש בסרט שלוש תלבושות שונות של דום. את השלישית לא ראינו בחומרים מהסרט: היא נחשפה דרך בובות של פאנקו.",
   sceneSource: S.doomSuits,
