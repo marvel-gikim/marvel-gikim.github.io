@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { ArrowRight, Clock, ExternalLink } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
+import { VerificationBadge } from "@/components/verification-badge"
 import { Button } from "@/components/ui/button"
 import { readingMinutes } from "@/components/my-articles-section"
 import { formatHebrewDate } from "@/lib/utils"
@@ -38,6 +39,7 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
         <p className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted animate-fade-slide-in">
+          {a.status && <VerificationBadge status={a.status} />}
           <span className="font-bold text-brand">מארוול גיקים</span>
           <time dateTime={a.publishedAt}>{formatHebrewDate(a.publishedAt)}</time>
           <span className="inline-flex items-center gap-1">
@@ -48,11 +50,18 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
         <h1 id="article-title" ref={headingRef} tabIndex={-1} className="text-4xl leading-tight font-black text-balance outline-none sm:text-5xl animate-fade-slide-in animation-delay-100">
           {a.titleHe}
         </h1>
-        <p className="mt-5 text-xl leading-9 text-foreground/80 animate-fade-slide-in animation-delay-200">{a.excerptHe}</p>
+        {a.bodyHe[0] !== a.excerptHe && (
+          <p className="mt-5 text-xl leading-9 text-foreground/80 animate-fade-slide-in animation-delay-200">{a.excerptHe}</p>
+        )}
 
         {a.cover && (
           <figure className="m-0 mt-10 animate-fade-slide-in animation-delay-300">
-            <img src={a.cover.src} alt={a.cover.altHe} className="w-full rounded-[var(--radius-lg)] border border-border" />
+            <img
+              src={a.cover.src}
+              alt={a.cover.altHe}
+              style={a.cover.focus ? { objectPosition: a.cover.focus } : undefined}
+              className="aspect-video w-full rounded-[var(--radius-lg)] border border-border object-cover"
+            />
             {a.cover.creditHe && <figcaption className="mt-2 text-xs text-muted">{a.cover.creditHe}</figcaption>}
           </figure>
         )}

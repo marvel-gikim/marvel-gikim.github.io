@@ -1,6 +1,7 @@
 import { ArrowLeft, Clock, Feather, Instagram, Music2 } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { SectionHeading } from "@/components/section-heading"
+import { VerificationBadge } from "@/components/verification-badge"
 import { formatHebrewDate } from "@/lib/utils"
 
 /** Rough reading time in minutes (Hebrew ~200 words per minute) */
@@ -71,11 +72,18 @@ function ArticleCard({ article: a, onOpen, featured }: { article: MyArticle; onO
       >
         {a.cover && (
           <span className={`relative block overflow-hidden ${featured ? "aspect-video lg:aspect-auto lg:min-h-80" : "aspect-video"}`}>
-            <img src={a.cover.src} alt={a.cover.altHe} loading="lazy" className="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105" />
+            <img
+              src={a.cover.src}
+              alt={a.cover.altHe}
+              loading="lazy"
+              style={a.cover.focus ? { objectPosition: a.cover.focus } : undefined}
+              className="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105"
+            />
           </span>
         )}
         <span className={`flex flex-col gap-3 p-6 ${featured ? "sm:p-10" : ""}`}>
           <span className="flex flex-wrap items-center gap-3 text-sm text-muted">
+            {a.status && <VerificationBadge status={a.status} />}
             <time dateTime={a.publishedAt}>{formatHebrewDate(a.publishedAt)}</time>
             <span className="inline-flex items-center gap-1">
               <Clock aria-hidden className="size-3.5" />

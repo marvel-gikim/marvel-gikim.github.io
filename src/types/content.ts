@@ -124,7 +124,9 @@ export interface MyArticle {
   publishedAt: string
   /** Paragraphs of the article; "## " starts a sub-heading */
   bodyHe: string[]
-  cover?: { src: string; altHe: string; creditHe?: string }
+  cover?: { src: string; altHe: string; creditHe?: string; focus?: string }
+  /** Verification label, when the article is about a rumor or report */
+  status?: VerificationStatus
   /** Optional link to the matching TikTok / Instagram post */
   postUrl?: string
   tagsHe?: string[]

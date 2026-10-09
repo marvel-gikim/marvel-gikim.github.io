@@ -562,7 +562,30 @@ export const TICKETS = {
 
 // ===== My articles (written by Marvel Gikim) =====
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
-export const MY_ARTICLES: MyArticle[] = []
+export const MY_ARTICLES: MyArticle[] = [
+  {
+    id: "tobey-spider-man-doomsday",
+    titleHe: "ספיידרמן של טובי יחזור בדומסדיי?",
+    excerptHe: "שמועות ברחבי הרשת אומרות כי טובי מגוויר יחזור כספיידרמן האייקוני שלו ב״הנוקמים: דומסדיי״. ומה זה אומר בפועל?",
+    publishedAt: "2026-10-09",
+    status: "rumor",
+    tagsHe: ["ספיידרמן", "טובי מגוויר", "אקס-מן"],
+    cover: {
+      src: "./cast/maguire.jpg",
+      altHe: "טובי מגוויר",
+      creditHe: "טובי מגוויר. צילום: gdcgraphics · CC BY-SA 2.0 · ויקישיתוף",
+      focus: "50% 25%",
+    },
+    bodyHe: [
+      "שמועות ברחבי הרשת אומרות כי טובי מגוויר יחזור כספיידרמן האייקוני שלו ב״הנוקמים: דומסדיי״. ומה זה אומר בפועל?",
+      "## האם היקום שלו יושמד?",
+      "קיים סיכוי גבוה מאוד שכן. על פי השמועות, האקס-מן ישמידו את היקום של טובי, בעזרת פצצה שבנה ביסט (על פי הדיווחים*).",
+      "## מה יקרה בפועל?",
+      "טובי מגוויר אמור להילחם קרב אייקוני נגד וולברין!!",
+      "אבל מזכיר: זו שמועה!",
+    ],
+  },
+]
 
 // ===== News =====
 export const NEWS: NewsItem[] = [
