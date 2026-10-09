@@ -8,10 +8,12 @@ interface TicketsPromoProps {
   youtubeId: string
   videoTitle: string
   videoSource: Src
+  /** Thumbnail stored on the site (downloaded by the GitHub Action) */
+  poster: string
 }
 
 /** Ticket call-to-action for Planet Cinema, built around Marvel's official "Doom Tickets" spot. */
-export function TicketsPromo({ href, youtubeId, videoTitle, videoSource }: TicketsPromoProps) {
+export function TicketsPromo({ href, youtubeId, videoTitle, videoSource, poster }: TicketsPromoProps) {
   const [playing, setPlaying] = useState(false)
   return (
     <section id="tickets" aria-labelledby="tickets-title" className="relative overflow-hidden border-b border-border bg-[radial-gradient(ellipse_at_center,rgb(70_214_44/0.14),transparent_65%)] py-20 sm:py-24">
@@ -30,9 +32,9 @@ export function TicketsPromo({ href, youtubeId, videoTitle, videoSource }: Ticke
             ) : (
               <button type="button" onClick={() => setPlaying(true)} className="group absolute inset-0 cursor-pointer" aria-label={`ניגון: ${videoTitle}`}>
                 <img
-                  src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`}
+                  src={poster}
                   onError={(e) => {
-                    e.currentTarget.src = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`
+                    if (!e.currentTarget.src.includes("ytimg")) e.currentTarget.src = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`
                   }}
                   alt=""
                   loading="lazy"
@@ -46,7 +48,18 @@ export function TicketsPromo({ href, youtubeId, videoTitle, videoSource }: Ticke
               </button>
             )}
           </div>
-          <SourceLink source={videoSource} className="mt-3" />
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href={`https://www.youtube.com/watch?v=${youtubeId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-pale underline decoration-brand/50 underline-offset-4 hover:decoration-brand-pale"
+            >
+              <Play aria-hidden className="size-3.5 fill-current" />
+              צפייה ב-YouTube בטאב חדש
+            </a>
+            <SourceLink source={videoSource} />
+          </div>
         </div>
 
         <div className="reveal flex flex-col items-start gap-5">

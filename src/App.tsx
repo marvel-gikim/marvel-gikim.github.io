@@ -174,7 +174,7 @@ export default function App() {
         <AboutPageSection socials={SOCIALS} />
 
         {/* ===== Tickets (Planet Cinema) ===== */}
-        <TicketsPromo href={TICKETS.href} youtubeId="WKBvITriYxM" videoTitle="טיזר הכרטיסים · Doom Tickets" videoSource={SOURCES.doomTickets} />
+        <TicketsPromo href={TICKETS.href} youtubeId="WKBvITriYxM" videoTitle="טיזר הכרטיסים · Doom Tickets" videoSource={SOURCES.doomTickets} poster="./media/fetched/yt-teaser-5.jpg" />
 
         {/* ===== About ===== */}
         <section id="about" aria-labelledby="about-title" className="relative overflow-hidden py-24 sm:py-32">
