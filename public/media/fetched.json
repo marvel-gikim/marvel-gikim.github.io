@@ -63,6 +63,14 @@
     "title": "Marvel Television\u2019s VisionQuest | Official Trailer",
     "channel": "Marvel Entertainment"
   },
+  "yt-phones-promo": {
+    "file": "./media/fetched/yt-phones-promo.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=nxDMRvDr4AQ",
+    "title": "Avengers: Doomsday | Silence Your Phones | In Theaters December 18",
+    "channel": "Marvel Entertainment"
+  },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
     "width": 1600,
