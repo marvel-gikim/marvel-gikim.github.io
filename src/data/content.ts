@@ -38,6 +38,8 @@ const S = {
   steveMjolnirFrame: { label: "Free Press Journal", url: "https://www.freepressjournal.in/entertainment/avengers-doomsday-trailer-teases-steve-rogers-lifting-mjlnir-once-again-how-captain-america-wields-thors-hammer" },
   steveRumor: { label: "Toy People", url: "https://www.toy-people.com/en/?p=106948" },
   steveTheories: { label: "ComicBookMovie · תיאוריות על סטיב", url: "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-trailer-spawns-wild-steve-rogers-and-crafty-character-editing-theories-a228932" },
+  doomSuits: { label: "The Direct · החליפה השלישית של דום", url: "https://thedirect.com/article/avengers-doomsday-merch-doctor-doom-third-costume" },
+  doomSuitsLord: { label: "TechnoSports · ״לורד דום״", url: "https://technosports.co.in/doctor-dooms-third-costume-revealed-what-lord-doom/" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -415,6 +417,7 @@ export const STEVE_RUMOR = {
   titleHe: "השמועה: סטיב רוג׳רס הוא הסיבה שדום הגיע",
   status: "rumor" as const,
   frameIds: ["frame-thor-offers-mjolnir", "frame-steve-mjolnir"],
+  frameLabels: ["רגע לפני", "סטיב תופס את מיולניר"],
   sceneHe:
     "בטריילר הרשמי סטיב רוג׳רס, עם שיער ארוך וזקן, מושיט יד, ומיולניר עף מידו של ת׳ור היישר אליו. סטיב עדיין ראוי להרים את הפטיש, בדיוק כמו ב״סוף המשחק״.",
   sceneSource: S.steveMjolnir,
@@ -436,6 +439,32 @@ export const STEVE_RUMOR = {
       textHe:
         "״סוף המשחק״ קבע שמסע בזמן יוצר ציר זמן חדש ולא משנה את העבר. כדי שהשמועה תעבוד, צריך הסבר נוסף. מארוול לא אישרה שום פרט מהעלילה.",
       source: S.steveTheories,
+    },
+  ],
+}
+
+export const DOOM_SUITS_RUMOR = {
+  titleHe: "שלוש חליפות לדוקטור דום?",
+  status: "report" as const,
+  sceneHe:
+    "לפי דיווחים, רוברט דאוני ג׳וניור ילבש בסרט שלוש תלבושות שונות של דום. את השלישית לא ראינו בחומרים מהסרט: היא נחשפה דרך בובות של פאנקו.",
+  sceneSource: S.doomSuits,
+  blocks: [
+    {
+      titleHe: "החליפה הראשונה: חליפת הקרב",
+      textHe: "החליפה שמופיעה ברוב חומרי הקידום, עם לוחות שריון ורשת שריון (צ׳יין-מייל). לפי הדיווח, ייתכן שזו חליפת הקרב שלו.",
+      source: S.doomSuits,
+    },
+    {
+      titleHe: "החליפה השנייה: מכנס D23",
+      textHe: "החליפה שנחשפה בכנס D23 באוגוסט. לפי הדיווח, יש לה אותה מסכה כמו לחליפה השלישית.",
+      source: S.doomSuits,
+    },
+    {
+      titleHe: "החליפה השלישית: ״לורד דום״",
+      textHe:
+        "בבובת פאנקו בשם ״Lord Doom״ דום לבוש כמו מלך או גנרל אירופי: דגל לטבריה על החזה, כמעט בלי שריון, וקישוטים מוזהבים במקום כסופים. אולי זה הלבוש שלו כשליט לטבריה, או לבוש מפלאשבקים. זה עוד לא אושר.",
+      source: S.doomSuitsLord,
     },
   ],
 }

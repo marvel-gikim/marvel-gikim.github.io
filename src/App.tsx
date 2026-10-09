@@ -34,6 +34,7 @@ import {
   JACKMAN_PREDICTION,
   JACKMAN_REEL,
   STEVE_RUMOR,
+  DOOM_SUITS_RUMOR,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -344,6 +345,7 @@ export default function App() {
             <DirectorsQuote {...JACKMAN_PREDICTION} photo={photos[JACKMAN_PREDICTION.photoKey]} />
             <InstagramReel {...JACKMAN_REEL} />
             <RumorFeature {...STEVE_RUMOR} frames={STEVE_RUMOR.frameIds.map((id) => GALLERY.find((g) => g.id === id)!).filter(Boolean)} />
+            <RumorFeature {...DOOM_SUITS_RUMOR} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">

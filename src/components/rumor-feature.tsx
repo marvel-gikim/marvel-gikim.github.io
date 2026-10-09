@@ -6,22 +6,25 @@ import { SmartImage } from "@/components/smart-image"
 interface RumorFeatureProps {
   titleHe: string
   status: VerificationStatus
-  frames: GalleryImage[]
+  frames?: GalleryImage[]
+  /** Short label shown on each frame */
+  frameLabels?: string[]
   sceneHe: string
   sceneSource: Src
   blocks: { titleHe: string; textHe: string; source: Src }[]
 }
 
 /** A rumor told around an official trailer moment: the frames first, then what is claimed and what doesn't fit. */
-export function RumorFeature({ titleHe, status, frames, sceneHe, sceneSource, blocks }: RumorFeatureProps) {
+export function RumorFeature({ titleHe, status, frames = [], frameLabels = [], sceneHe, sceneSource, blocks }: RumorFeatureProps) {
   return (
     <article className="reveal mb-16 overflow-hidden rounded-[calc(var(--radius-lg)+0.25rem)] border border-rumor/30 bg-[linear-gradient(160deg,rgb(201_163_255/0.07),#0b140d_45%)]">
+      {frames.length > 0 && (
       <div className="grid gap-px bg-border sm:grid-cols-2">
         {frames.map((f, i) => (
           <figure key={f.id} className="group relative m-0 bg-black">
             <SmartImage src={f.src} alt={f.altHe} width={16} height={9} focus={f.focus} imgClassName="transition duration-[1.5s] group-hover:scale-105" />
             <span className="pointer-events-none absolute start-3 top-3 rounded-full bg-black/75 px-2.5 py-0.5 text-xs font-black text-brand-pale">
-              {i === 0 ? "רגע לפני" : "סטיב תופס את מיולניר"}
+              {frameLabels[i]}
             </span>
             <figcaption className="border-t border-border bg-surface/80 px-4 py-2 text-xs leading-5 text-muted">
               {f.provenanceNoteHe} <bdi dir="ltr">© Marvel</bdi>
@@ -29,6 +32,7 @@ export function RumorFeature({ titleHe, status, frames, sceneHe, sceneSource, bl
           </figure>
         ))}
       </div>
+      )}
       <div className="p-6 sm:p-10">
         <VerificationBadge status={status} />
         <h3 className="mt-4 text-3xl leading-tight font-black text-balance sm:text-4xl">{titleHe}</h3>
