@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'docs/articles.json'
+  workflow_dispatch: {}
 
 jobs:
   notify:
@@ -16,7 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check the OneSignal key is set (does not print it)
+        env:
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: |
+          if [ -n "$ONESIGNAL_REST_API_KEY" ]; then echo "ONESIGNAL_REST_API_KEY: set"; else echo "ONESIGNAL_REST_API_KEY: MISSING"; fi
       - name: Send push for new articles
+        if: github.event_name == 'push'
         env:
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
           BEFORE: ${{ github.event.before }}
