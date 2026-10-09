@@ -323,14 +323,32 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joe_Russo_%26_Anthony_Russo_by_Gage_Skidmore.jpg"
   },
+  "quan": {
+    "file": "./cast/quan.jpg",
+    "width": 640,
+    "height": 855,
+    "author": "The White House",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ke_Huy_Quan_at_the_White_House_(52902390767)_(cropped).jpg"
+  },
+  "owen-wilson": {
+    "file": "./cast/owen-wilson.jpg",
+    "width": 374,
+    "height": 576,
+    "author": "Georges Biard",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Owen_Wilson_Cannes_2011.jpg"
+  },
   "rdj-alt": {
     "file": "./cast/rdj-alt.jpg",
-    "width": 635,
-    "height": 900,
-    "author": "Gage Skidmore",
+    "width": 640,
+    "height": 853,
+    "author": "nagi usano",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr_2014_Comic_Con_(cropped).jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr._-_2019_Disney_Legends_Awards_Ceremony_-_D23_EXPO_2019_(cropped_3).jpg"
   },
   "stan-alt": {
     "file": "./cast/stan-alt.jpg",
