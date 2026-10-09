@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Play } from "lucide-react"
+import { ExternalLink, Play } from "lucide-react"
 import type { Trailer } from "@/types/content"
 import { VerificationBadge } from "@/components/verification-badge"
 import { SourceLink } from "@/components/source-link"
@@ -86,9 +86,20 @@ export function TrailerPlayer({ trailers }: { trailers: Trailer[] }) {
             </div>
             <p className="mt-2 leading-7 text-muted">{selected.descriptionHe}</p>
           </div>
-          <div className="flex flex-col items-start gap-1 text-sm">
+          <div className="flex flex-col items-start gap-2 text-sm">
             <span className="text-muted">פורסם: {formatHebrewDate(selected.publishedAt)}</span>
             <SourceLink source={selected.source} />
+            {selected.youtubeId && (
+              <a
+                href={`https://www.youtube.com/watch?v=${selected.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 px-4 py-2 font-bold text-brand-pale transition hover:border-brand hover:bg-brand/20"
+              >
+                <ExternalLink aria-hidden className="size-4" />
+                צפייה ב-YouTube בטאב חדש
+              </a>
+            )}
           </div>
         </div>
       </div>

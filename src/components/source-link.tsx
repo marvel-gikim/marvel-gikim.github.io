@@ -8,10 +8,12 @@ export function SourceLink({ source, className, prefix = "מקור:" }: { source
       href={source.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("inline-flex items-center gap-1.5 text-sm text-muted underline-offset-4 transition hover:text-brand-pale hover:underline", className)}
+      className={cn("group inline-flex items-center gap-1.5 text-sm text-muted transition", className)}
     >
-      <span>{prefix}</span>
-      <bdi>{source.label}</bdi>
+      {prefix && <span>{prefix}</span>}
+      <bdi className="font-medium text-brand-pale underline decoration-brand/50 decoration-1 underline-offset-4 transition group-hover:text-brand group-hover:decoration-brand">
+        {source.label}
+      </bdi>
       <ExternalLink aria-hidden className="size-3.5" />
       <span className="sr-only">(נפתח בלשונית חדשה)</span>
     </a>

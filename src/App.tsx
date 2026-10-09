@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { CheckCircle2, CircleHelp, Film, Sparkles } from "lucide-react"
+import { CheckCircle2, CircleHelp, Film, LayoutGrid, Rows3, Sparkles } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { ResponsiveHeroBanner } from "@/components/ui/responsive-hero-banner"
 import { ReleaseCountdown } from "@/components/release-countdown"
@@ -11,6 +11,10 @@ import { NewsCard } from "@/components/news-card"
 import { SiteFooter } from "@/components/site-footer"
 import { BrandLogo } from "@/components/brand-logo"
 import { DirectorsQuote } from "@/components/directors-quote"
+import { CastGallery } from "@/components/cast-gallery"
+import { ActorPage } from "@/components/actor-page"
+import { CreditsMarquee } from "@/components/credits-marquee"
+import { useActorRoute } from "@/hooks/use-actor-route"
 import { SourceLink } from "@/components/source-link"
 import { STATUS_LABEL } from "@/components/verification-badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -34,7 +38,10 @@ import type { CastPhoto, GalleryImage, VerificationStatus } from "@/types/conten
 
 type Filter = "all" | VerificationStatus
 
-const SOCIALS = [{ label: "אינסטגרם", handle: "@marv.elgikim", url: "https://www.instagram.com/marv.elgikim/" }]
+const SOCIALS = [
+  { label: "טיקטוק", handle: "Marvel Gikim", url: "https://www.tiktok.com/search/user?q=marvel%20gikim", icon: "tiktok" as const },
+  { label: "אינסטגרם", handle: "@marv.elgikim", url: "https://www.instagram.com/marv.elgikim/", icon: "instagram" as const },
+]
 
 function FilterChips({ value, onChange, counts, label }: { value: Filter; onChange: (f: Filter) => void; counts: Record<Filter, number>; label: string }) {
   const options: Filter[] = ["all", "official", "report", "rumor"]
@@ -72,6 +79,9 @@ function countBy<T extends { status: VerificationStatus }>(items: T[]): Record<F
 export default function App() {
   useReveal()
   const [castFilter, setCastFilter] = useState<Filter>("all")
+  const [castView, setCastView] = useState<"cards" | "gallery">("cards")
+  const { actorId, openActor, closeActor } = useActorRoute()
+  const activeActor = actorId ? CHARACTERS.find((c) => c.id === actorId) : undefined
   const [newsFilter, setNewsFilter] = useState<Filter>("all")
   const [photos, setPhotos] = useState<Record<string, CastPhoto>>({})
 
@@ -139,6 +149,8 @@ export default function App() {
           aside={<ReleaseCountdown releaseDate={FILM.releaseDate} regionHe={FILM.releaseRegionHe} />}
           imageCredit="תמונת הרקע: תמונת המפתח הרשמית מעמוד הסרט ב-marvel.com · © Marvel"
         />
+
+        <CreditsMarquee cast={CHARACTERS} />
 
         {/* ===== About ===== */}
         <section id="about" aria-labelledby="about-title" className="relative overflow-hidden py-24 sm:py-32">
@@ -225,36 +237,63 @@ export default function App() {
               ושמועה.
             </SectionHeading>
             <DirectorsQuote {...DIRECTORS_QUOTE} photo={photos[DIRECTORS_QUOTE.photoKey]} />
-            <div className="reveal mb-10">
+            <div className="reveal mb-10 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={castFilter} onChange={setCastFilter} counts={countBy(CHARACTERS)} label="סינון לפי רמת אימות" />
+              <div role="group" aria-label="תצוגת הצוות" className="flex rounded-full border border-border bg-surface p-1">
+                {([
+                  ["cards", "כרטיסים", Rows3],
+                  ["gallery", "גלריה", LayoutGrid],
+                ] as const).map(([v, label, Icon]) => (
+                  <button
+                    key={v}
+                    type="button"
+                    aria-pressed={castView === v}
+                    onClick={() => setCastView(v)}
+                    className={cn(
+                      "inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition",
+                      castView === v ? "bg-brand text-primary-foreground" : "text-muted hover:text-foreground",
+                    )}
+                  >
+                    <Icon aria-hidden className="size-4" />
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {visibleConfirmed.length > 0 && (
+            {castView === "gallery" && (
+              <div className="mb-4">
+                <p className="mb-5 text-muted">לחצו על שחקן כדי לפתוח את העמוד שלו.</p>
+                <CastGallery cast={[...visibleConfirmed, ...visibleUnconfirmed]} photos={photos} onOpen={openActor} />
+              </div>
+            )}
+
+            {castView === "cards" && visibleConfirmed.length > 0 && (
               <>
                 <h3 className="mb-5 text-sm font-bold tracking-[0.14em] text-brand">צוות מאושר</h3>
                 {doom && (
                   <div className="reveal mb-5">
-                    <CharacterCard character={doom} groupLabel={CHARACTER_GROUPS[doom.group]} photo={photos[doom.id]} featured />
+                    <CharacterCard character={doom} groupLabel={CHARACTER_GROUPS[doom.group]} photo={photos[doom.id]} onOpen={openActor} featured />
                   </div>
                 )}
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {restConfirmed.map((c) => (
                     <li key={c.id} className="reveal">
-                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} />
+                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} onOpen={openActor} />
                     </li>
                   ))}
                 </ul>
               </>
             )}
 
-            {visibleUnconfirmed.length > 0 && (
+            {castView === "cards" && visibleUnconfirmed.length > 0 && (
               <div className="mt-16 rounded-[calc(var(--radius-lg)+0.5rem)] border border-dashed border-white/12 p-4 sm:p-6">
                 <h3 className="mb-2 text-xl font-black">לא מאושר</h3>
                 <p className="mb-6 text-muted">דיווחים ושמועות שמארוול עוד לא אישרה.</p>
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {visibleUnconfirmed.map((c) => (
                     <li key={c.id} className="reveal">
-                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} />
+                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} onOpen={openActor} />
                     </li>
                   ))}
                 </ul>
@@ -310,7 +349,7 @@ export default function App() {
         </section>
 
         {/* ===== FAQ ===== */}
-        <section id="faq" aria-labelledby="faq-title" className="relative overflow-hidden border-t border-border py-24 sm:py-32">
+        <section id="faq" aria-labelledby="faq-title" className="relative overflow-hidden border-t border-border py-24 [overflow-anchor:none] sm:py-32">
           <img
             src="./brand/marvel-gikim-logo.webp"
             alt=""
@@ -320,7 +359,7 @@ export default function App() {
           />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.6fr] lg:px-8">
             <SectionHeading id="faq-title" eyebrow="שאלות נפוצות" title="כל מה שרציתם לדעת" className="mb-0" />
-            <Accordion type="single" collapsible className="reveal">
+            <Accordion type="multiple" className="reveal">
               {FAQ.map((f) => (
                 <AccordionItem key={f.id} value={f.id}>
                   <AccordionTrigger>{f.questionHe}</AccordionTrigger>
@@ -336,6 +375,17 @@ export default function App() {
       </main>
 
       <SiteFooter links={NAV_LINKS} lastReviewed={LAST_REVIEWED} socials={SOCIALS} />
+
+      {activeActor && (
+        <ActorPage
+          character={activeActor}
+          all={CHARACTERS}
+          groups={CHARACTER_GROUPS}
+          photos={photos}
+          onClose={closeActor}
+          onOpen={openActor}
+        />
+      )}
     </>
   )
 }

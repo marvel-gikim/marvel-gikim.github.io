@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { useEffect, useRef, type ReactNode } from "react"
 import { ArrowDown, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -44,21 +44,41 @@ export function ResponsiveHeroBanner({
   imageCredit,
   className,
 }: ResponsiveHeroBannerProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+  // Subtle parallax: the background drifts slower than the page
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    let frame = 0
+    const onScroll = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, window.innerHeight)
+        sectionRef.current?.style.setProperty("--hero-shift", `${y * 0.35}px`)
+        sectionRef.current?.style.setProperty("--hero-fade", `${1 - y / window.innerHeight}`)
+      })
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener("scroll", onScroll)
+    }
+  }, [])
   return (
     <section
+      ref={sectionRef}
       id={id}
       aria-labelledby={id ? `${id}-title` : undefined}
       className={cn("relative isolate flex min-h-[100svh] items-end overflow-hidden pt-28 pb-14 sm:pb-20", className)}
     >
       {/* Background image: shown on the visual end side on desktop, full-bleed on mobile */}
-      <div aria-hidden className="absolute inset-0 -z-20">
+      <div aria-hidden className="absolute inset-0 -z-20 overflow-hidden" style={{ transform: "translate3d(0, var(--hero-shift, 0px), 0)" }}>
         <img
           src={background.src}
           alt=""
           width={background.width}
           height={background.height}
           fetchPriority="high"
-          className="absolute inset-y-0 end-0 h-full w-full object-cover opacity-70 lg:w-[62%] animate-fade-in"
+          className="absolute inset-y-0 end-0 h-full w-full animate-kenburns object-cover opacity-70 lg:w-[62%]"
           style={{ objectPosition: background.focus }}
         />
       </div>
@@ -70,7 +90,7 @@ export function ResponsiveHeroBanner({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgb(0_0_0/0.55)_100%)]" />
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8" style={{ opacity: "var(--hero-fade, 1)" }}>
         <div className="max-w-3xl">
           {badge && <div className="mb-6 animate-fade-slide-in">{badge}</div>}
 

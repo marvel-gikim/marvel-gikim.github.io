@@ -13,7 +13,7 @@ export function SectionHeading({ eyebrow, title, id, children, className }: Sect
   return (
     <header className={cn("reveal mb-12 max-w-3xl", className)}>
       <p className="mb-4 flex items-center gap-3 text-sm font-bold tracking-[0.18em] text-brand">
-        <span aria-hidden className="h-px w-10 bg-gradient-to-l from-brand to-transparent" />
+        <span aria-hidden className="h-px w-14 origin-right scale-x-0 bg-gradient-to-l from-brand to-transparent transition-transform delay-300 duration-1000 in-[.is-visible]:scale-x-100" />
         {eyebrow}
       </p>
       <h2 id={id} className="text-4xl leading-[1.1] font-black tracking-tight text-balance sm:text-5xl lg:text-6xl">

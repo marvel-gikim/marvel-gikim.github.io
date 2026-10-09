@@ -18,17 +18,19 @@ export function CharacterCard({
   groupLabel,
   featured = false,
   photo,
+  onOpen,
 }: {
   character: Character
   groupLabel: string
   featured?: boolean
   photo?: CastPhoto
+  onOpen?: (id: string) => void
 }) {
   const c = character
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface transition duration-500 hover:-translate-y-1 hover:border-brand/45 hover:shadow-[0_24px_60px_-30px_rgb(70_214_44/0.55)]",
+        "shine group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-border bg-surface transition duration-500 hover:-translate-y-1 hover:border-brand/45 hover:shadow-[0_24px_60px_-30px_rgb(70_214_44/0.55)]",
         featured && "md:flex-row",
       )}
     >
@@ -44,7 +46,7 @@ export function CharacterCard({
             imgClassName="transition duration-700 group-hover:scale-[1.03]"
           />
           <span aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
-          <figcaption className="absolute inset-x-0 bottom-0 truncate px-3 py-2 text-[11px] text-muted/90">
+          <figcaption className="absolute inset-x-0 bottom-0 z-[2] truncate px-3 py-2 text-[11px] text-muted/90">
             צילום: <bdi>{photo.author}</bdi> ·{" "}
             {photo.licenseUrl ? (
               <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">
@@ -89,7 +91,19 @@ export function CharacterCard({
           <span className="text-xs font-medium text-muted">{groupLabel}</span>
         </div>
         <div>
-          <h3 className={cn("text-xl leading-tight font-black", featured && "md:text-3xl")}>{c.actorHe}</h3>
+          <h3 className={cn("text-xl leading-tight font-black", featured && "md:text-3xl")}>
+            {onOpen ? (
+              <button
+                type="button"
+                onClick={() => onOpen(c.id)}
+                className="cursor-pointer text-start transition after:absolute after:inset-0 after:z-[1] hover:text-brand-pale"
+              >
+                {c.actorHe}
+              </button>
+            ) : (
+              c.actorHe
+            )}
+          </h3>
           <p className="mt-0.5 text-sm text-muted">
             <bdi dir="ltr">{c.actorEn}</bdi>
           </p>
@@ -107,7 +121,14 @@ export function CharacterCard({
           <p className="text-sm font-medium text-muted/90">הדמות עוד לא אושרה</p>
         )}
         <p className={cn("text-[15px] leading-7 text-muted", featured && "md:text-lg md:leading-8")}>{c.descriptionHe}</p>
-        <SourceLink source={c.source} className="mt-auto pt-2" />
+        <div className="relative z-[2] mt-auto flex flex-wrap items-center justify-between gap-2 pt-2">
+          <SourceLink source={c.source} />
+          {onOpen && (
+            <button type="button" onClick={() => onOpen(c.id)} className="cursor-pointer text-sm font-bold text-brand underline decoration-brand/40 underline-offset-4 hover:text-brand-pale">
+              לעמוד השחקן ←
+            </button>
+          )}
+        </div>
       </div>
     </article>
   )
