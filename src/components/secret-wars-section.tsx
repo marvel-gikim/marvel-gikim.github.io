@@ -7,6 +7,13 @@ import { SmartImage } from "@/components/smart-image"
 import { MediaGallery } from "@/components/media-gallery"
 import { cn } from "@/lib/utils"
 
+const LEVEL = {
+  official: { label: "נאמר רשמית", chip: "border-brand/60 text-brand-pale", border: "border-brand/40" },
+  fact: { label: "עובדה", chip: "border-brand/40 text-brand-pale/90", border: "border-border" },
+  report: { label: "דיווח", chip: "border-report/60 text-report", border: "border-report/30" },
+  interpretation: { label: "פרשנות", chip: "border-rumor/60 text-rumor", border: "border-dashed border-rumor/30" },
+} as const
+
 /** Full section about Jonathan Hickman's Secret Wars (2015), the comic behind the next two Avengers films. */
 export function SecretWarsSection() {
   const [showSpoiler, setShowSpoiler] = useState(false)
@@ -141,6 +148,25 @@ export function SecretWarsSection() {
               <SourceLink source={sw.publicationSources[1]} className="mt-3" />
             </div>
           </aside>
+        </div>
+
+        <div className="mt-20">
+          <h3 className="reveal mb-2 text-2xl font-black">{sw.why.titleHe}</h3>
+          <p className="reveal mb-8 max-w-3xl text-lg leading-8 text-muted">{sw.why.introHe}</p>
+          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {sw.why.items.map((item, i) => (
+              <li key={item.id} className={cn("reveal shine flex flex-col rounded-[var(--radius-lg)] border bg-surface/70 p-6", LEVEL[item.level].border)}>
+                <div className="flex items-center justify-between gap-3">
+                  <span aria-hidden className="text-3xl font-black text-brand/30 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <span className={cn("rounded-full border px-2.5 py-0.5 text-xs font-bold", LEVEL[item.level].chip)}>{LEVEL[item.level].label}</span>
+                </div>
+                <h4 className="mt-3 text-lg font-black">{item.titleHe}</h4>
+                <p className="mt-2 flex-1 leading-7 text-foreground/80">{item.textHe}</p>
+                <SourceLink source={item.source} className="mt-3" />
+              </li>
+            ))}
+          </ol>
+          <p className="reveal mt-8 rounded-[var(--radius-lg)] border-s-4 border-brand bg-brand/8 p-5 text-lg leading-8 font-medium">{sw.why.bottomLineHe}</p>
         </div>
 
         <div className="mt-20">

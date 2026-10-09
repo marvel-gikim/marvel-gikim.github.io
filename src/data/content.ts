@@ -29,6 +29,9 @@ const S = {
   swNinth: { label: "The Beat · גיליון תשיעי", url: "https://www.comicsbeat.com/secret-wars-espands-to-a-ninth-issue" },
   swEnding: { label: "Popverse · הסוף של מלחמות סודיות", url: "https://www.thepopverse.com/comics-marvel-secret-wars-1984-2015-ending-explained-ultimate-universe-god-emperor-doom-jonathan-hickman" },
   swMoleculeMan: { label: "Marvel.com · איש המולקולות", url: "https://www.marvel.com/characters/molecule-man" },
+  swMadness: { label: "SYFY · הסוף של ״בממד הטירוף״", url: "https://www.syfy.com/syfy-wire/doctor-strange-multiverse-madness-ending-explained-clea-post-credits" },
+  swInfinity: { label: "Wikipedia · Infinity (2013)", url: "https://en.wikipedia.org/wiki/Infinity_(comic_book)" },
+  swForeword: { label: "JustWatch", url: "https://guides.justwatch.com/mx/hermanos-russo-spoiler-avengers-doomsday-secret-wars" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -485,6 +488,63 @@ export const SECRET_WARS = {
       source: S.swEnding,
     },
   ] satisfies ComicChapter[],
+  why: {
+    titleHe: "למה סביר שהסרטים יישענו על הגרסה של היקמן",
+    introHe:
+      "האחים רוסו כבר אמרו שהם ייקחו מהקומיקס הזה השראה. השאלה היא כמה. אלה הסיבות, מסודרות לפי רמת הוודאות:",
+    items: [
+      {
+        id: "said",
+        level: "official",
+        titleHe: "הם אמרו את זה בעצמם",
+        textHe:
+          "בראיון ל-TechRadar אמר ג׳ו רוסו שהם ישאבו השראה גם מ״מלחמות סודיות״ של 1984 וגם מהגרסה של היקמן, שאותה כינה ״פנטסטית״. הוא הוסיף שהם תמיד יוצרים גרסה משלהם.",
+        source: S.swRusso,
+      },
+      {
+        id: "doom",
+        level: "fact",
+        titleHe: "דום במרכז הסיפור",
+        textHe:
+          "בגרסה של 1984 הדמות המרכזית היא הביונדר, ודום הוא אחד מכמה נבלים. אצל היקמן דום הוא הסיפור כולו: הוא מציל את מה שנשאר מהיקומים, הופך לאל ושולט בעולם הקרב. זה מתאים לסרט שנקרא על שמו, עם רוברט דאוני ג׳וניור בתפקיד.",
+        source: S.swExplained,
+      },
+      {
+        id: "incursions",
+        level: "fact",
+        titleHe: "ההתנגשויות כבר בסרטים",
+        textHe:
+          "ב״דוקטור סטריינג׳ בממד הטירוף״ מסבירים מה זו ״התנגשות״ בין יקומים, ובסצנה שבאמצע הקרדיטים קליאה אומרת לסטריינג׳ שהוא גרם לאחת כזאת. זה המנגנון שמניע את הקומיקס של היקמן. גם התקציר הרשמי של דומסדיי מדבר על גיבורים משלושה יקומים ״במסלול התנגשות״.",
+        source: S.swMadness,
+      },
+      {
+        id: "black-order",
+        level: "fact",
+        titleHe: "הרוסו כבר עיבדו את היקמן",
+        textHe:
+          "המסדר השחור, העוזרים של ת׳אנוס ב״מלחמת האינסוף״, הם דמויות שהיקמן יצר בקומיקס ״Infinity״ מ-2013.",
+        source: S.swInfinity,
+      },
+      {
+        id: "foreword",
+        level: "report",
+        titleHe: "הקדמה למהדורה חדשה",
+        textHe:
+          "לפי דיווח, הרוסו כתבו הקדמה למהדורה של ״מלחמות סודיות״ של היקמן שיצאה ב-2026, ושיבחו בה את הסיפור. לא מצאנו לזה מקור רשמי.",
+        source: S.swForeword,
+      },
+      {
+        id: "throne",
+        level: "interpretation",
+        titleHe: "חדר הכס",
+        textHe:
+          "בפוסטר הרשמי של דומסדיי, דום יורד במדרגות של חדר כס. זה מזכיר את ״האל הקיסר דום״ מהקומיקס, אבל זו פרשנות שלנו בלבד.",
+        source: S.movie,
+      },
+    ] satisfies { id: string; level: "official" | "fact" | "report" | "interpretation"; titleHe: string; textHe: string; source: SourceLink }[],
+    bottomLineHe:
+      "בשורה התחתונה: השראה תהיה, כי הבמאים אמרו את זה. סביר שהיא תגיע בעיקר מהגרסה של היקמן, בגלל דום וההתנגשויות. אבל העלילה בסרטים תהיה שונה מהקומיקס.",
+  },
   coverCreditHe: "העטיפות הראשיות של הסדרה צוירו בידי אלכס רוס.",
   covers: [
     {
