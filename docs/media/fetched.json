@@ -55,6 +55,14 @@
     "title": "Avengers: Doomsday | Doom Tickets",
     "channel": "Marvel Philippines"
   },
+  "yt-vision-quest": {
+    "file": "./media/fetched/yt-vision-quest.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=sXKnmgmbkoE",
+    "title": "Marvel Television\u2019s VisionQuest | Official Trailer",
+    "channel": "Marvel Entertainment"
+  },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
     "width": 1600,
