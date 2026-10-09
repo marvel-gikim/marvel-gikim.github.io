@@ -100,7 +100,7 @@ export default function App() {
   // Official media downloaded by the GitHub Action (YouTube thumbnails, og:images of official pages)
   const [fetchedMedia, setFetchedMedia] = useState<Record<string, { file: string; width: number; height: number }>>({})
   useEffect(() => {
-    fetch("./media/fetched.json")
+    fetch("./media/fetched.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : {}))
       .then(setFetchedMedia)
       .catch(() => setFetchedMedia({}))
@@ -114,9 +114,12 @@ export default function App() {
     [fetchedMedia],
   )
 
+  // Quote cards use a second photo ("<id>-alt"); fall back to the cast photo if it isn't loaded
+  const quotePhoto = (key: string) => photos[key] ?? photos[key.replace(/-alt$/, "")]
+
   // Cast portraits + attribution, downloaded from Wikimedia Commons by a GitHub Action
   useEffect(() => {
-    fetch("./cast/credits.json")
+    fetch("./cast/credits.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : {}))
       .then((data: Record<string, CastPhoto>) => setPhotos(data))
       .catch(() => setPhotos({}))
@@ -251,7 +254,7 @@ export default function App() {
               כל שחקן מסומן לפי רמת האימות שלו, ובכל כרטיס מופיע המקור: הטיזרים הרשמיים, דיווחי ההכרזה על הצוות, או דיווח
               ושמועה.
             </SectionHeading>
-            <DirectorsQuote {...DIRECTORS_QUOTE} photo={photos[DIRECTORS_QUOTE.photoKey]} />
+            <DirectorsQuote {...DIRECTORS_QUOTE} photo={quotePhoto(DIRECTORS_QUOTE.photoKey)} />
             <div className="reveal mb-10 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={castFilter} onChange={setCastFilter} counts={countBy(CHARACTERS)} label="סינון לפי רמת אימות" />
               <div role="group" aria-label="תצוגת הצוות" className="flex rounded-full border border-border bg-surface p-1">
@@ -350,13 +353,13 @@ export default function App() {
             <SectionHeading id="news-title" eyebrow="עדכונים" title="מה חדש בדרך לדומסדיי">
               הודעות רשמיות מסומנות בירוק. דיווחים ושמועות מסומנים אחרת, כדי שיהיה קל להבדיל ביניהם.
             </SectionHeading>
-            <DirectorsQuote {...JACKMAN_PREDICTION} photo={photos[JACKMAN_PREDICTION.photoKey]} />
+            <DirectorsQuote {...JACKMAN_PREDICTION} photo={quotePhoto(JACKMAN_PREDICTION.photoKey)} />
             <InstagramReel {...JACKMAN_REEL} />
             <RumorFeature {...STEVE_RUMOR} frames={STEVE_RUMOR.frameIds.map((id) => GALLERY.find((g) => g.id === id)!).filter(Boolean)} />
             <RumorFeature {...DOOM_SUITS_RUMOR} frames={DOOM_SUIT_IMAGES} />
-            <DirectorsQuote {...RDJ_QUOTE} photo={photos[RDJ_QUOTE.photoKey]} />
-            <DirectorsQuote {...STAN_QUOTE} photo={photos[STAN_QUOTE.photoKey]} />
-            <DirectorsQuote {...EVANS_QUOTE} photo={photos[EVANS_QUOTE.photoKey]} />
+            <DirectorsQuote {...RDJ_QUOTE} photo={quotePhoto(RDJ_QUOTE.photoKey)} />
+            <DirectorsQuote {...STAN_QUOTE} photo={quotePhoto(STAN_QUOTE.photoKey)} />
+            <DirectorsQuote {...EVANS_QUOTE} photo={quotePhoto(EVANS_QUOTE.photoKey)} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">
