@@ -9,7 +9,6 @@ PAGES = {
  "technosports": "https://technosports.co.in/doctor-dooms-third-costume-revealed-what-lord-doom/",
  "cbm-sdcc": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-a229030",
  "yahoo-toys": "https://www.yahoo.com/entertainment/movies/articles/doctor-doom-suit-thor-helmet-155208150.html",
- "cbm-leaks": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-a228929",
 }
 log = open(f"{OUT}/log.txt", "w")
 for k, u in PAGES.items():
@@ -20,6 +19,22 @@ for k, u in PAGES.items():
         data = urllib.request.urlopen(urllib.request.Request(img, headers=UA), timeout=60).read()
         im = Image.open(io.BytesIO(data)).convert("RGB"); im.thumbnail((1600, 1600)); im.save(f"{OUT}/og-{k}.jpg", quality=88)
         log.write(f"og {k} {img} {im.size}\n")
+        n = 0
+        for mm in re.finditer(r'<img\b[^>]*>', t):
+            tag = mm.group(0)
+            sm = re.search(r'\b(?:data-src|src)=["\']([^"\']+)["\']', tag)
+            if not sm or sm.group(1).startswith("data:"): continue
+            src = urllib.parse.urljoin(u, html.unescape(sm.group(1)))
+            alt = (re.search(r'\balt=["\']([^"\']*)', tag) or [None, ""])[1]
+            try:
+                d2 = urllib.request.urlopen(urllib.request.Request(src, headers=UA), timeout=30).read()
+                im2 = Image.open(io.BytesIO(d2)).convert("RGB")
+                if min(im2.size) < 350: continue
+                n += 1; im2.thumbnail((1600, 1600)); im2.save(f"{OUT}/{k}-img{n}.jpg", quality=86)
+                log.write(f"  img {k}-img{n} {src} {im2.size} alt={alt[:100]}\n")
+                if n >= 12: break
+            except Exception:
+                pass
         n = 0
         for mm in re.finditer(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\'][^>]*>', t):
             src = urllib.parse.urljoin(u, html.unescape(mm.group(1)))
