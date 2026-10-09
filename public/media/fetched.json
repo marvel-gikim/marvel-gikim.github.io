@@ -47,14 +47,6 @@
     "title": "Avengers: Doomsday | Only in Theaters December 18, 2026",
     "channel": "Marvel Entertainment"
   },
-  "yt-teaser-5": {
-    "file": "./media/fetched/yt-teaser-5.jpg",
-    "width": 1280,
-    "height": 720,
-    "source": "https://www.youtube.com/watch?v=WKBvITriYxM",
-    "title": "Avengers: Doomsday | Doom Tickets",
-    "channel": "Marvel Philippines"
-  },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
     "width": 1600,
