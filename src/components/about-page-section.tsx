@@ -1,11 +1,11 @@
-import { BadgeCheck, Instagram, Music2, ShieldCheck, Link2 } from "lucide-react"
+import { BadgeCheck, Instagram, MessageCircle, Music2, ShieldCheck, Link2 } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 
 interface Social {
   label: string
   handle: string
   url: string
-  icon: "tiktok" | "instagram"
+  icon: "tiktok" | "instagram" | "whatsapp"
 }
 
 const PRINCIPLES = [
@@ -42,7 +42,7 @@ export function AboutPageSection({ socials }: { socials: Social[] }) {
           </div>
           <div className="reveal mt-8 flex flex-wrap gap-3">
             {socials.map((s) => {
-              const Icon = s.icon === "instagram" ? Instagram : Music2
+              const Icon = s.icon === "instagram" ? Instagram : s.icon === "whatsapp" ? MessageCircle : Music2
               return (
                 <a
                   key={s.url}

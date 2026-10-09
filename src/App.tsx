@@ -50,6 +50,7 @@ import {
   SOURCES,
   TRAILERS,
   TICKETS,
+  WHATSAPP_URL,
 } from "@/data/content"
 import type { CastPhoto, GalleryImage, VerificationStatus } from "@/types/content"
 
@@ -58,6 +59,7 @@ type Filter = "all" | VerificationStatus
 const SOCIALS = [
   { label: "טיקטוק", handle: "Marvel Gikim", url: "https://www.tiktok.com/search/user?q=marvel%20gikim", icon: "tiktok" as const },
   { label: "אינסטגרם", handle: "@marv.elgikim", url: "https://www.instagram.com/marv.elgikim/", icon: "instagram" as const },
+  { label: "וואטסאפ", handle: "התראות על כל כתבה", url: WHATSAPP_URL, icon: "whatsapp" as const },
 ]
 
 function FilterChips({ value, onChange, counts, label }: { value: Filter; onChange: (f: Filter) => void; counts: Record<Filter, number>; label: string }) {

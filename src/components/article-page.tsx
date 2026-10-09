@@ -3,6 +3,8 @@ import { ArrowRight, Clock, ExternalLink } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
+import { WhatsAppAlert } from "@/components/whatsapp-alert"
+import { WHATSAPP_URL } from "@/data/content"
 import { Button } from "@/components/ui/button"
 import { readingMinutes } from "@/components/my-articles-section"
 import { formatHebrewDate } from "@/lib/utils"
@@ -89,6 +91,7 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
             לסרטון שלנו על הכתבה
           </a>
         )}
+        <WhatsAppAlert href={WHATSAPP_URL} className="mt-14" />
       </article>
     </div>
   )

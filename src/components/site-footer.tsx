@@ -1,4 +1,4 @@
-import { ExternalLink, Instagram, Music2 } from "lucide-react"
+import { ExternalLink, Instagram, MessageCircle, Music2 } from "lucide-react"
 import type { NavLink } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { formatHebrewDate } from "@/lib/utils"
@@ -6,7 +6,7 @@ import { formatHebrewDate } from "@/lib/utils"
 interface SiteFooterProps {
   links: NavLink[]
   lastReviewed: string
-  socials: { label: string; handle: string; url: string; icon: "instagram" | "tiktok" }[]
+  socials: { label: string; handle: string; url: string; icon: "instagram" | "tiktok" | "whatsapp" }[]
 }
 
 export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
@@ -42,7 +42,7 @@ export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
             <p className="mb-3 text-sm font-bold text-brand">עקבו אחרינו</p>
             <ul className="flex flex-col gap-3">
               {socials.map((s) => {
-                const Icon = s.icon === "instagram" ? Instagram : Music2
+                const Icon = s.icon === "instagram" ? Instagram : s.icon === "whatsapp" ? MessageCircle : Music2
                 return (
                   <li key={s.url}>
                     <a

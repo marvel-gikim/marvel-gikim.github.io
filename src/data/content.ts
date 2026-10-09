@@ -560,6 +560,9 @@ export const TICKETS = {
   providerHe: "פלאנט · הקרנות Infinity Vision",
 }
 
+/** WhatsApp group where every new article is posted */
+export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
+
 // ===== My articles (written by Marvel Gikim) =====
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
 export const MY_ARTICLES: MyArticle[] = [

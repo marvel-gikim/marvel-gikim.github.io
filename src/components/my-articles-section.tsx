@@ -1,7 +1,9 @@
-import { ArrowLeft, Clock, Feather, Instagram, Music2 } from "lucide-react"
+import { ArrowLeft, Clock, Feather, Instagram, MessageCircle, Music2 } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { SectionHeading } from "@/components/section-heading"
 import { VerificationBadge } from "@/components/verification-badge"
+import { WhatsAppAlert } from "@/components/whatsapp-alert"
+import { WHATSAPP_URL } from "@/data/content"
 import { formatHebrewDate } from "@/lib/utils"
 
 /** Rough reading time in minutes (Hebrew ~200 words per minute) */
@@ -10,7 +12,7 @@ export const readingMinutes = (a: MyArticle) => Math.max(1, Math.round(a.bodyHe.
 interface Social {
   label: string
   url: string
-  icon: "tiktok" | "instagram"
+  icon: "tiktok" | "instagram" | "whatsapp"
 }
 
 /** "My articles": long-form pieces written by Marvel Gikim. Each card opens the full article. */
@@ -24,6 +26,8 @@ export function MyArticlesSection({ articles, onOpen, socials }: { articles: MyA
           ניתוחים, תיאוריות ודעות שכתבנו בעצמנו. כאן זה כבר לא רק חדשות, אלא מה שאנחנו חושבים.
         </SectionHeading>
 
+        <WhatsAppAlert href={WHATSAPP_URL} className="mb-8" />
+
         {!featured ? (
           <div className="reveal shine flex flex-col items-center gap-5 rounded-[calc(var(--radius-lg)+0.25rem)] border border-dashed border-brand/40 bg-surface/60 px-6 py-14 text-center">
             <span className="grid size-16 place-items-center rounded-full border border-brand/50 bg-brand/10 text-brand animate-float">
@@ -33,7 +37,7 @@ export function MyArticlesSection({ articles, onOpen, socials }: { articles: MyA
             <p className="max-w-xl text-lg leading-8 text-muted">בקרוב יעלו כאן הכתבות שלנו על דומסדיי ועל היקום של מארוול. בינתיים, עקבו אחרינו כדי לא לפספס.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {socials.map((s) => {
-                const Icon = s.icon === "instagram" ? Instagram : Music2
+                const Icon = s.icon === "instagram" ? Instagram : s.icon === "whatsapp" ? MessageCircle : Music2
                 return (
                   <a
                     key={s.url}
