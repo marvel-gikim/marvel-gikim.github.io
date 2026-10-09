@@ -122,12 +122,14 @@ export interface MyArticle {
   excerptHe: string
   /** ISO date */
   publishedAt: string
-  /** Paragraphs of the article; "## " starts a sub-heading */
+  /** Paragraphs of the article; "## " starts a sub-heading, "!! " marks a spoiler (hidden until clicked) */
   bodyHe: string[]
   cover?: { src: string; altHe: string; creditHe?: string; focus?: string }
   /** Verification label, when the article is about a rumor or report */
   status?: VerificationStatus
-  /** Optional link to the matching TikTok / Instagram post */
+  /** Optional link to the matching TikTok / Instagram post or a video */
   postUrl?: string
+  /** Button text for postUrl (default: "לסרטון שלנו על הכתבה") */
+  postLabelHe?: string
   tagsHe?: string[]
 }

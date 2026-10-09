@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react"
-import { ArrowRight, Clock, ExternalLink } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { ArrowRight, Clock, ExternalLink, Eye } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
@@ -74,6 +74,8 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
               <h2 key={i} className="pt-4 text-2xl font-black text-brand-pale">
                 {p.slice(3)}
               </h2>
+            ) : p.startsWith("!! ") ? (
+              <Spoiler key={i} text={p.slice(3)} />
             ) : (
               <p key={i}>{p}</p>
             ),
@@ -88,11 +90,33 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
             className="mt-12 inline-flex items-center gap-2 rounded-full border border-brand/50 bg-brand/10 px-5 py-2.5 font-bold text-brand-pale transition hover:bg-brand/20"
           >
             <ExternalLink aria-hidden className="size-4" />
-            לסרטון שלנו על הכתבה
+            {a.postLabelHe ?? "לסרטון שלנו על הכתבה"}
           </a>
         )}
         <WhatsAppAlert href={WHATSAPP_URL} className="mt-14" />
       </article>
+    </div>
+  )
+}
+
+/** Paragraph hidden behind a blur until the reader chooses to see it. */
+function Spoiler({ text }: { text: string }) {
+  const [shown, setShown] = useState(false)
+  return (
+    <div className="relative">
+      <p className={shown ? "transition duration-700" : "select-none blur-md transition duration-700"} aria-hidden={!shown || undefined}>
+        {text}
+      </p>
+      {!shown && (
+        <button
+          type="button"
+          onClick={() => setShown(true)}
+          className="absolute inset-0 m-auto flex h-fit w-fit cursor-pointer items-center gap-2 rounded-full border border-rumor/60 bg-background/90 px-4 py-2 text-sm font-bold text-rumor transition hover:bg-rumor/10"
+        >
+          <Eye aria-hidden className="size-4" />
+          הצגת הספוילר
+        </button>
+      )}
     </div>
   )
 }

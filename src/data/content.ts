@@ -567,6 +567,28 @@ export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
 export const MY_ARTICLES: MyArticle[] = [
   {
+    id: "vision-quest",
+    titleHe: "ויז׳ן קווסט יוצא בעוד 4 וחצי ימים",
+    excerptHe: "ויז׳ן קווסט יוצא ב-14.10.26. חזרתו של פול בטאני כוויז׳ן וג׳יימס ספיידר כאולטרון מעוררת ציפיות גדולות בקהל הרחב.",
+    publishedAt: "2026-10-09",
+    tagsHe: ["ויז׳ן קווסט", "ויז׳ן", "אולטרון"],
+    cover: {
+      src: "./media/fetched/yt-vision-quest.jpg",
+      altHe: "ויז׳ן ואולטרון, מתוך הטריילר הרשמי של ויז׳ן קווסט",
+      creditHe: "מתוך הטריילר הרשמי של ויז׳ן קווסט, ערוץ YouTube של Marvel Entertainment · © Marvel",
+      focus: "50% 30%",
+    },
+    postUrl: "https://www.youtube.com/watch?v=sXKnmgmbkoE",
+    postLabelHe: "לצפייה בטריילר הרשמי ב-YouTube",
+    bodyHe: [
+      "ויז׳ן קווסט יוצא ב-14.10.26, ממש בעוד 4 וחצי ימים!",
+      "חזרתו של פול בטאני כוויז׳ן וג׳יימס ספיידר כאולטרון מעוררת ציפיות גדולות בקהל הרחב.",
+      "לפי השמועות, הסדרה תהיה סוג של המשך ל״וונדה-ויז׳ן״, על אף שלא ידוע אם וונדה תופיע או לא.",
+      "## אזהרת ספוילר קטן",
+      "!! בפרק הראשון של ויז׳ן קווסט, שהוצג במלואו בקומיק-קון מלאגה, הראו כי ויז׳ן יודע בדיוק איך וונדה מתה, מה שהופך את זה למאוד מעניין.",
+    ],
+  },
+  {
     id: "second-trailer-doom-suit",
     titleHe: "הטריילר השני: החליפה השנייה של דום וג׳וני סטורם?",
     excerptHe: "שמועה ברשת מציינת כי בטריילר השני של ״הנוקמים: עלייתו של דוקטור דום״, מארוול יציגו את דום עם החליפה השנייה שלו.",
