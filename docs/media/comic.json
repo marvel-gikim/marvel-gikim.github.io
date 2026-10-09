@@ -1,5 +1,78 @@
 {
-  "covers": {},
+  "covers": {
+    "1": {
+      "file": "./media/comic/cover-1.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52447/secret_wars_2015_1",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/c/70/5cb736a3cdd49.jpg",
+      "onsale": null
+    },
+    "2": {
+      "file": "./media/comic/cover-2.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52450/secret_wars_2015_2",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/9/40/5cb737237a2de.jpg",
+      "onsale": null
+    },
+    "3": {
+      "file": "./media/comic/cover-3.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52451/secret_wars_2015_3",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/f/03/5cb7377845092.jpg",
+      "onsale": null
+    },
+    "4": {
+      "file": "./media/comic/cover-4.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52452/secret_wars_2015_4",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/3/a0/5cb73456184e4.jpg",
+      "onsale": null
+    },
+    "5": {
+      "file": "./media/comic/cover-5.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52453/secret_wars_2015_5",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/6/a0/5cb736208d76d.jpg",
+      "onsale": null
+    },
+    "6": {
+      "file": "./media/comic/cover-6.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52454/secret_wars_2015_6",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/8/e0/5cb73a17a642c.jpg",
+      "onsale": null
+    },
+    "7": {
+      "file": "./media/comic/cover-7.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52455/secret_wars_2015_7",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/5cb73c66beb33.jpg",
+      "onsale": null
+    },
+    "8": {
+      "file": "./media/comic/cover-8.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/52456/secret_wars_2015_8",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/f/80/564ce8a2d5cde.jpg",
+      "onsale": null
+    },
+    "9": {
+      "file": "./media/comic/cover-9.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/comics/issue/57620/secret_wars_2015_9",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/3/70/569040820cfb9.jpg",
+      "onsale": null
+    }
+  },
   "articles": [
     {
       "file": "./media/comic/article-01.jpg",
@@ -7,7 +80,8 @@
       "height": 1571,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_1984_12_omnipotent_doom.webp",
-      "alt": "Omnipotent Doom in SECRET WARS (1984) #12."
+      "alt": "Omnipotent Doom in SECRET WARS (1984) #12.",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-02.jpg",
@@ -15,7 +89,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_1.webp",
-      "alt": "The Richards' family is lost in SECRET WARS (2015) #1."
+      "alt": "The Richards' family is lost in SECRET WARS (2015) #1.",
+      "issueLink": "/comics/issue/52450/secret_wars_2015_2"
     },
     {
       "file": "./media/comic/article-03.jpg",
@@ -23,7 +98,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_2_0.webp",
-      "alt": "Susan Von Doom encourages her husband to show mercy in SECRET WARS (2015) #2."
+      "alt": "Susan Von Doom encourages her husband to show mercy in SECRET WARS (2015) #2.",
+      "issueLink": "/comics/issue/52451/secret_wars_2015_3"
     },
     {
       "file": "./media/comic/article-04.jpg",
@@ -31,7 +107,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_3.webp",
-      "alt": "Strange explains Battleworld in SECRET WARS (2015) #3."
+      "alt": "Strange explains Battleworld in SECRET WARS (2015) #3.",
+      "issueLink": "/comics/issue/52451/secret_wars_2015_3"
     },
     {
       "file": "./media/comic/article-05.jpg",
@@ -39,7 +116,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_4.webp",
-      "alt": "Phoenix Cyclops is lost to Doom in SECRET WARS (2015) #4."
+      "alt": "Phoenix Cyclops is lost to Doom in SECRET WARS (2015) #4.",
+      "issueLink": "/comics/issue/52452/secret_wars_2015_4"
     },
     {
       "file": "./media/comic/article-06.jpg",
@@ -47,7 +125,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_5.webp",
-      "alt": "The discovery of Molecule Man in SECRET WARS (2015) #5."
+      "alt": "The discovery of Molecule Man in SECRET WARS (2015) #5.",
+      "issueLink": "/comics/issue/52453/secret_wars_2015_5"
     },
     {
       "file": "./media/comic/article-07.jpg",
@@ -55,7 +134,8 @@
       "height": 1224,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_6.webp",
-      "alt": "Miles Morales shares a hamburger with Molecule Man in SECRET WARS (2015) #6."
+      "alt": "Miles Morales shares a hamburger with Molecule Man in SECRET WARS (2015) #6.",
+      "issueLink": "/comics/issue/57620/secret_wars_2015_9"
     },
     {
       "file": "./media/comic/article-08.jpg",
@@ -63,7 +143,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_7.webp",
-      "alt": "Black Panther assembles an undead army."
+      "alt": "Black Panther assembles an undead army.",
+      "issueLink": "/comics/issue/52455/secret_wars_2015_7"
     },
     {
       "file": "./media/comic/article-09.jpg",
@@ -71,7 +152,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_8.webp",
-      "alt": "Black Panther and Namor front the confrontation against Thanos."
+      "alt": "Black Panther and Namor front the confrontation against Thanos.",
+      "issueLink": "/comics/issue/52456/secret_wars_2015_8"
     },
     {
       "file": "./media/comic/article-10.jpg",
@@ -79,7 +161,8 @@
       "height": 1600,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/2x/secret_wars_2015_9.webp",
-      "alt": "A battle of Mulitversal will in SECRET WARS (2015) #9."
+      "alt": "A battle of Mulitversal will in SECRET WARS (2015) #9.",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-11.jpg",
@@ -87,7 +170,8 @@
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/marvel-2024-logo-card-1560x876_8.webp",
-      "alt": "Marvel Logo"
+      "alt": "Marvel Logo",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-12.jpg",
@@ -95,7 +179,8 @@
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/nycc2026_marvel_panel_recap.webp",
-      "alt": "Marvel Television and Marvel Animation at NYCC 2026"
+      "alt": "Marvel Television and Marvel Animation at NYCC 2026",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-13.jpg",
@@ -103,7 +188,8 @@
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/zodiac_logo_card.webp",
-      "alt": "Marvel Television Announces New ‘Zodiac’ Series at NYCC 2026"
+      "alt": "Marvel Television Announces New ‘Zodiac’ Series at NYCC 2026",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-14.jpg",
@@ -111,7 +197,8 @@
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/mc-webtoon_card.webp",
-      "alt": "WEBTOON and Marvel Announce New Marvel Comics App at New York Comic Con"
+      "alt": "WEBTOON and Marvel Announce New Marvel Comics App at New York Comic Con",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-15.jpg",
@@ -119,45 +206,120 @@
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/marvelmidnight_com_mas_mob_card.webp",
-      "alt": "October 7's New Marvel Comics: The Full List"
+      "alt": "October 7's New Marvel Comics: The Full List",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-16.jpg",
       "width": 1540,
       "height": 672,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
-      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/6/b0/5756d52c8a6b4.webp",
-      "alt": "Secret Wars"
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/6/b0/5756d52c8a6b4.jpg",
+      "alt": "Secret Wars",
+      "issueLink": null
     },
     {
       "file": "./media/comic/article-17.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/c/70/5cb736a3cdd49.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52447/secret"
+    },
+    {
+      "file": "./media/comic/article-18.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/9/40/5cb737237a2de.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52447/secret"
+    },
+    {
+      "file": "./media/comic/article-19.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/f/03/5cb7377845092.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52450/secret"
+    },
+    {
+      "file": "./media/comic/article-20.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/3/a0/5cb73456184e4.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52451/secret"
+    },
+    {
+      "file": "./media/comic/article-21.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/6/a0/5cb736208d76d.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52452/secret"
+    },
+    {
+      "file": "./media/comic/article-22.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/8/e0/5cb73a17a642c.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52453/secret"
+    },
+    {
+      "file": "./media/comic/article-23.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/5cb73c66beb33.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52454/secret"
+    },
+    {
+      "file": "./media/comic/article-24.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/f/80/564ce8a2d5cde.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52455/secret"
+    },
+    {
+      "file": "./media/comic/article-25.jpg",
+      "width": 553,
+      "height": 850,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/u/prod/marvel/i/mg/3/70/569040820cfb9.jpg",
+      "alt": "",
+      "issueLink": "/comics/issue/52456/secret"
+    },
+    {
+      "file": "./media/comic/article-26.jpg",
       "width": 780,
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/midnight_postmortem1_card.webp",
-      "alt": "Midnight Post-Mortem: Creators Reveal Secrets from the Terrifying New Universe"
+      "alt": "Midnight Post-Mortem: Creators Reveal Secrets from the Terrifying New Universe",
+      "issueLink": null
     }
   ],
   "log": [
+    "issue 1: 137656 chars, 50 candidates",
+    "issue 2: 137848 chars, 50 candidates",
+    "issue 3: 137606 chars, 50 candidates",
+    "issue 4: 138018 chars, 53 candidates",
+    "issue 5: 138721 chars, 46 candidates",
+    "issue 6: 137610 chars, 46 candidates",
+    "issue 7: 138038 chars, 49 candidates",
+    "issue 8: 137984 chars, 46 candidates",
+    "issue 9: 138559 chars, 46 candidates",
     "article img https://cdn.marvel.com/content/1x/mu-logo-nav-v4-2x-02.webp: too small (134, 59)",
-    "article img https://cdn.marvel.com/content/1x/mu-logo-nav-v4-2x-02.webp: too small (134, 59)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/c/70/5cb736a3cdd49/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/c/70/5cb736a3cdd49/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/9/40/5cb737237a2de/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/9/40/5cb737237a2de/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/f/03/5cb7377845092/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/f/03/5cb7377845092/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/3/a0/5cb73456184e4/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/3/a0/5cb73456184e4/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/6/a0/5cb736208d76d/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/6/a0/5cb736208d76d/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/8/e0/5cb73a17a642c/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/8/e0/5cb73a17a642c/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/5cb73c66beb33/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/c/30/5cb73c66beb33/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/f/80/564ce8a2d5cde/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/f/80/564ce8a2d5cde/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/3/70/569040820cfb9/portrait_uncanny.webp: too small (300, 450)",
-    "article img https://cdn.marvel.com/u/prod/marvel/i/mg/3/70/569040820cfb9/portrait_uncanny.webp: too small (300, 450)"
+    "article img https://cdn.marvel.com/content/1x/mu-logo-nav-v4-2x-02.webp: too small (134, 59)"
   ]
 }
