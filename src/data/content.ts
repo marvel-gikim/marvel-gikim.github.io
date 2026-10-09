@@ -271,14 +271,6 @@ export const TRAILERS: Trailer[] = [
     source: S.trailer,
   },
   {
-    id: "doom-tickets",
-    youtubeId: "WKBvITriYxM",
-    titleHe: "טיזר הכרטיסים · Doom Tickets",
-    descriptionHe: "טיזר קצר לקידום מכירת הכרטיסים לסרט, מהערוץ הרשמי של Marvel בפיליפינים.",
-    status: "official",
-    source: S.doomTickets,
-  },
-  {
     id: "d23-special-look",
     youtubeId: "X1aFkAkFASk",
     titleHe: "מבט מיוחד מכנס D23",
