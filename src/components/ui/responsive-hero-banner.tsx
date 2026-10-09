@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react"
-import { ArrowDown, Play } from "lucide-react"
+import { ArrowDown, Play, Ticket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -16,6 +16,8 @@ export interface ResponsiveHeroBannerProps {
   subtitle?: string
   primaryButton?: { label: string; href: string }
   secondaryButton?: { label: string; href: string }
+  /** External ticket link, shown first and opened in a new tab */
+  ticketsButton?: { label: string; href: string }
   background: { src: string; alt: string; focus?: string; width: number; height: number }
   /** Verified facts shown in a compact row */
   infoItems?: HeroInfoItem[]
@@ -38,6 +40,7 @@ export function ResponsiveHeroBanner({
   subtitle,
   primaryButton,
   secondaryButton,
+  ticketsButton,
   background,
   infoItems,
   aside,
@@ -109,10 +112,19 @@ export function ResponsiveHeroBanner({
             </p>
           )}
 
-          {(primaryButton || secondaryButton) && (
-            <div className="mt-9 flex animate-fade-slide-in animation-delay-300 flex-col gap-3 sm:flex-row">
+          {(primaryButton || secondaryButton || ticketsButton) && (
+            <div className="mt-9 flex animate-fade-slide-in animation-delay-300 flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {ticketsButton && (
+                <Button asChild size="lg" className="shine w-full shadow-[0_0_40px_-8px_rgb(70_214_44/0.8)] sm:w-auto">
+                  <a href={ticketsButton.href} target="_blank" rel="noopener noreferrer">
+                    <Ticket aria-hidden />
+                    {ticketsButton.label}
+                    <span className="sr-only">(נפתח בלשונית חדשה)</span>
+                  </a>
+                </Button>
+              )}
               {primaryButton && (
-                <Button asChild size="lg" className="w-full sm:w-auto">
+                <Button asChild size="lg" variant={ticketsButton ? "outline" : "default"} className="w-full sm:w-auto">
                   <a href={primaryButton.href}>
                     <Play aria-hidden className="fill-current" />
                     {primaryButton.label}

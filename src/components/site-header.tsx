@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Menu, Play } from "lucide-react"
+import { Menu, Play, Ticket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { BrandLogo } from "@/components/brand-logo"
@@ -9,9 +9,11 @@ import { cn } from "@/lib/utils"
 interface SiteHeaderProps {
   links: NavLink[]
   cta: { label: string; href: `#${string}` }
+  /** External ticket-shop link, opens in a new tab */
+  tickets?: { label: string; href: string }
 }
 
-export function SiteHeader({ links, cta }: SiteHeaderProps) {
+export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState<string>("#top")
@@ -75,6 +77,15 @@ export function SiteHeader({ links, cta }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
+          {tickets && (
+            <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+              <a href={tickets.href} target="_blank" rel="noopener noreferrer">
+                <Ticket aria-hidden />
+                {tickets.label}
+                <span className="sr-only">(נפתח בלשונית חדשה)</span>
+              </a>
+            </Button>
+          )}
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <a href={cta.href}>
               <Play aria-hidden className="fill-current" />
@@ -120,8 +131,16 @@ export function SiteHeader({ links, cta }: SiteHeaderProps) {
                   ))}
                 </ul>
               </nav>
+              {tickets && (
+                <Button asChild variant="outline" size="lg" className="mt-auto w-full">
+                  <a href={tickets.href} target="_blank" rel="noopener noreferrer">
+                    <Ticket aria-hidden />
+                    {tickets.label}
+                  </a>
+                </Button>
+              )}
               <Button
-                className="mt-auto w-full"
+                className={cn("w-full", !tickets && "mt-auto")}
                 size="lg"
                 onClick={() => navigate(cta.href)}
               >

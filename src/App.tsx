@@ -45,6 +45,7 @@ import {
   NEWS,
   SOURCES,
   TRAILERS,
+  TICKETS,
 } from "@/data/content"
 import type { CastPhoto, GalleryImage, VerificationStatus } from "@/types/content"
 
@@ -140,7 +141,7 @@ export default function App() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground">
         דילוג לתוכן
       </a>
-      <SiteHeader links={NAV_LINKS} cta={{ label: "צפו בטריילר", href: "#trailers" }} />
+      <SiteHeader links={NAV_LINKS} cta={{ label: "צפו בטריילר", href: "#trailers" }} tickets={{ label: "כרטיסים", href: TICKETS.href }} />
 
       <main id="main">
         <ResponsiveHeroBanner
@@ -153,6 +154,7 @@ export default function App() {
           }
           title={FILM.titleHe}
           subtitle="כל המידע. כל הטריילרים. כל העדכונים."
+          ticketsButton={{ label: "קנו כרטיסים בפלאנט", href: TICKETS.href }}
           primaryButton={{ label: "צפו בטריילר", href: "#trailers" }}
           secondaryButton={{ label: "גלו את כל הפרטים", href: "#about" }}
           background={{ src: HERO_IMAGE.src, alt: HERO_IMAGE.altHe, focus: "50% 30%", width: HERO_IMAGE.width, height: HERO_IMAGE.height }}

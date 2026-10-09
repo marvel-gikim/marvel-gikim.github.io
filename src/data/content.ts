@@ -551,6 +551,13 @@ export const STAN_QUOTE = {
   source: S.stanHeartbreaking,
 }
 
+/** Where to buy tickets in Israel (Planet Cinema, Infinity Vision screenings) */
+export const TICKETS = {
+  label: "קנו כרטיסים",
+  href: "https://www.planetcinema.co.il/films/avengers-doomsday-infinity-vision/7879s2r1#/buy-tickets-by-film?for-movie=7879s2r1&view-mode=list",
+  providerHe: "פלאנט · הקרנות Infinity Vision",
+}
+
 // ===== News =====
 export const NEWS: NewsItem[] = [
   {
@@ -610,6 +617,7 @@ export const FAQ: FaqItem[] = [
   { id: "doom", questionHe: "מי מגלם את דוקטור דום?", answerHe: "רוברט דאוני ג׳וניור, שגילם את טוני סטארק. ההכרזה הייתה בכנס קומיק-קון ב-27 ביולי 2024.", source: S.sdcc },
   { id: "evans", questionHe: "האם כריס אוונס משתתף בסרט?", answerHe: "כן. הטיזר הראשון, מ-23 בדצמבר 2025, חשף אותו בתפקיד סטיב רוג׳רס. פרטים נוספים על חלקו בעלילה לא פורסמו.", source: S.teasers },
   { id: "plot", questionHe: "על מה הסרט?", answerHe: "לפי התקציר הרשמי, גיבורים משלושה יקומים שונים יוצאים למסלול התנגשות ופוגשים איום קיומי. מעבר לזה, פרטי העלילה עוד לא פורסמו.", source: S.synopsis },
+  { id: "tickets", questionHe: "איפה קונים כרטיסים בישראל?", answerHe: "כרטיסים להקרנות Infinity Vision של הסרט נמכרים באתר של פלאנט. הכפתור ״קנו כרטיסים״ בראש האתר מוביל ישר לעמוד הסרט שם.", source: { label: "פלאנט · Infinity Vision", url: "https://www.planetcinema.co.il/films/avengers-doomsday-infinity-vision/7879s2r1#/buy-tickets-by-film?for-movie=7879s2r1&view-mode=list" } },
   { id: "infinity-vision", questionHe: "מה זה Infinity Vision?", answerHe: "תו תקן חדש של דיסני לאולמות פרימיום גדולים. הוא לא טכנולוגיית הקרנה חדשה. הכרטיסים לאולמות האלה נמכרו ראשונים.", source: S.axios },
   { id: "next", questionHe: "מה מגיע אחרי דומסדיי?", answerHe: "״הנוקמים: מלחמות סודיות״, שמתוכנן ל-17 בדצמבר 2027.", source: S.secretWars },
   { id: "comic", questionHe: "על איזה קומיקס מבוססים הסרטים?", answerHe: "האחים רוסו אמרו שהם שואבים השראה חופשית משני הקומיקסים בשם ״מלחמות סודיות״: המקורי מ-1984 והגרסה של ג׳ונתן היקמן מ-2015. הם הדגישו שהסרטים יספרו גרסה משלהם. פירוט על הקומיקס של היקמן יש בחלק ״הקומיקס״ באתר.", source: S.swRusso },
