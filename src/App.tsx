@@ -19,7 +19,9 @@ import { SecretWarsSection } from "@/components/secret-wars-section"
 import { AboutPageSection } from "@/components/about-page-section"
 import { TicketsPromo } from "@/components/tickets-promo"
 import { CreditsMarquee } from "@/components/credits-marquee"
-import { useActorRoute } from "@/hooks/use-actor-route"
+import { useActorRoute, useHashRoute } from "@/hooks/use-actor-route"
+import { MyArticlesSection } from "@/components/my-articles-section"
+import { ArticlePage } from "@/components/article-page"
 import { SourceLink } from "@/components/source-link"
 import { STATUS_LABEL } from "@/components/verification-badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -42,6 +44,7 @@ import {
   STAN_QUOTE,
   EVANS_QUOTE,
   LAST_REVIEWED,
+  MY_ARTICLES,
   NAV_LINKS,
   NEWS,
   SOURCES,
@@ -96,6 +99,8 @@ export default function App() {
   const [castView, setCastView] = useState<"cards" | "gallery">("cards")
   const { actorId, openActor, closeActor } = useActorRoute()
   const activeActor = actorId ? CHARACTERS.find((c) => c.id === actorId) : undefined
+  const { actorId: articleId, openActor: openArticle, closeActor: closeArticle } = useHashRoute("#/article/", "#my-articles")
+  const activeArticle = articleId ? MY_ARTICLES.find((a) => a.id === articleId) : undefined
   const [newsFilter, setNewsFilter] = useState<Filter>("all")
   const [photos, setPhotos] = useState<Record<string, CastPhoto>>({})
 
@@ -354,6 +359,9 @@ export default function App() {
         {/* ===== Secret Wars comic ===== */}
         <SecretWarsSection />
 
+        {/* ===== My articles ===== */}
+        <MyArticlesSection articles={MY_ARTICLES} onOpen={openArticle} socials={SOCIALS} />
+
         <section id="news" aria-labelledby="news-title" className="py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading id="news-title" eyebrow="עדכונים" title="מה חדש בדרך לדומסדיי">
@@ -409,6 +417,8 @@ export default function App() {
       </main>
 
       <SiteFooter links={NAV_LINKS} lastReviewed={LAST_REVIEWED} socials={SOCIALS} />
+
+      {activeArticle && <ArticlePage article={activeArticle} onClose={closeArticle} />}
 
       {activeActor && (
         <ActorPage

@@ -1,4 +1,4 @@
-import type { Character, ComicChapter, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, Trailer } from "@/types/content"
+import type { Character, ComicChapter, MyArticle, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, Trailer } from "@/types/content"
 
 /** Date of the last manual content review. The site has no live data feed. */
 export const LAST_REVIEWED = "2026-10-09"
@@ -59,6 +59,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "טריילרים", href: "#trailers" },
   { label: "גלריה", href: "#gallery" },
   { label: "הקומיקס", href: "#secret-wars" },
+  { label: "הכתבות שלי", href: "#my-articles" },
   { label: "עדכונים", href: "#news" },
   { label: "שאלות נפוצות", href: "#faq" },
 ]
@@ -558,6 +559,10 @@ export const TICKETS = {
   href: "https://www.planetcinema.co.il/films/avengers-doomsday-infinity-vision/7879s2r1#/buy-tickets-by-film?for-movie=7879s2r1&view-mode=list",
   providerHe: "פלאנט · הקרנות Infinity Vision",
 }
+
+// ===== My articles (written by Marvel Gikim) =====
+// Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
+export const MY_ARTICLES: MyArticle[] = []
 
 // ===== News =====
 export const NEWS: NewsItem[] = [

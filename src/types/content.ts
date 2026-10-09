@@ -113,3 +113,19 @@ export interface ComicChapter {
   /** id of an image in SECRET_WARS.pages shown with this chapter */
   pageId?: string
 }
+
+/** An article written by Marvel Gikim */
+export interface MyArticle {
+  id: string
+  titleHe: string
+  /** One or two sentences shown on the card */
+  excerptHe: string
+  /** ISO date */
+  publishedAt: string
+  /** Paragraphs of the article; "## " starts a sub-heading */
+  bodyHe: string[]
+  cover?: { src: string; altHe: string; creditHe?: string }
+  /** Optional link to the matching TikTok / Instagram post */
+  postUrl?: string
+  tagsHe?: string[]
+}

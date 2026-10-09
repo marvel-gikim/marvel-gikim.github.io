@@ -57,15 +57,15 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
           <span className="text-lg font-black tracking-tight whitespace-nowrap">מארוול גיקים</span>
         </a>
 
-        <nav aria-label="ניווט ראשי" className="hidden xl:block">
-          <ul className="flex items-center gap-1">
+        <nav aria-label="ניווט ראשי" className="hidden min-[1360px]:block">
+          <ul className="flex items-center gap-0.5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   aria-current={active === l.href ? "true" : undefined}
                   className={cn(
-                    "rounded-full px-3.5 py-2 text-[15px] font-medium text-muted transition hover:text-foreground",
+                    "rounded-full px-2.5 py-2 text-[15px] font-medium whitespace-nowrap text-muted transition hover:text-foreground 2xl:px-3.5",
                     active === l.href && "bg-brand/12 text-brand-pale",
                   )}
                 >
@@ -95,7 +95,7 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
 
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="icon" className="xl:hidden" aria-label="פתיחת התפריט">
+              <Button variant="outline" size="icon" className="min-[1360px]:hidden" aria-label="פתיחת התפריט">
                 <Menu aria-hidden />
               </Button>
             </DialogTrigger>
