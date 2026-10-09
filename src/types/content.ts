@@ -29,7 +29,7 @@ export interface Character {
   characterHe?: string
   characterEn?: string
   descriptionHe: string
-  group: "doom" | "avengers" | "fantastic-four" | "thunderbolts" | "x-men" | "wakanda-talokan" | "spider-man"
+  group: "doom" | "avengers" | "fantastic-four" | "thunderbolts" | "x-men" | "wakanda-talokan" | "spider-man" | "tva"
   status: VerificationStatus
   source: SourceLink
   image?: GalleryImage

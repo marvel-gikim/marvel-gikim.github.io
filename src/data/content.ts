@@ -45,6 +45,7 @@ const S = {
   rdjVariety: { label: "Variety · רוברט דאוני ג׳וניור", url: "https://variety.com/2026/film/news/robert-downey-jr-avengers-doomsday-wont-let-down-marvel-fans-1236784201/" },
   evansReturn: { label: "TheWrap · כריס אוונס", url: "https://www.thewrap.com/creative-content/movies/chris-evans-marvel-sent-pitches-captain-america-return/" },
   doomTickets: { label: "YouTube · Marvel Philippines", url: "https://www.youtube.com/watch?v=WKBvITriYxM" },
+  tvaCast: { label: "Cinefilos · דיווח (באיטלקית)", url: "https://cinefilos.it/cinema-news/2026/avengers-doomsday-cinque-nuovi-attori-mcu-entrano-ufficialmente-nel-cast-723278" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -380,6 +381,14 @@ CHARACTERS.push(
     descriptionHe: "שמועה מקהילת המעריצים. לא הופיע ברשימת 27 השחקנים שהוכרזה, ולא מצאנו דיווח תקשורתי מבוסס על השתתפותו." },
 )
 
+// Loki / TVA, "almost official" per the site owner
+CHARACTERS.push(
+  { id: "quan", actorEn: "Ke Huy Quan", actorHe: "קי הוי קוואן", characterHe: "אורובורוס (או.בי)", characterEn: "Ouroboros (O.B.)", group: "tva", status: "rumor", source: S.tvaCast,
+    descriptionHe: "כמעט רשמי. לפי דיווח, הוא חוזר לתפקיד מהעונה השנייה של ״לוקי״. מארוול עוד לא אישרה זאת בהודעה רשמית." },
+  { id: "owen-wilson", actorEn: "Owen Wilson", actorHe: "אוון וילסון", characterHe: "מוביוס מ. מוביוס", characterEn: "Mobius M. Mobius", group: "tva", status: "rumor", source: S.tvaCast,
+    descriptionHe: "כמעט רשמי. לפי דיווח, הוא חוזר לתפקיד הסוכן מוביוס מ״לוקי״. מארוול עוד לא אישרה זאת בהודעה רשמית." },
+)
+
 export const CHARACTER_GROUPS: Record<Character["group"], string> = {
   doom: "דום",
   avengers: "הנוקמים",
@@ -388,6 +397,7 @@ export const CHARACTER_GROUPS: Record<Character["group"], string> = {
   "x-men": "אקס-מן",
   "wakanda-talokan": "וואקנדה וטלוקן",
   "spider-man": "ספיידרמן",
+  tva: "ה-TVA",
 }
 
 // ===== Quote =====
