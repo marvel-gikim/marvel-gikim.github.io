@@ -37,10 +37,10 @@
   },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
-    "width": 787,
-    "height": 787,
+    "width": 1600,
+    "height": 656,
     "source": "https://press.disney.co.uk/news/marvel-studios-avengers-doomsday-debuts-new-trailer-and-poster",
-    "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/avengers_doomsday_trailer_still_7_cc99a191.jpeg?region=567%2C0%2C787%2C787"
+    "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/avengers_doomsday_trailer_still_7_cc99a191.jpeg"
   },
   "marvel-keyart": {
     "file": "./media/fetched/marvel-keyart.jpg",
