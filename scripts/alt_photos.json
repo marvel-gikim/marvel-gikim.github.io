@@ -5,5 +5,9 @@
     "file": "File:Sebastian Stan in 2024.jpg"
   },
   "jackman-alt": "Hugh Jackman",
-  "evans-alt": "Chris Evans"
+  "evans-alt": "Chris Evans",
+  "maguire-alt": {
+    "person": "Tobey Maguire",
+    "candidates": true
+  }
 }
