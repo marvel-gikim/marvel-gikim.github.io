@@ -221,8 +221,8 @@ export default function App() {
         <section id="characters" aria-labelledby="characters-title" className="border-y border-border bg-[linear-gradient(180deg,#050805,#0a120b_30%,#050805)] py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading id="characters-title" eyebrow="דמויות וצוות" title="מי נלחם בדומסדיי">
-              כל שחקן מסומן לפי רמת האימות. שם הדמות מופיע רק כשהוא אושר במקור רשמי. ההופעה של שחקן בסרטים קודמים לא אומרת
-              שגם הדמות שלו מאושרת.
+              כל שחקן מסומן לפי רמת האימות שלו, ובכל כרטיס מופיע המקור: הטיזרים הרשמיים, דיווחי ההכרזה על הצוות, או דיווח
+              ושמועה.
             </SectionHeading>
             <DirectorsQuote {...DIRECTORS_QUOTE} photo={photos[DIRECTORS_QUOTE.photoKey]} />
             <div className="reveal mb-10">

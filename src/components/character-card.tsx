@@ -96,14 +96,11 @@ export function CharacterCard({
         </div>
         {c.characterHe ? (
           <p className="text-base font-bold text-brand-pale">
-            בתפקיד {c.characterHe}
+            {c.status === "official" ? "בתפקיד" : c.status === "report" ? "בתפקיד (לפי הדיווח)" : "בתפקיד (לפי השמועה)"} {c.characterHe}
             {c.characterEn && (
-              <>
-                {" "}
-                <span className="font-normal whitespace-nowrap text-muted">
-                  (<bdi dir="ltr">{c.characterEn}</bdi>)
-                </span>
-              </>
+              <span className="block text-sm font-normal text-muted">
+                <bdi dir="ltr">{c.characterEn}</bdi>
+              </span>
             )}
           </p>
         ) : (
