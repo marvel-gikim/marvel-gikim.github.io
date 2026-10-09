@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { Badge } from "@/components/ui/badge"
 import { SmartImage } from "@/components/smart-image"
 import { SourceLink } from "@/components/source-link"
+import { cn } from "@/lib/utils"
 
 const KIND_LABEL: Record<MediaKind, string> = {
   poster: "פוסטר",
@@ -12,13 +13,16 @@ const KIND_LABEL: Record<MediaKind, string> = {
   still: "תמונת סט רשמית",
   "trailer-frame": "פריים מטריילר",
   "trailer-thumbnail": "תמונה ממוזערת של טריילר",
+  "comic-cover": "עטיפה רשמית",
+  "comic-page": "עמוד מהקומיקס",
 }
 
 function ProvenanceBadge({ img }: { img: GalleryImage }) {
   return img.provenance === "official" ? <Badge>מקור רשמי</Badge> : <Badge variant="report">מקור לא אומת</Badge>
 }
 
-export function MediaGallery({ items }: { items: GalleryImage[] }) {
+export function MediaGallery({ items, variant = "masonry" }: { items: GalleryImage[]; variant?: "masonry" | "covers" }) {
+  const covers = variant === "covers"
   const [index, setIndex] = useState<number | null>(null)
   const open = index !== null
   const current = open ? items[index] : null
@@ -41,14 +45,17 @@ export function MediaGallery({ items }: { items: GalleryImage[] }) {
 
   return (
     <>
-      <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <ul className={covers ? "grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-9" : "columns-1 gap-4 sm:columns-2 lg:columns-3"}>
         {items.map((img, i) => {
           return (
-            <li key={img.id} className="reveal mb-4 break-inside-avoid">
+            <li key={img.id} className={covers ? "reveal" : "reveal mb-4 break-inside-avoid"}>
               <button
                 type="button"
                 onClick={() => setIndex(i)}
-                className="group relative block h-full w-full cursor-pointer overflow-hidden rounded-[var(--radius-lg)] border border-border text-start transition hover:border-brand/50"
+                className={cn(
+                  "group relative block h-full w-full cursor-pointer overflow-hidden rounded-[var(--radius-lg)] border border-border text-start transition hover:border-brand/50",
+                  covers && "rounded-md duration-300 hover:-translate-y-2 hover:rotate-[-1.5deg] hover:shadow-[0_24px_50px_-18px_rgb(70_214_44/0.6)]",
+                )}
                 aria-label={`הגדלת התמונה: ${img.altHe}`}
               >
                 <SmartImage
@@ -60,6 +67,10 @@ export function MediaGallery({ items }: { items: GalleryImage[] }) {
                   className="h-full w-full"
                   imgClassName="transition duration-700 group-hover:scale-[1.04]"
                 />
+                {covers ? (
+                  <span className="pointer-events-none absolute bottom-2 start-2 rounded-full bg-black/75 px-2 py-0.5 text-xs font-black text-brand-pale tabular-nums">#{i + 1}</span>
+                ) : (
+                <>
                 <span aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-transparent opacity-90" />
                 <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
                   <span className="flex flex-col items-start gap-1.5">
@@ -68,6 +79,8 @@ export function MediaGallery({ items }: { items: GalleryImage[] }) {
                   </span>
                   <Expand aria-hidden className="size-5 text-brand-pale opacity-0 transition group-hover:opacity-100" />
                 </span>
+                </>
+                )}
               </button>
             </li>
           )

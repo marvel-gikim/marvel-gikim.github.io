@@ -47,7 +47,7 @@ export interface Trailer {
   youtubeId?: string
 }
 
-export type MediaKind = "poster" | "key-art" | "still" | "trailer-frame" | "trailer-thumbnail"
+export type MediaKind = "poster" | "key-art" | "still" | "trailer-frame" | "trailer-thumbnail" | "comic-cover" | "comic-page"
 
 export interface GalleryImage {
   id: string
@@ -109,4 +109,6 @@ export interface ComicChapter {
   textHe: string
   source: SourceLink
   spoiler?: boolean
+  /** id of an image in SECRET_WARS.pages shown with this chapter */
+  pageId?: string
 }

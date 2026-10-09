@@ -3,21 +3,43 @@ import { BookOpen, Eye, Quote } from "lucide-react"
 import { SECRET_WARS } from "@/data/content"
 import { SectionHeading } from "@/components/section-heading"
 import { SourceLink } from "@/components/source-link"
+import { SmartImage } from "@/components/smart-image"
+import { MediaGallery } from "@/components/media-gallery"
 import { cn } from "@/lib/utils"
 
 /** Full section about Jonathan Hickman's Secret Wars (2015), the comic behind the next two Avengers films. */
 export function SecretWarsSection() {
   const [showSpoiler, setShowSpoiler] = useState(false)
   const sw = SECRET_WARS
+  const mainCover = sw.covers[0]
+  const pageById = (id?: string) => sw.pages.find((p) => p.id === id)
 
   return (
     <section id="secret-wars" aria-labelledby="secret-wars-title" className="relative overflow-hidden border-y border-border bg-[radial-gradient(ellipse_at_top,rgb(70_214_44/0.10),transparent_60%),linear-gradient(180deg,#050805,#081008_50%,#050805)] py-24 sm:py-32">
       {/* Slow drifting glow, echoing Battleworld's patchwork sky */}
       <span aria-hidden className="pointer-events-none absolute -start-40 top-1/3 size-[30rem] rounded-full bg-brand/10 blur-3xl animate-float" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading id="secret-wars-title" eyebrow="הקומיקס שמאחורי הסרטים" title="מלחמות סודיות (2015): כשדום הפך לאל">
-          {sw.introHe} <SourceLink source={sw.introSource} className="text-base" />
-        </SectionHeading>
+        <div className="mb-14 grid items-center gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
+          <SectionHeading id="secret-wars-title" eyebrow="הקומיקס שמאחורי הסרטים" title="מלחמות סודיות (2015): כשדום הפך לאל" className="mb-0">
+            {sw.introHe} <SourceLink source={sw.introSource} className="text-base" />
+          </SectionHeading>
+          <figure className="reveal m-0 mx-auto w-full max-w-[19rem] [perspective:1200px]">
+            <a
+              href={mainCover.source?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block animate-float"
+              aria-label="העטיפה הרשמית של גיליון 1 בעמוד הגיליון ב-marvel.com (נפתח בלשונית חדשה)"
+            >
+              <div className="shine overflow-hidden rounded-lg border border-brand/30 shadow-[0_50px_120px_-30px_rgb(70_214_44/0.55)] transition duration-700 [transform:rotateY(-10deg)_rotateX(4deg)] group-hover:[transform:rotateY(0deg)_rotateX(0deg)]">
+                <SmartImage src={mainCover.src} alt={mainCover.altHe} width={mainCover.width} height={mainCover.height} priority />
+              </div>
+            </a>
+            <figcaption className="mt-4 text-center text-sm text-muted">
+              העטיפה הרשמית של גיליון 1. {sw.coverCreditHe} © Marvel
+            </figcaption>
+          </figure>
+        </div>
 
         <dl className="mb-16 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {sw.facts.map((f) => (
@@ -67,6 +89,24 @@ export function SecretWarsSection() {
                         </button>
                       )}
                     </div>
+                    {(() => {
+                      const page = pageById(c.pageId)
+                      if (!page) return null
+                      return (
+                        <figure className="m-0 mt-4 overflow-hidden rounded-[var(--radius-lg)] border border-border">
+                          <SmartImage
+                            src={page.src}
+                            alt={hidden ? "" : page.altHe}
+                            width={16}
+                            height={9}
+                            focus={page.focus}
+                            className={cn("transition duration-700", hidden && "blur-xl")}
+                            imgClassName="transition duration-[1.5s] hover:scale-105"
+                          />
+                          {!hidden && <figcaption className="border-t border-border bg-surface/70 px-4 py-2 text-sm text-muted">{page.captionHe} © Marvel</figcaption>}
+                        </figure>
+                      )
+                    })()}
                     <SourceLink source={c.source} className="mt-2" />
                   </li>
                 )
@@ -101,6 +141,21 @@ export function SecretWarsSection() {
               <SourceLink source={sw.publicationSources[1]} className="mt-3" />
             </div>
           </aside>
+        </div>
+
+        <div className="mt-20">
+          <h3 className="reveal mb-2 text-2xl font-black">כל 9 העטיפות הרשמיות</h3>
+          <p className="reveal mb-6 text-muted">{sw.coverCreditHe} לחיצה על עטיפה מגדילה אותה.</p>
+          <MediaGallery items={sw.covers} variant="covers" />
+        </div>
+
+        <div className="mt-20">
+          <h3 className="reveal mb-2 text-2xl font-black">מתוך הקומיקס</h3>
+          <p className="reveal mb-6 text-muted">
+            עמודים מתוך הסדרה, כפי שפורסמו בכתבה הרשמית של Marvel. חלקם חושפים פרטים מהעלילה.{" "}
+            <SourceLink source={sw.introSource} prefix="" />
+          </p>
+          <MediaGallery items={sw.pages} />
         </div>
       </div>
     </section>
