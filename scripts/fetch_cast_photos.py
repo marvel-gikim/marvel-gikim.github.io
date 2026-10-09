@@ -130,7 +130,10 @@ def main():
         except Exception as e:
             missing.append(cid)
             print("miss", cid, e)
-    json.dump(cand_log, open(os.path.join(cand_dir, "candidates.json"), "w"), indent=2)
+    if cand_log:
+        json.dump(cand_log, open(os.path.join(cand_dir, "candidates.json"), "w"), indent=2)
+    else:
+        shutil.rmtree(cand_dir, ignore_errors=True)
     json.dump(credits, open(os.path.join(OUT, "credits.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     shutil.rmtree(PUBLIC, ignore_errors=True)
     shutil.copytree(OUT, PUBLIC)
