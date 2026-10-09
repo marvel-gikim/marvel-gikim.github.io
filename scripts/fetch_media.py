@@ -4,7 +4,7 @@
 - Pages: the page's own og:image / twitter:image (the image the official page declares).
 Writes docs/media/fetched.json with file + size for the site, and mirrors to public/media/fetched/.
 """
-import html, io, json, os, re, shutil, urllib.request
+import html, io, json, os, re, shutil, urllib.parse, urllib.request
 
 from PIL import Image
 
@@ -46,6 +46,11 @@ def main():
         for size in ("maxresdefault", "hqdefault"):
             try:
                 out[key] = {**save(key, fetch(f"https://i.ytimg.com/vi/{vid}/{size}.jpg")), "source": f"https://www.youtube.com/watch?v={vid}"}
+                try:  # official title and channel, from YouTube's oEmbed
+                    oe = json.loads(fetch("https://www.youtube.com/oembed?format=json&url=" + urllib.parse.quote(f"https://www.youtube.com/watch?v={vid}")))
+                    out[key].update({"title": oe.get("title"), "channel": oe.get("author_name")})
+                except Exception as e:
+                    print("no oembed", key, e)
                 print("ok  ", key, size)
                 break
             except Exception as e:
