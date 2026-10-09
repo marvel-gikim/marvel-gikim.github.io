@@ -1,0 +1,5 @@
+og popverse https://media.thepopverse.com/media/avengers_doomsday_trailer_still_8-fu1bktnrhk4fde3ftawnzwkxcm.jpg (1600, 960)
+og fpj https://media.assettype.com/freepressjournal/2026-07-23/zqiozl1z/Untitled-design-2026-07-23T162913.037.jpg (1200, 675)
+og pinkvilla https://www.pinkvilla.com/images/2026-07/157145751_doomsday-trailer-webp.webp (1280, 720)
+og inquirer FAIL HTTP Error 403: Forbidden
+yt FAIL Command '['yt-dlp', '-f', 'bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b', '-o', 'hunt/trailer.%(ext)s', 'https://www.youtube.com/watch?v=irVNGjRFZGk']' returned non-zero exit status 1.
