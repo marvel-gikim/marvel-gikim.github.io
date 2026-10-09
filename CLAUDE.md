@@ -24,6 +24,11 @@
 - דפים "פנימיים" בניתוב hash: `#/actor/<id>` (עמוד שחקן), `#/article/<id>` (כתבה). `#push-check` פותח חלון בדיקת התראות.
 - תמונות סטטיות ב-`public/` (מועתקות ל-`docs/` בבנייה).
 
+## נגישות
+- תפריט נגישות צף (כפתור כחול בפינה): `src/components/accessibility-menu.tsx`. מוסיף מחלקות `a11y-*` ל-`<html>` (מוגדרות בסוף `src/index.css`) ושומר ב-localStorage.
+- הצהרת נגישות: `src/components/accessibility-statement.tsx`, בכתובת `#/accessibility` (קישור בתחתית האתר). פניות: marvelgikim@gmail.com. לעדכן את תאריך ההצהרה כשמשנים משהו מהותי.
+- בכל רכיב חדש: טקסט חלופי לתמונות, תוויות לכפתורים עם אייקון בלבד, ניווט במקלדת.
+
 ## בנייה ופרסום
 ```bash
 npm install          # פעם אחת

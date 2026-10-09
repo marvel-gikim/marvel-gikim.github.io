@@ -119,3 +119,36 @@
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===== Accessibility menu (classes set on <html> by AccessibilityMenu) ===== */
+html.a11y-text-1 { font-size: 112.5%; }
+html.a11y-text-2 { font-size: 125%; }
+html.a11y-text-3 { font-size: 140%; }
+
+html.a11y-contrast {
+  --color-background: #000;
+  --color-surface: #000;
+  --color-surface-2: #0a0a0a;
+  --color-foreground: #fff;
+  --color-muted: #f2f2f2;
+  --color-border: #9dff7a;
+  --color-brand: #7dff52;
+  --color-brand-pale: #d6ffc4;
+  --color-primary: #7dff52;
+  --color-primary-foreground: #000;
+}
+html.a11y-contrast img:not([alt=""]) { filter: none !important; }
+html.a11y-contrast .text-muted\/80, html.a11y-contrast [class*="text-foreground/"] { color: #fff !important; }
+
+html.a11y-no-motion { scroll-behavior: auto; }
+html.a11y-no-motion *, html.a11y-no-motion *::before, html.a11y-no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html.a11y-no-motion .reveal { opacity: 1 !important; transform: none !important; }
+
+html.a11y-links a { text-decoration: underline !important; text-underline-offset: 4px; text-decoration-thickness: 2px !important; }
+html.a11y-links a:not(:has(img)) { outline: 1px dashed currentColor; outline-offset: 2px; }
+
+html.a11y-font body, html.a11y-font body * { font-family: Arial, "Segoe UI", system-ui, sans-serif !important; letter-spacing: 0.02em; }
+html.a11y-font p, html.a11y-font li { line-height: 1.9 !important; }

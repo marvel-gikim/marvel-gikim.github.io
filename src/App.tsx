@@ -19,6 +19,8 @@ import { SecretWarsSection } from "@/components/secret-wars-section"
 import { AboutPageSection } from "@/components/about-page-section"
 import { TicketsPromo } from "@/components/tickets-promo"
 import { PushCheck } from "@/components/push-check"
+import { AccessibilityMenu } from "@/components/accessibility-menu"
+import { AccessibilityStatement } from "@/components/accessibility-statement"
 import { NotifyButton } from "@/components/notify-button"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute, useHashRoute } from "@/hooks/use-actor-route"
@@ -424,6 +426,8 @@ export default function App() {
       <SiteFooter links={NAV_LINKS} lastReviewed={LAST_REVIEWED} socials={SOCIALS} />
 
       <PushCheck />
+      <AccessibilityMenu />
+      <AccessibilityStatement />
 
       {activeArticle && <ArticlePage article={activeArticle} onClose={closeArticle} />}
 

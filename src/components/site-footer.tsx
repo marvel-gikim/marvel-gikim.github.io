@@ -96,7 +96,11 @@ export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
           </p>
         </div>
         <p className="mx-auto max-w-7xl px-4 py-5 text-xs text-muted/80 sm:px-6 lg:px-8">
-          עודכן לאחרונה: <time dateTime={lastReviewed}>{formatHebrewDate(lastReviewed)}</time> · התוכן נבדק ידנית. אין באתר עדכון חי.
+          עודכן לאחרונה: <time dateTime={lastReviewed}>{formatHebrewDate(lastReviewed)}</time> · התוכן נבדק ידנית. אין באתר עדכון חי.{" "}
+          ·{" "}
+          <a href="#/accessibility" className="font-bold text-brand-pale underline underline-offset-4">
+            הצהרת נגישות
+          </a>
         </p>
       </div>
     </footer>
