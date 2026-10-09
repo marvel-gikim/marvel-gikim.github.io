@@ -313,5 +313,14 @@
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mark_Ruffalo_(36201774756)_(cropped).jpg"
+  },
+  "russos": {
+    "file": "./cast/russos.jpg",
+    "width": 640,
+    "height": 306,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joe_Russo_%26_Anthony_Russo_by_Gage_Skidmore.jpg"
   }
 }
