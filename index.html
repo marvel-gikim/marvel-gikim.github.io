@@ -17,7 +17,26 @@
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
       OneSignalDeferred.push(async function (OneSignal) {
-        await OneSignal.init({ appId: "f91c0142-927b-478b-9da6-f8e595bb42b3" });
+        await OneSignal.init({
+          appId: "f91c0142-927b-478b-9da6-f8e595bb42b3",
+          // Ask visitors a few seconds after they arrive (in Hebrew), in addition to the bell buttons on the site
+          promptOptions: {
+            slidedown: {
+              prompts: [
+                {
+                  type: "push",
+                  autoPrompt: true,
+                  text: {
+                    actionMessage: "רוצים לקבל התראה על כל כתבה חדשה של מארוול גיקים?",
+                    acceptButton: "כן, תעדכנו אותי",
+                    cancelButton: "לא עכשיו",
+                  },
+                  delay: { pageViews: 1, timeDelay: 6 },
+                },
+              ],
+            },
+          },
+        });
       });
     </script>
   </head>

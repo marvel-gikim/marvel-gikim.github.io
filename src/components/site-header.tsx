@@ -3,6 +3,7 @@ import { Menu, Play, Ticket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { BrandLogo } from "@/components/brand-logo"
+import { NotifyButton } from "@/components/notify-button"
 import type { NavLink } from "@/types/content"
 import { cn } from "@/lib/utils"
 
@@ -77,6 +78,7 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
+          <NotifyButton compact />
           {tickets && (
             <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
               <a href={tickets.href} target="_blank" rel="noopener noreferrer">

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 type State = "loading" | "ready" | "subscribed" | "denied" | "ios-install" | "unsupported" | "blocked"
 
 /** "Get notified about new articles" button, backed by OneSignal web push. */
-export function NotifyButton({ className }: { className?: string }) {
+export function NotifyButton({ className, compact }: { className?: string; compact?: boolean }) {
   const [state, setState] = useState<State>("loading")
 
   useEffect(() => {
@@ -47,6 +47,26 @@ export function NotifyButton({ className }: { className?: string }) {
     })
 
   const base = "inline-flex items-center gap-2 rounded-full px-6 py-3 font-black transition"
+
+  // Header icon: only shown while the visitor can still subscribe
+  if (compact) {
+    if (state !== "ready") return null
+    return (
+      <button
+        type="button"
+        onClick={subscribe}
+        aria-label="קבלו התראה על כל כתבה חדשה"
+        title="קבלו התראה על כל כתבה חדשה"
+        className={cn(
+          "relative grid size-9 cursor-pointer place-items-center rounded-full border border-brand/50 bg-brand/10 text-brand-pale transition hover:bg-brand/20",
+          className,
+        )}
+      >
+        <BellRing aria-hidden className="size-4.5 animate-[float_3s_ease-in-out_infinite]" />
+        <span aria-hidden className="absolute -top-0.5 -end-0.5 size-2.5 rounded-full bg-brand ring-2 ring-background" />
+      </button>
+    )
+  }
 
   if (state === "subscribed") {
     return (
