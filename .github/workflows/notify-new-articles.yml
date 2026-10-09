@@ -1,0 +1,23 @@
+name: Notify subscribers about new articles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/articles.json'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Send push for new articles
+        env:
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          BEFORE: ${{ github.event.before }}
+        run: python scripts/notify_new_articles.py
