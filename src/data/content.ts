@@ -22,6 +22,7 @@ const S = {
   holland: { label: "SuperHeroHype", url: "https://www.superherohype.com/?p=631396" },
   castRoundup: { label: "ComicBookMovie", url: "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-who-is-confirmed-reported-and-rumored-to-appear-updated-a215455" },
   missingStars: { label: "Kino.de", url: "https://www.kino.de/film/avengers-doomsday-2026/news/mcu-chef-zerstreut-jetzt-grosse-sorge-der-marvel-fans-und-liefert-neuen-einblick-in-avengers-doomsday/" },
+  russoQuote: { label: "ComicBasics", url: "https://www.comicbasics.com/?p=192199" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
 
@@ -335,6 +336,16 @@ export const CHARACTER_GROUPS: Record<Character["group"], string> = {
   "x-men": "אקס-מן",
   "wakanda-talokan": "וואקנדה וטלוקן",
   "spider-man": "ספיידרמן",
+}
+
+// ===== Quote =====
+export const DIRECTORS_QUOTE = {
+  quoteHe: "הקאסט כל כך גדול. הכרזנו על חלק ממנו, ועל חלק ממנו עוד לא.",
+  quoteEn: "The cast is so large, and we've announced some of the cast, and we haven't announced some of the cast.",
+  speakerHe: "אנתוני רוסו, במאי הסרט",
+  contextHe: "בשאלות ותשובות אחרי הקרנה של ״הנוקמים: סוף המשחק – הדרן״. ג׳ו רוסו נעדר מהאירוע.",
+  photoKey: "russos",
+  source: S.russoQuote,
 }
 
 // ===== News =====

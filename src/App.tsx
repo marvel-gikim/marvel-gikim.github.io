@@ -10,6 +10,7 @@ import { MediaGallery } from "@/components/media-gallery"
 import { NewsCard } from "@/components/news-card"
 import { SiteFooter } from "@/components/site-footer"
 import { BrandLogo } from "@/components/brand-logo"
+import { DirectorsQuote } from "@/components/directors-quote"
 import { SourceLink } from "@/components/source-link"
 import { STATUS_LABEL } from "@/components/verification-badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -18,6 +19,7 @@ import { cn, formatHebrewDate } from "@/lib/utils"
 import {
   CHARACTERS,
   CHARACTER_GROUPS,
+  DIRECTORS_QUOTE,
   FAQ,
   FILM,
   GALLERY,
@@ -222,6 +224,7 @@ export default function App() {
               כל שחקן מסומן לפי רמת האימות. שם הדמות מופיע רק כשהוא אושר במקור רשמי. ההופעה של שחקן בסרטים קודמים לא אומרת
               שגם הדמות שלו מאושרת.
             </SectionHeading>
+            <DirectorsQuote {...DIRECTORS_QUOTE} photo={photos[DIRECTORS_QUOTE.photoKey]} />
             <div className="reveal mb-10">
               <FilterChips value={castFilter} onChange={setCastFilter} counts={countBy(CHARACTERS)} label="סינון לפי רמת אימות" />
             </div>
