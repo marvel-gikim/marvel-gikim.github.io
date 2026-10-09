@@ -18,6 +18,11 @@ const S = {
   axios: { label: "Axios", url: "https://www.axios.com/2026/07/20/avengers-doomsday-trailer-marvel-infinity-vision" },
   castRumor: { label: "JoBlo", url: "https://www.joblo.com/avengers-doomsday-cast-rumor/" },
   marvelYoutube: { label: "YouTube · Marvel Entertainment", url: "https://www.youtube.com/@marvel" },
+  maguire: { label: "SuperHeroHype", url: "https://www.superherohype.com/?p=639353" },
+  holland: { label: "SuperHeroHype", url: "https://www.superherohype.com/?p=631396" },
+  castRoundup: { label: "ComicBookMovie", url: "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-who-is-confirmed-reported-and-rumored-to-appear-updated-a215455" },
+  missingStars: { label: "Kino.de", url: "https://www.kino.de/film/avengers-doomsday-2026/news/mcu-chef-zerstreut-jetzt-grosse-sorge-der-marvel-fans-und-liefert-neuen-einblick-in-avengers-doomsday/" },
+  posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
 
 export const SOURCES = S
@@ -59,6 +64,18 @@ export const GALLERY: GalleryImage[] = [
     provenance: "unverified",
     provenanceNoteHe: "התקבל מקהילת מארוול גיקים. הפוסטר נושא את סימני הזכויות של Marvel, אך את עמוד המקור הרשמי עוד לא איתרנו.",
     focus: "50% 22%",
+  },
+  {
+    id: "doom-throne-poster",
+    src: "./media/doom-throne-poster.webp",
+    width: 1080,
+    height: 1348,
+    altHe: "דוקטור דום יורד במדרגות חדר כס עם ויטראז׳ ירוק, ומאחוריו שלוש דמויות בגלימות",
+    captionHe: "פוסטר עם הכיתוב ״12.18.26 הוא דומסדיי״: דום יורד במדרגות חדר הכס, ושלוש דמויות בגלימות מאחוריו.",
+    kind: "poster",
+    provenance: "official",
+    provenanceNoteHe: "פוסטר רשמי של Marvel Studios. המקור אומת על ידי מארוול גיקים.",
+    focus: "50% 60%",
   },
   {
     id: "frame-gauntlet",
@@ -232,6 +249,17 @@ export const CHARACTERS: Character[] = [
     descriptionHe: "נשמע ברקע של סרטון D23 של ג׳קמן. ההשתתפות שלו לא אושרה." },
 ]
 
+CHARACTERS.push(
+  { id: "maguire", actorEn: "Tobey Maguire", actorHe: "טובי מגווייר", group: "spider-man", status: "rumor", source: SOURCES.maguire,
+    descriptionHe: "לפי מקורות לא רשמיים, ספיידרמן של מגווייר יופיע בסרט. מארוול לא הגיבה, ואחד הקולאז׳ים שהופצו ברשת התברר כמזויף." },
+  { id: "holland", actorEn: "Tom Holland", actorHe: "טום הולנד", group: "spider-man", status: "rumor", source: SOURCES.holland,
+    descriptionHe: "הדיווחים סותרים: חלקם טוענים שהוא לא יופיע בדומסדיי אלא ב״מלחמות סודיות״, וחלקם מדברים על צילומים חוזרים. אין אישור רשמי." },
+  { id: "cumberbatch", actorEn: "Benedict Cumberbatch", actorHe: "בנדיקט קמברבאץ׳", group: "avengers", status: "rumor", source: SOURCES.castRoundup,
+    descriptionHe: "האמירות שלו עצמו סותרות: ל-Variety אמר שלא יופיע בדומסדיי, ואחר כך תיקן שהוא ״בסרט הבא״. השתתפות בדומסדיי לא אושרה." },
+  { id: "ruffalo", actorEn: "Mark Ruffalo", actorHe: "מארק רופאלו", group: "avengers", status: "rumor", source: SOURCES.missingStars,
+    descriptionHe: "שמועה מקהילת המעריצים. לא הופיע ברשימת 27 השחקנים שהוכרזה, ולא מצאנו דיווח תקשורתי מבוסס על השתתפותו." },
+)
+
 export const CHARACTER_GROUPS: Record<Character["group"], string> = {
   doom: "דום",
   avengers: "הנוקמים",
@@ -239,6 +267,7 @@ export const CHARACTER_GROUPS: Record<Character["group"], string> = {
   thunderbolts: "ת׳אנדרבולטס",
   "x-men": "אקס-מן",
   "wakanda-talokan": "וואקנדה וטלוקן",
+  "spider-man": "ספיידרמן",
 }
 
 // ===== News =====

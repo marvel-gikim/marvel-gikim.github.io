@@ -5,7 +5,6 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { Badge } from "@/components/ui/badge"
 import { SmartImage } from "@/components/smart-image"
 import { SourceLink } from "@/components/source-link"
-import { cn } from "@/lib/utils"
 
 const KIND_LABEL: Record<MediaKind, string> = {
   poster: "פוסטר",
@@ -41,11 +40,10 @@ export function MediaGallery({ items }: { items: GalleryImage[] }) {
 
   return (
     <>
-      <ul className="grid auto-rows-auto grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+      <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
         {items.map((img, i) => {
-          const wide = img.width / img.height > 1.5
           return (
-            <li key={img.id} className={cn("reveal", wide ? "lg:col-span-4" : "lg:col-span-2", i === 0 && "lg:row-span-2")}>
+            <li key={img.id} className="reveal mb-4 break-inside-avoid">
               <button
                 type="button"
                 onClick={() => setIndex(i)}
