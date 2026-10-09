@@ -9,6 +9,8 @@ on:
       - 'scripts/fetch_cast_photos.py'
       - 'scripts/media.json'
       - 'scripts/fetch_media.py'
+      - 'scripts/comic.json'
+      - 'scripts/fetch_comic.py'
       - '.github/workflows/fetch-cast-photos.yml'
 
 permissions:
@@ -25,6 +27,7 @@ jobs:
       - run: pip install pillow
       - run: python scripts/fetch_cast_photos.py
       - run: python scripts/fetch_media.py
+      - run: python scripts/fetch_comic.py
       - name: Commit photos
         run: |
           git config user.name "github-actions[bot]"
