@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { CheckCircle2, CircleHelp, Film, Sparkles } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { ResponsiveHeroBanner } from "@/components/ui/responsive-hero-banner"
@@ -28,7 +28,7 @@ import {
   SOURCES,
   TRAILERS,
 } from "@/data/content"
-import type { VerificationStatus } from "@/types/content"
+import type { CastPhoto, VerificationStatus } from "@/types/content"
 
 type Filter = "all" | VerificationStatus
 
@@ -71,6 +71,15 @@ export default function App() {
   useReveal()
   const [castFilter, setCastFilter] = useState<Filter>("all")
   const [newsFilter, setNewsFilter] = useState<Filter>("all")
+  const [photos, setPhotos] = useState<Record<string, CastPhoto>>({})
+
+  // Cast portraits + attribution, downloaded from Wikimedia Commons by a GitHub Action
+  useEffect(() => {
+    fetch("./cast/credits.json")
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((data: Record<string, CastPhoto>) => setPhotos(data))
+      .catch(() => setPhotos({}))
+  }, [])
 
   const confirmedCast = useMemo(() => CHARACTERS.filter((c) => c.status === "official"), [])
   const unconfirmedCast = useMemo(() => CHARACTERS.filter((c) => c.status !== "official"), [])
@@ -205,13 +214,13 @@ export default function App() {
                 <h3 className="mb-5 text-sm font-bold tracking-[0.14em] text-brand">צוות מאושר</h3>
                 {doom && (
                   <div className="reveal mb-5">
-                    <CharacterCard character={doom} groupLabel={CHARACTER_GROUPS[doom.group]} featured />
+                    <CharacterCard character={doom} groupLabel={CHARACTER_GROUPS[doom.group]} photo={photos[doom.id]} featured />
                   </div>
                 )}
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {restConfirmed.map((c) => (
                     <li key={c.id} className="reveal">
-                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} />
+                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} />
                     </li>
                   ))}
                 </ul>
@@ -225,7 +234,7 @@ export default function App() {
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {visibleUnconfirmed.map((c) => (
                     <li key={c.id} className="reveal">
-                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} />
+                      <CharacterCard character={c} groupLabel={CHARACTER_GROUPS[c.group]} photo={photos[c.id]} />
                     </li>
                   ))}
                 </ul>

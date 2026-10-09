@@ -1,4 +1,4 @@
-import type { Character } from "@/types/content"
+import type { CastPhoto, Character } from "@/types/content"
 import { VerificationBadge } from "@/components/verification-badge"
 import { SourceLink } from "@/components/source-link"
 import { SmartImage } from "@/components/smart-image"
@@ -13,7 +13,17 @@ function initials(name: string) {
     .join("")
 }
 
-export function CharacterCard({ character, groupLabel, featured = false }: { character: Character; groupLabel: string; featured?: boolean }) {
+export function CharacterCard({
+  character,
+  groupLabel,
+  featured = false,
+  photo,
+}: {
+  character: Character
+  groupLabel: string
+  featured?: boolean
+  photo?: CastPhoto
+}) {
   const c = character
   return (
     <article
@@ -22,7 +32,34 @@ export function CharacterCard({ character, groupLabel, featured = false }: { cha
         featured && "md:flex-row",
       )}
     >
-      {c.image ? (
+      {photo ? (
+        <figure className={cn("relative m-0", featured && "md:w-2/5")}>
+          <SmartImage
+            src={photo.file}
+            alt={`${c.actorHe}, צילום מוויקישיתוף`}
+            width={4}
+            height={5}
+            focus="50% 18%"
+            className={cn("w-full", featured && "md:h-full")}
+            imgClassName="transition duration-700 group-hover:scale-[1.03]"
+          />
+          <span aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+          <figcaption className="absolute inset-x-0 bottom-0 truncate px-3 py-2 text-[11px] text-muted/90">
+            צילום: <bdi>{photo.author}</bdi> ·{" "}
+            {photo.licenseUrl ? (
+              <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">
+                <bdi dir="ltr">{photo.license}</bdi>
+              </a>
+            ) : (
+              <bdi dir="ltr">{photo.license}</bdi>
+            )}{" "}
+            ·{" "}
+            <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:underline">
+              ויקישיתוף
+            </a>
+          </figcaption>
+        </figure>
+      ) : c.image ? (
         <SmartImage
           src={c.image.src}
           alt={c.image.altHe}
@@ -35,7 +72,7 @@ export function CharacterCard({ character, groupLabel, featured = false }: { cha
         <div
           aria-hidden
           className={cn(
-            "relative grid aspect-[4/3] place-items-center overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#163a1c,#0b140d_70%)]",
+            "relative grid aspect-[4/5] place-items-center overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#163a1c,#0b140d_70%)]",
             featured && "md:aspect-auto md:w-2/5",
           )}
         >

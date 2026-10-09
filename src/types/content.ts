@@ -85,6 +85,17 @@ export interface FaqItem {
   source?: SourceLink
 }
 
+/** A freely-licensed portrait from Wikimedia Commons (see scripts/fetch_cast_photos.py) */
+export interface CastPhoto {
+  file: string
+  width: number
+  height: number
+  author: string
+  license: string
+  licenseUrl: string
+  sourceUrl: string
+}
+
 export interface NavLink {
   label: string
   href: `#${string}`
