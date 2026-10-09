@@ -1,0 +1,281 @@
+{
+  "rdj": {
+    "file": "./cast/rdj.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "PhilipRomano",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RobertDowneyJr-byPhilipRomano7_(cropped).jpg"
+  },
+  "evans": {
+    "file": "./cast/evans.jpg",
+    "width": 599,
+    "height": 900,
+    "author": "Sara Komatsu",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Evans_at_the_2025_Toronto_International_Film_Festival_(cropped).jpg"
+  },
+  "hemsworth": {
+    "file": "./cast/hemsworth.jpg",
+    "width": 640,
+    "height": 800,
+    "author": "Kevin Paul",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chris_Hemsworth_-_Crime_101.jpg"
+  },
+  "mackie": {
+    "file": "./cast/mackie.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Quejaytee",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthony_Mackie_on_the_Green_Carpet_at_the_2025_Zurich_Film_Festival_03_(cropped).jpg"
+  },
+  "stan": {
+    "file": "./cast/stan.jpg",
+    "width": 640,
+    "height": 853,
+    "author": "Harald Krichel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sebastian_Stan-64526.jpg"
+  },
+  "rudd": {
+    "file": "./cast/rudd.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Rudd_at_the_2026_New_York_Film_Festival-003.jpg"
+  },
+  "hiddleston": {
+    "file": "./cast/hiddleston.jpg",
+    "width": 640,
+    "height": 801,
+    "author": "Kevin Payravi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tom_Hiddleston_at_the_2024_Toronto_International_Film_Festival_(cropped).jpg"
+  },
+  "liu": {
+    "file": "./cast/liu.jpg",
+    "width": 640,
+    "height": 857,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simu_Liu_by_Gage_Skidmore_2.jpg"
+  },
+  "ramirez": {
+    "file": "./cast/ramirez.jpg",
+    "width": 499,
+    "height": 693,
+    "author": "SWinxy",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guests_at_the_2026_Met_Gala_416_(cropped_2).jpg"
+  },
+  "wright": {
+    "file": "./cast/wright.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Duk3L1xon",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Letitia_Wright_at_2025_SXSW_London_(cropped).jpg"
+  },
+  "duke": {
+    "file": "./cast/duke.jpg",
+    "width": 621,
+    "height": 900,
+    "author": "Zach Catanzareti Photo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Winston_duke_(49562238976).jpg"
+  },
+  "huerta": {
+    "file": "./cast/huerta.jpg",
+    "width": 597,
+    "height": 900,
+    "author": "Kevin Payravi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tenoch_Huerta_2024.jpg"
+  },
+  "moss-bachrach": {
+    "file": "./cast/moss-bachrach.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Amy Hecht",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ebon_Moss-Bachrach_at_the_2026_New_York_Film_Festival_(2).jpg"
+  },
+  "pascal": {
+    "file": "./cast/pascal.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pedro_Pascal_at_the_2026_New_York_Film_Festival-042.jpg"
+  },
+  "kirby": {
+    "file": "./cast/kirby.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Jay Dixit",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vanessa_Kirby_at_the_2024_Toronto_International_Film_Festival_08_(Cropped).jpg"
+  },
+  "quinn": {
+    "file": "./cast/quinn.jpg",
+    "width": 640,
+    "height": 836,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Quinn_by_Gage_Skidmore.jpg"
+  },
+  "pugh": {
+    "file": "./cast/pugh.jpg",
+    "width": 639,
+    "height": 900,
+    "author": "Frank Sun",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florence_Pugh_at_the_2024_Toronto_International_Film_Festival_13_(cropped_2_%E2%80%93_color_adjusted).jpg"
+  },
+  "harbour": {
+    "file": "./cast/harbour.jpg",
+    "width": 466,
+    "height": 603,
+    "author": "PelucheEn ElEstuche",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Harbour_2025.jpg"
+  },
+  "russell": {
+    "file": "./cast/russell.jpg",
+    "width": 640,
+    "height": 850,
+    "author": "JaceMerlyn",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wyatt_Russell_at_Comic_Con_Connections_26_19_(cropped).jpg"
+  },
+  "john-kamen": {
+    "file": "./cast/john-kamen.jpg",
+    "width": 581,
+    "height": 775,
+    "author": "joyparris",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannah_John-Kamen_Ant-Man_%26_The_Wasp_premiere.jpg"
+  },
+  "pullman": {
+    "file": "./cast/pullman.jpg",
+    "width": 640,
+    "height": 800,
+    "author": "Kevin Paul",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lewis_Pullman_at_San_Diego_Comic_Con_2026-2.jpg"
+  },
+  "stewart": {
+    "file": "./cast/stewart.jpg",
+    "width": 640,
+    "height": 832,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Patrick_Stewart_by_Gage_Skidmore_2.jpg"
+  },
+  "mckellen": {
+    "file": "./cast/mckellen.jpg",
+    "width": 627,
+    "height": 900,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SDCC13_-_Ian_McKellen.jpg"
+  },
+  "marsden": {
+    "file": "./cast/marsden.jpg",
+    "width": 621,
+    "height": 900,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Marsden_by_Gage_Skidmore.jpg"
+  },
+  "grammer": {
+    "file": "./cast/grammer.jpg",
+    "width": 640,
+    "height": 854,
+    "author": "Exchanges Photos",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kelsey_Grammer_Young_Washington_Film_Screening_2026_(cropped).jpg"
+  },
+  "cumming": {
+    "file": "./cast/cumming.jpg",
+    "width": 640,
+    "height": 855,
+    "author": "Scottish Government",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FM_and_Alan_Cumming_in_NY-4_(cropped).jpg"
+  },
+  "romijn": {
+    "file": "./cast/romijn.jpg",
+    "width": 640,
+    "height": 814,
+    "author": "Gage Skidmore",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rebecca_Romijn_by_Gage_Skidmore_2.jpg"
+  },
+  "tatum": {
+    "file": "./cast/tatum.jpg",
+    "width": 640,
+    "height": 853,
+    "author": "Harald Krichel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Channing_Tatum_at_the_2026_Berlin_International_Film_Festival-69843.jpg"
+  },
+  "atwell": {
+    "file": "./cast/atwell.jpg",
+    "width": 640,
+    "height": 896,
+    "author": "Harald Krichel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hayley_Atwell_2025_(crop).jpg"
+  },
+  "jackman": {
+    "file": "./cast/jackman.jpg",
+    "width": 640,
+    "height": 853,
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hugh_Jackman_Is_This_Thing_On-68_(cropped).jpg"
+  },
+  "reynolds": {
+    "file": "./cast/reynolds.jpg",
+    "width": 600,
+    "height": 900,
+    "author": "Dick Thomas Johnson from Tokyo, Japan",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_(cropped).jpg"
+  }
+}
