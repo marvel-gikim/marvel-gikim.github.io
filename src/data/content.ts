@@ -46,6 +46,7 @@ const S = {
   evansReturn: { label: "TheWrap · כריס אוונס", url: "https://www.thewrap.com/creative-content/movies/chris-evans-marvel-sent-pitches-captain-america-return/" },
   doomTickets: { label: "YouTube · Marvel Philippines", url: "https://www.youtube.com/watch?v=WKBvITriYxM" },
   tvaCast: { label: "Cinefilos · דיווח (באיטלקית)", url: "https://cinefilos.it/cinema-news/2026/avengers-doomsday-cinque-nuovi-attori-mcu-entrano-ufficialmente-nel-cast-723278" },
+  phonesPromo: { label: "YouTube · Marvel Entertainment", url: "https://www.youtube.com/watch?v=nxDMRvDr4AQ" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -271,6 +272,14 @@ export const TRAILERS: Trailer[] = [
     descriptionHe: "הטריילר המלא הראשון לקהל הרחב. יחד איתו נפתחה מכירת הכרטיסים לאולמות Infinity Vision.",
     status: "official",
     source: S.trailer,
+  },
+  {
+    id: "silence-your-phones",
+    youtubeId: "nxDMRvDr4AQ",
+    titleHe: "פרומו · כבו את הטלפונים",
+    descriptionHe: "פרומו רשמי של מארוול לבתי הקולנוע, שמבקש מהקהל להשתיק את הטלפונים לפני דומסדיי.",
+    status: "official",
+    source: S.phonesPromo,
   },
   {
     id: "d23-special-look",
