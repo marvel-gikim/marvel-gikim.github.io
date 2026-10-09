@@ -9,6 +9,12 @@ PAGES = {
  "technosports": "https://technosports.co.in/doctor-dooms-third-costume-revealed-what-lord-doom/",
  "cbm-sdcc": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-a229030",
  "yahoo-toys": "https://www.yahoo.com/entertainment/movies/articles/doctor-doom-suit-thor-helmet-155208150.html",
+ "shh-toys": "https://www.superherohype.com/?p=670968",
+ "shh-costume": "https://www.superherohype.com/?p=639939",
+ "cbm-leaks": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-a228929",
+ "toypeople-1": "https://www.toy-people.com/en/?p=112477",
+ "toypeople-2": "https://www.toy-people.com/en/?p=104750",
+ "toypeople-3": "https://www.toy-people.com/en/?p=113618",
 }
 log = open(f"{OUT}/log.txt", "w")
 for k, u in PAGES.items():
