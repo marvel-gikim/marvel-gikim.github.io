@@ -326,29 +326,29 @@
   "rdj-alt": {
     "file": "./cast/rdj-alt.jpg",
     "width": 640,
-    "height": 853,
+    "height": 771,
     "author": "nagi usano",
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr._-_2019_Disney_Legends_Awards_Ceremony_-_D23_EXPO_2019_(cropped_3).jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Downey_Jr._-_2019_Disney_Legends_Awards_Ceremony_-_D23_EXPO_2019_(cropped2).jpg"
   },
   "stan-alt": {
     "file": "./cast/stan-alt.jpg",
     "width": 640,
-    "height": 896,
-    "author": "GabboT",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:WW_Chicago_2014_-_Sebastian_Stan_01_(15035666116).jpg"
+    "height": 853,
+    "author": "Jay Dixit",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sebastian_Stan_in_2024.jpg"
   },
   "jackman-alt": {
     "file": "./cast/jackman-alt.jpg",
-    "width": 640,
-    "height": 853,
-    "author": "Franz Richter (User:FRZ)",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hugh_Jackman_3380.jpg"
+    "width": 600,
+    "height": 900,
+    "author": "Dick Thomas Johnson from Tokyo, Japan",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logan_Japan_Premiere_Red_Carpet-_Hugh_Jackman_(38501225701).jpg"
   },
   "evans-alt": {
     "file": "./cast/evans-alt.jpg",
