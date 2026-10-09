@@ -43,6 +43,7 @@ const S = {
   rdjFactCheck: { label: "MEAWW · בדיקת עובדות", url: "https://news.meaww.com/fact-check-did-robert-downey-jr-say-doomsday-will-be-more-heartbreaking-than-endgame" },
   stanHeartbreaking: { label: "TheWrap · סבסטיאן סטן", url: "https://www.thewrap.com/creative-content/movies/sebastian-stan-avengers-doomsday-prediction-heartbreaking/" },
   rdjVariety: { label: "Variety · רוברט דאוני ג׳וניור", url: "https://variety.com/2026/film/news/robert-downey-jr-avengers-doomsday-wont-let-down-marvel-fans-1236784201/" },
+  evansReturn: { label: "TheWrap · כריס אוונס", url: "https://www.thewrap.com/creative-content/movies/chris-evans-marvel-sent-pitches-captain-america-return/" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -401,7 +402,7 @@ export const JACKMAN_PREDICTION = {
   speakerHe: "יו ג׳קמן, ב-2013",
   contextHe:
     "בראיון לקידום ״וולברין״ (2013), כשהזכויות על האקס-מן עוד היו בידי פוקס, הנוקמים אצל מארוול וספיידרמן אצל סוני. הראיון עלה מחדש לאחרונה כ״תחזית״ לדומסדיי. בתרגום חופשי.",
-  photoKey: "jackman",
+  photoKey: "jackman-alt",
   photoLabelHe: "יו ג׳קמן",
   source: S.jackmanPrediction,
 }
@@ -522,9 +523,21 @@ export const RDJ_QUOTE = {
   speakerHe: "רוברט דאוני ג׳וניור, דוקטור דום",
   contextHe:
     "בראיון ל-CBR יחד עם ג׳ו רוסו, על האתגר להמשיך אחרי ״מלחמת האינסוף״ ו״סוף המשחק״. שימו לב: הציטוט שמסתובב ברשת, שלפיו דאוני אמר שהסוף יהיה ״הרסני״, מזויף. הוא התחיל כפוסט סאטירי.",
-  photoKey: "rdj",
+  photoKey: "rdj-alt",
   photoLabelHe: "רוברט דאוני ג׳וניור",
   source: S.rdjVariety,
+}
+
+export const EVANS_QUOTE = {
+  quoteHe:
+    "במשך שמונה שנים שמעתי כנראה לפחות תריסר הצעות. ואז ג׳ו רוסו הציג לי את הסיפור, ודאוני היה בפנים. פתאום זה היה כמו: ׳זהו, זה זה׳.",
+  quoteEn: "Over the course of eight years, I probably heard at least a dozen pitches… It just all of a sudden… it was like, 'This is it.'",
+  speakerHe: "כריס אוונס, סטיב רוג׳רס",
+  contextHe:
+    "בקומיק-קון 2026, בשיחה עם Entertainment Weekly, על הסיבה שחזר. לדבריו, כל ההצעות הקודמות היו נהדרות, אבל אף אחת לא הרגישה נכונה עד שהגיע הסיפור של האחים רוסו.",
+  photoKey: "evans-alt",
+  photoLabelHe: "כריס אוונס",
+  source: S.evansReturn,
 }
 
 export const STAN_QUOTE = {
@@ -532,7 +545,7 @@ export const STAN_QUOTE = {
   quoteEn: "I'm sure it's going to be probably heartbreaking, in a lot of ways.",
   speakerHe: "סבסטיאן סטן, באקי בארנס",
   contextHe: "סטן הודה שעוד לא ראה את הסרט ולא יודע איך הוא יצא. לדבריו, השחקנים צילמו סצנות מפוזרות בלי תסריט מלא.",
-  photoKey: "stan",
+  photoKey: "stan-alt",
   photoLabelHe: "סבסטיאן סטן",
   source: S.stanHeartbreaking,
 }

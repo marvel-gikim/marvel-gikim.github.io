@@ -38,6 +38,7 @@ import {
   DOOM_SUIT_IMAGES,
   RDJ_QUOTE,
   STAN_QUOTE,
+  EVANS_QUOTE,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -351,6 +352,7 @@ export default function App() {
             <RumorFeature {...DOOM_SUITS_RUMOR} frames={DOOM_SUIT_IMAGES} />
             <DirectorsQuote {...RDJ_QUOTE} photo={photos[RDJ_QUOTE.photoKey]} />
             <DirectorsQuote {...STAN_QUOTE} photo={photos[STAN_QUOTE.photoKey]} />
+            <DirectorsQuote {...EVANS_QUOTE} photo={photos[EVANS_QUOTE.photoKey]} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">
