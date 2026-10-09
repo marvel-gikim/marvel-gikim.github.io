@@ -1,6 +1,9 @@
 {
   "rdj-alt": "Robert Downey Jr.",
-  "stan-alt": "Sebastian Stan",
+  "stan-alt": {
+    "person": "Sebastian Stan",
+    "candidates": true
+  },
   "jackman-alt": "Hugh Jackman",
   "evans-alt": "Chris Evans"
 }

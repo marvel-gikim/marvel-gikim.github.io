@@ -71,14 +71,40 @@ def main():
     # Second, different photos (for quote cards), searched on Wikimedia Commons (all files there are free)
     alt = json.load(open(os.path.join(ROOT, "scripts", "alt_photos.json"), encoding="utf-8"))
     used = {c["sourceUrl"] for c in credits.values()}
-    for cid, person in alt.items():
+    cand_dir = os.path.join(ROOT, "candidates")
+    shutil.rmtree(cand_dir, ignore_errors=True)
+    os.makedirs(cand_dir, exist_ok=True)
+    cand_log = {}
+    for cid, spec in alt.items():
+        # spec: "Person Name" or {"person": ..., "file": "File:exact.jpg", "candidates": true}
+        spec = {"person": spec} if isinstance(spec, str) else spec
+        person = spec["person"]
         try:
-            res = commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 40,
+            res = commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 50,
                            "srsearch": f'intitle:"{person}" filetype:bitmap'})["query"]["search"]
+            if spec.get("candidates"):
+                # Save thumbnails of possible photos so a person can choose one (not published)
+                n = 0
+                for hit in res:
+                    try:
+                        ci = commons({"action": "query", "titles": hit["title"], "prop": "imageinfo",
+                                      "iiprop": "url|size", "iiurlwidth": 320})["query"]["pages"][0]["imageinfo"][0]
+                        if ci["height"] < ci["width"] or ci["width"] < 800:
+                            continue
+                        with urllib.request.urlopen(urllib.request.Request(ci["thumburl"], headers=UA), timeout=60) as r:
+                            open(os.path.join(cand_dir, f"{cid}-{n:02d}.jpg"), "wb").write(r.read())
+                        cand_log[f"{cid}-{n:02d}"] = hit["title"]
+                        n += 1
+                        if n >= 16:
+                            break
+                    except Exception:
+                        pass
+            if spec.get("file"):
+                res = [{"title": spec["file"]}]
             for hit in res:
                 info = commons({"action": "query", "titles": hit["title"], "prop": "imageinfo",
                                 "iiprop": "url|extmetadata|size", "iiurlwidth": 640})["query"]["pages"][0]["imageinfo"][0]
-                if info.get("descriptionurl") in used or info["height"] < info["width"] or info["width"] < 800:
+                if not spec.get("file") and (info.get("descriptionurl") in used or info["height"] < info["width"] or info["width"] < 800):
                     continue  # want a different, portrait, decent-size photo
                 meta = info.get("extmetadata", {})
                 license_name = clean(meta.get("LicenseShortName", {}).get("value"))
@@ -104,6 +130,7 @@ def main():
         except Exception as e:
             missing.append(cid)
             print("miss", cid, e)
+    json.dump(cand_log, open(os.path.join(cand_dir, "candidates.json"), "w"), indent=2)
     json.dump(credits, open(os.path.join(OUT, "credits.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     shutil.rmtree(PUBLIC, ignore_errors=True)
     shutil.copytree(OUT, PUBLIC)
