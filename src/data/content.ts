@@ -40,6 +40,9 @@ const S = {
   steveTheories: { label: "ComicBookMovie · תיאוריות על סטיב", url: "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-trailer-spawns-wild-steve-rogers-and-crafty-character-editing-theories-a228932" },
   doomSuits: { label: "The Direct · החליפה השלישית של דום", url: "https://thedirect.com/article/avengers-doomsday-merch-doctor-doom-third-costume" },
   doomSuitsLord: { label: "TechnoSports · ״לורד דום״", url: "https://technosports.co.in/doctor-dooms-third-costume-revealed-what-lord-doom/" },
+  rdjFactCheck: { label: "MEAWW · בדיקת עובדות", url: "https://news.meaww.com/fact-check-did-robert-downey-jr-say-doomsday-will-be-more-heartbreaking-than-endgame" },
+  stanHeartbreaking: { label: "TheWrap · סבסטיאן סטן", url: "https://www.thewrap.com/creative-content/movies/sebastian-stan-avengers-doomsday-prediction-heartbreaking/" },
+  rdjVariety: { label: "Variety · רוברט דאוני ג׳וניור", url: "https://variety.com/2026/film/news/robert-downey-jr-avengers-doomsday-wont-let-down-marvel-fans-1236784201/" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -509,6 +512,33 @@ export const DOOM_SUITS_RUMOR = {
       textHe:
         "בבובת פאנקו בשם ״Lord Doom״ דום לבוש כמו מלך או גנרל אירופי: דגל לטבריה על החזה, כמעט בלי שריון, וקישוטים מוזהבים במקום כסופים. אולי זה הלבוש שלו כשליט לטבריה, או לבוש מפלאשבקים. זה עוד לא אושר.",
       source: S.doomSuitsLord,
+    },
+  ],
+}
+
+export const RDJ_FACT_CHECK = {
+  titleHe: "בדיקת עובדות: האם דאוני אמר שהסיום יהיה ״הרסני״?",
+  status: "rumor" as const,
+  sceneHe:
+    "ברשתות הופץ ציטוט שלפיו רוברט דאוני ג׳וניור אמר שהסוף של דומסדיי יהיה שובר לב יותר מ״סוף המשחק״, ואפילו ״הרסני״. בדיקת עובדות מצאה שהציטוט בדוי: הוא התחיל כפוסט סאטירי, ואין שום ראיון או הצהרה שבהם דאוני אמר אותו.",
+  sceneSource: S.rdjFactCheck,
+  blocks: [
+    {
+      titleHe: "מה הופץ",
+      textHe: "פוסט ויראלי ב-X ייחס לדאוני את המשפט ״זה הולך להיות הרסני״. כלי תקשורת רציניים לא דיווחו על ציטוט כזה, כי הוא לא נאמר.",
+      source: S.rdjFactCheck,
+    },
+    {
+      titleHe: "מי באמת אמר ״שובר לב״",
+      textHe:
+        "סבסטיאן סטן (באקי). הוא אמר שהוא ״בטוח שזה יהיה כנראה שובר לב, בהרבה מובנים״, אבל הודה שלא ראה את הסרט ולא יודע איך הוא יצא.",
+      source: S.stanHeartbreaking,
+    },
+    {
+      titleHe: "מה דאוני אמר באמת",
+      textHe:
+        "בראיון ל-CBR יחד עם ג׳ו רוסו, דאוני אמר שהסרט ״נחת במקום שלדעתי יספק את המעריצים, ואף יותר״. הוא דיבר על כך שהסרט לא יאכזב אחרי ״מלחמת האינסוף״ ו״סוף המשחק״, ולא על הסוף שלו.",
+      source: S.rdjVariety,
     },
   ],
 }

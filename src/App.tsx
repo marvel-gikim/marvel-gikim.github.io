@@ -36,6 +36,7 @@ import {
   STEVE_RUMOR,
   DOOM_SUITS_RUMOR,
   DOOM_SUIT_IMAGES,
+  RDJ_FACT_CHECK,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -103,7 +104,7 @@ export default function App() {
   }, [])
   const gallery: GalleryImage[] = useMemo(
     () =>
-      GALLERY.map((img) => {
+      [...GALLERY, ...DOOM_SUIT_IMAGES].map((img) => {
         const m = img.remoteKey ? fetchedMedia[img.remoteKey] : undefined
         return m ? { ...img, src: m.file, width: m.width, height: m.height } : img
       }),
@@ -347,6 +348,7 @@ export default function App() {
             <InstagramReel {...JACKMAN_REEL} />
             <RumorFeature {...STEVE_RUMOR} frames={STEVE_RUMOR.frameIds.map((id) => GALLERY.find((g) => g.id === id)!).filter(Boolean)} />
             <RumorFeature {...DOOM_SUITS_RUMOR} frames={DOOM_SUIT_IMAGES} />
+            <RumorFeature {...RDJ_FACT_CHECK} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">
