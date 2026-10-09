@@ -3,37 +3,57 @@
     "file": "./media/fetched/yt-main-trailer.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=irVNGjRFZGk"
+    "source": "https://www.youtube.com/watch?v=irVNGjRFZGk",
+    "title": "Avengers: Doomsday | Official Trailer | In Theaters December 18",
+    "channel": "Marvel Entertainment"
   },
   "yt-d23": {
     "file": "./media/fetched/yt-d23.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=X1aFkAkFASk"
+    "source": "https://www.youtube.com/watch?v=X1aFkAkFASk",
+    "title": "Avengers: Doomsday | Special Look | In Theaters December 18",
+    "channel": "Marvel Entertainment"
   },
   "yt-teaser-1": {
     "file": "./media/fetched/yt-teaser-1.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=UiMg566PREA"
+    "source": "https://www.youtube.com/watch?v=UiMg566PREA",
+    "title": "Steve Rogers Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+    "channel": "Marvel Entertainment"
   },
   "yt-teaser-2": {
     "file": "./media/fetched/yt-teaser-2.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=1clWprLC5Ak"
+    "source": "https://www.youtube.com/watch?v=1clWprLC5Ak",
+    "title": "Thor Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+    "channel": "Marvel Entertainment"
   },
   "yt-teaser-3": {
     "file": "./media/fetched/yt-teaser-3.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=kH1XlwHQv9o"
+    "source": "https://www.youtube.com/watch?v=kH1XlwHQv9o",
+    "title": "The X-Men Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+    "channel": "Marvel Entertainment"
   },
   "yt-teaser-4": {
     "file": "./media/fetched/yt-teaser-4.jpg",
     "width": 1280,
     "height": 720,
-    "source": "https://www.youtube.com/watch?v=399Ez7WHK5s"
+    "source": "https://www.youtube.com/watch?v=399Ez7WHK5s",
+    "title": "Avengers: Doomsday | Only in Theaters December 18, 2026",
+    "channel": "Marvel Entertainment"
+  },
+  "yt-teaser-5": {
+    "file": "./media/fetched/yt-teaser-5.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=WKBvITriYxM",
+    "title": "Avengers: Doomsday | Doom Tickets",
+    "channel": "Marvel Philippines"
   },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",

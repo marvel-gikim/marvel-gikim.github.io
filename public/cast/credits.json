@@ -343,12 +343,12 @@
   },
   "jackman-alt": {
     "file": "./cast/jackman-alt.jpg",
-    "width": 600,
-    "height": 900,
-    "author": "Dick Thomas Johnson from Tokyo, Japan",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logan_Japan_Premiere_Red_Carpet-_Hugh_Jackman_(38501225701).jpg"
+    "width": 640,
+    "height": 853,
+    "author": "Franz Richter (User:FRZ)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hugh_Jackman_3380.jpg"
   },
   "evans-alt": {
     "file": "./cast/evans-alt.jpg",
