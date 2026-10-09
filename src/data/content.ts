@@ -530,11 +530,11 @@ export const RDJ_QUOTE = {
 
 export const EVANS_QUOTE = {
   quoteHe:
-    "במשך שמונה שנים שמעתי כנראה לפחות תריסר הצעות. ואז ג׳ו רוסו הציג לי את הסיפור, ודאוני היה בפנים. פתאום זה היה כמו: ׳זהו, זה זה׳.",
+    "במשך שמונה שנים שמעתי כנראה לפחות תריסר הצעות… ואז פתאום זה היה כמו: ׳זהו, זה זה׳.",
   quoteEn: "Over the course of eight years, I probably heard at least a dozen pitches… It just all of a sudden… it was like, 'This is it.'",
   speakerHe: "כריס אוונס, סטיב רוג׳רס",
   contextHe:
-    "בקומיק-קון 2026, בשיחה עם Entertainment Weekly, על הסיבה שחזר. לדבריו, כל ההצעות הקודמות היו נהדרות, אבל אף אחת לא הרגישה נכונה עד שהגיע הסיפור של האחים רוסו.",
+    "בקומיק-קון 2026, בשיחה עם Entertainment Weekly, על הסיבה שחזר. לדבריו, כל ההצעות הקודמות היו נהדרות, אבל אף אחת לא הרגישה נכונה, עד שג׳ו רוסו הציג לו את הסיפור ורוברט דאוני ג׳וניור הצטרף.",
   photoKey: "evans-alt",
   photoLabelHe: "כריס אוונס",
   source: S.evansReturn,
