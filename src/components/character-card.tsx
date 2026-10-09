@@ -98,10 +98,12 @@ export function CharacterCard({
           <p className="text-base font-bold text-brand-pale">
             בתפקיד {c.characterHe}
             {c.characterEn && (
-              <span className="font-normal text-muted">
+              <>
                 {" "}
-                (<bdi dir="ltr">{c.characterEn}</bdi>)
-              </span>
+                <span className="font-normal whitespace-nowrap text-muted">
+                  (<bdi dir="ltr">{c.characterEn}</bdi>)
+                </span>
+              </>
             )}
           </p>
         ) : (
