@@ -1,4 +1,4 @@
-name: Fetch cast photos (Wikimedia Commons)
+name: Fetch cast photos and official media
 
 on:
   workflow_dispatch:
@@ -7,6 +7,8 @@ on:
     paths:
       - 'scripts/cast.json'
       - 'scripts/fetch_cast_photos.py'
+      - 'scripts/media.json'
+      - 'scripts/fetch_media.py'
       - '.github/workflows/fetch-cast-photos.yml'
 
 permissions:
@@ -22,11 +24,12 @@ jobs:
           python-version: '3.12'
       - run: pip install pillow
       - run: python scripts/fetch_cast_photos.py
+      - run: python scripts/fetch_media.py
       - name: Commit photos
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/cast public/cast
+          git add docs/cast public/cast docs/media public/media
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "Add cast photos from Wikimedia Commons"
+          git commit -m "Update cast photos and official media"
           git push

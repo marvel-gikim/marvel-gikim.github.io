@@ -28,7 +28,7 @@ import {
   SOURCES,
   TRAILERS,
 } from "@/data/content"
-import type { CastPhoto, VerificationStatus } from "@/types/content"
+import type { CastPhoto, GalleryImage, VerificationStatus } from "@/types/content"
 
 type Filter = "all" | VerificationStatus
 
@@ -72,6 +72,23 @@ export default function App() {
   const [castFilter, setCastFilter] = useState<Filter>("all")
   const [newsFilter, setNewsFilter] = useState<Filter>("all")
   const [photos, setPhotos] = useState<Record<string, CastPhoto>>({})
+
+  // Official media downloaded by the GitHub Action (YouTube thumbnails, og:images of official pages)
+  const [fetchedMedia, setFetchedMedia] = useState<Record<string, { file: string; width: number; height: number }>>({})
+  useEffect(() => {
+    fetch("./media/fetched.json")
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(setFetchedMedia)
+      .catch(() => setFetchedMedia({}))
+  }, [])
+  const gallery: GalleryImage[] = useMemo(
+    () =>
+      GALLERY.map((img) => {
+        const m = img.remoteKey ? fetchedMedia[img.remoteKey] : undefined
+        return m ? { ...img, src: m.file, width: m.width, height: m.height } : img
+      }),
+    [fetchedMedia],
+  )
 
   // Cast portraits + attribution, downloaded from Wikimedia Commons by a GitHub Action
   useEffect(() => {
@@ -263,7 +280,7 @@ export default function App() {
             <SectionHeading id="gallery-title" eyebrow="גלריה" title="תמונות מהסרט">
               כל תמונה מסומנת לפי המקור שלה: רשמי, או שהתקבלה מהקהילה ועוד לא אומתה. לחצו על תמונה כדי להגדיל אותה.
             </SectionHeading>
-            <MediaGallery items={GALLERY} />
+            <MediaGallery items={gallery} />
           </div>
         </section>
 

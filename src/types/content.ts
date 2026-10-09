@@ -66,6 +66,8 @@ export interface GalleryImage {
   timestamp?: string
   /** CSS object-position used to avoid awkward crops */
   focus?: string
+  /** Key in media/fetched.json (downloaded by the GitHub Action); fills src/size at runtime */
+  remoteKey?: string
 }
 
 export interface NewsItem {
