@@ -277,5 +277,41 @@
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_(cropped).jpg"
+  },
+  "maguire": {
+    "file": "./cast/maguire.jpg",
+    "width": 640,
+    "height": 852,
+    "author": "gdcgraphics",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tobey_Maguire_2014.jpg"
+  },
+  "holland": {
+    "file": "./cast/holland.jpg",
+    "width": 599,
+    "height": 900,
+    "author": "PhilipRomano",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TomHolland-byPhilipRomano.jpg"
+  },
+  "cumberbatch": {
+    "file": "./cast/cumberbatch.jpg",
+    "width": 640,
+    "height": 853,
+    "author": "Harald Krichel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benedict_Cumberbatch-67555.jpg"
+  },
+  "ruffalo": {
+    "file": "./cast/ruffalo.jpg",
+    "width": 640,
+    "height": 852,
+    "author": "Gage Skidmore from Peoria, AZ, United States of America",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mark_Ruffalo_(36201774756)_(cropped).jpg"
   }
 }
