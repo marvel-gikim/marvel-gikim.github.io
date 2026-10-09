@@ -36,7 +36,8 @@ import {
   STEVE_RUMOR,
   DOOM_SUITS_RUMOR,
   DOOM_SUIT_IMAGES,
-  RDJ_FACT_CHECK,
+  RDJ_QUOTE,
+  STAN_QUOTE,
   LAST_REVIEWED,
   NAV_LINKS,
   NEWS,
@@ -348,7 +349,8 @@ export default function App() {
             <InstagramReel {...JACKMAN_REEL} />
             <RumorFeature {...STEVE_RUMOR} frames={STEVE_RUMOR.frameIds.map((id) => GALLERY.find((g) => g.id === id)!).filter(Boolean)} />
             <RumorFeature {...DOOM_SUITS_RUMOR} frames={DOOM_SUIT_IMAGES} />
-            <RumorFeature {...RDJ_FACT_CHECK} />
+            <DirectorsQuote {...RDJ_QUOTE} photo={photos[RDJ_QUOTE.photoKey]} />
+            <DirectorsQuote {...STAN_QUOTE} photo={photos[STAN_QUOTE.photoKey]} />
             <div className="reveal mb-8 flex flex-wrap items-center justify-between gap-4">
               <FilterChips value={newsFilter} onChange={setNewsFilter} counts={countBy(NEWS)} label="סינון עדכונים לפי רמת אימות" />
               <p className="text-sm text-muted">
