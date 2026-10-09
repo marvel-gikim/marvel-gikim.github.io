@@ -39,7 +39,8 @@ export interface Trailer {
   id: string
   titleHe: string
   /** ISO date */
-  publishedAt: string
+  /** Unknown for some regional spots */
+  publishedAt?: string
   descriptionHe: string
   status: VerificationStatus
   source: SourceLink

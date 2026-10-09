@@ -44,6 +44,7 @@ const S = {
   stanHeartbreaking: { label: "TheWrap · סבסטיאן סטן", url: "https://www.thewrap.com/creative-content/movies/sebastian-stan-avengers-doomsday-prediction-heartbreaking/" },
   rdjVariety: { label: "Variety · רוברט דאוני ג׳וניור", url: "https://variety.com/2026/film/news/robert-downey-jr-avengers-doomsday-wont-let-down-marvel-fans-1236784201/" },
   evansReturn: { label: "TheWrap · כריס אוונס", url: "https://www.thewrap.com/creative-content/movies/chris-evans-marvel-sent-pitches-captain-america-return/" },
+  doomTickets: { label: "YouTube · Marvel Philippines", url: "https://www.youtube.com/watch?v=WKBvITriYxM" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -268,6 +269,14 @@ export const TRAILERS: Trailer[] = [
     descriptionHe: "הטריילר המלא הראשון לקהל הרחב. יחד איתו נפתחה מכירת הכרטיסים לאולמות Infinity Vision.",
     status: "official",
     source: S.trailer,
+  },
+  {
+    id: "doom-tickets",
+    youtubeId: "WKBvITriYxM",
+    titleHe: "טיזר הכרטיסים · Doom Tickets",
+    descriptionHe: "טיזר קצר לקידום מכירת הכרטיסים לסרט, מהערוץ הרשמי של Marvel בפיליפינים.",
+    status: "official",
+    source: S.doomTickets,
   },
   {
     id: "d23-special-look",

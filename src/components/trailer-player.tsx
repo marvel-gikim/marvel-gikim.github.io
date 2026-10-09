@@ -67,7 +67,7 @@ export function TrailerPlayer({ trailers }: { trailers: Trailer[] }) {
               </span>
               <span className="absolute inset-x-0 bottom-0 hidden p-5 text-start sm:block sm:p-7">
                 <span className="block text-2xl font-black sm:text-3xl">{selected.titleHe}</span>
-                <span className="mt-1 block text-sm text-muted">{formatHebrewDate(selected.publishedAt)}</span>
+                {selected.publishedAt && <span className="mt-1 block text-sm text-muted">{formatHebrewDate(selected.publishedAt)}</span>}
               </span>
             </button>
           ) : (
@@ -87,7 +87,7 @@ export function TrailerPlayer({ trailers }: { trailers: Trailer[] }) {
             <p className="mt-2 leading-7 text-muted">{selected.descriptionHe}</p>
           </div>
           <div className="flex flex-col items-start gap-2 text-sm">
-            <span className="text-muted">פורסם: {formatHebrewDate(selected.publishedAt)}</span>
+            {selected.publishedAt && <span className="text-muted">פורסם: {formatHebrewDate(selected.publishedAt)}</span>}
             <SourceLink source={selected.source} />
             {selected.youtubeId && (
               <a
@@ -139,7 +139,7 @@ export function TrailerPlayer({ trailers }: { trailers: Trailer[] }) {
               </span>
               <span className="min-w-0">
                 <span className={cn("block truncate font-bold", isActive && "text-brand-pale")}>{t.titleHe}</span>
-                <span className="mt-0.5 block text-xs text-muted">{formatHebrewDate(t.publishedAt)}</span>
+                {t.publishedAt && <span className="mt-0.5 block text-xs text-muted">{formatHebrewDate(t.publishedAt)}</span>}
               </span>
             </button>
           )
