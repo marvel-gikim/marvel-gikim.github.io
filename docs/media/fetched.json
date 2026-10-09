@@ -1,0 +1,52 @@
+{
+  "yt-main-trailer": {
+    "file": "./media/fetched/yt-main-trailer.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=irVNGjRFZGk"
+  },
+  "yt-d23": {
+    "file": "./media/fetched/yt-d23.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=X1aFkAkFASk"
+  },
+  "yt-teaser-1": {
+    "file": "./media/fetched/yt-teaser-1.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=UiMg566PREA"
+  },
+  "yt-teaser-2": {
+    "file": "./media/fetched/yt-teaser-2.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=1clWprLC5Ak"
+  },
+  "yt-teaser-3": {
+    "file": "./media/fetched/yt-teaser-3.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=kH1XlwHQv9o"
+  },
+  "yt-teaser-4": {
+    "file": "./media/fetched/yt-teaser-4.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=399Ez7WHK5s"
+  },
+  "disney-trailer-poster": {
+    "file": "./media/fetched/disney-trailer-poster.jpg",
+    "width": 787,
+    "height": 787,
+    "source": "https://press.disney.co.uk/news/marvel-studios-avengers-doomsday-debuts-new-trailer-and-poster",
+    "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/avengers_doomsday_trailer_still_7_cc99a191.jpeg?region=567%2C0%2C787%2C787"
+  },
+  "marvel-keyart": {
+    "file": "./media/fetched/marvel-keyart.jpg",
+    "width": 1600,
+    "height": 762,
+    "source": "https://www.marvel.com/movies/avengers-doomsday",
+    "imageUrl": "https://cdn.marvel.com/content/2x/avengersdoomsday_lob_mas_mob_03.webp"
+  }
+}
