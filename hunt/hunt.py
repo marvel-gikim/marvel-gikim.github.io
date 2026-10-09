@@ -1,14 +1,15 @@
 """One-off: find the official trailer frame of Steve Rogers catching Mjolnir.
 1) og:image of articles about that moment; 2) frames from the official trailer via yt-dlp (1 per second, contact sheets)."""
-import html, io, os, re, subprocess, urllib.request, glob
+import html, io, os, re, subprocess, urllib.request, urllib.parse, glob
 from PIL import Image, ImageDraw
-OUT = "hunt/out"; os.makedirs(OUT, exist_ok=True)
+OUT = "hunt/out2"; os.makedirs(OUT, exist_ok=True)
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 PAGES = {
- "popverse": "https://www.thepopverse.com/movies-avengers-doomsday-chris-evans-steve-rogers-reveal-still-worthy-captain-america-thor-mjolnir",
- "fpj": "https://www.freepressjournal.in/entertainment/avengers-doomsday-trailer-teases-steve-rogers-lifting-mjlnir-once-again-how-captain-america-wields-thors-hammer",
- "pinkvilla": "https://www.pinkvilla.com/entertainment/hollywood/avengers-doomsday-trailer-chris-evans-returns-to-wield-mjolnir-after-robert-downey-jrs-ruthless-doctor-doom-creates-havoc-1404442",
- "inquirer": "https://entertainment.inquirer.net/677803/avengers-doomsday-first-trailer-reveals-mcus-biggest-crossover-yet",
+ "thedirect": "https://thedirect.com/article/avengers-doomsday-merch-doctor-doom-third-costume",
+ "technosports": "https://technosports.co.in/doctor-dooms-third-costume-revealed-what-lord-doom/",
+ "cbm-sdcc": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-detailed-look-at-doctor-dooms-costume-at-comic-con-reveals-hidden-details-a229030",
+ "yahoo-toys": "https://www.yahoo.com/entertainment/movies/articles/doctor-doom-suit-thor-helmet-155208150.html",
+ "cbm-leaks": "https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-a-fresh-wave-of-leaks-reveal-new-doctor-doom-spider-man-and-x-men-details-a228929",
 }
 log = open(f"{OUT}/log.txt", "w")
 for k, u in PAGES.items():
@@ -19,9 +20,21 @@ for k, u in PAGES.items():
         data = urllib.request.urlopen(urllib.request.Request(img, headers=UA), timeout=60).read()
         im = Image.open(io.BytesIO(data)).convert("RGB"); im.thumbnail((1600, 1600)); im.save(f"{OUT}/og-{k}.jpg", quality=88)
         log.write(f"og {k} {img} {im.size}\n")
+        n = 0
+        for mm in re.finditer(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\'][^>]*>', t):
+            src = urllib.parse.urljoin(u, html.unescape(mm.group(1)))
+            alt = (re.search(r'\balt=["\']([^"\']*)', mm.group(0)) or [None, ""])[1]
+            try:
+                d2 = urllib.request.urlopen(urllib.request.Request(src, headers=UA), timeout=30).read()
+                im2 = Image.open(io.BytesIO(d2)).convert("RGB")
+                if min(im2.size) < 350: continue
+                n += 1; im2.thumbnail((1600, 1600)); im2.save(f"{OUT}/{k}-img{n}.jpg", quality=86)
+                log.write(f"  img {k}-img{n} {src} {im2.size} alt={alt[:100]}\n")
+            except Exception as e2:
+                pass
     except Exception as e:
         log.write(f"og {k} FAIL {e}\n")
-try:
+if False:
     subprocess.run(["yt-dlp", "-f", "bv*[height<=1080][ext=mp4]/bv*[height<=1080]/b", "-o", "hunt/trailer.%(ext)s", "https://www.youtube.com/watch?v=irVNGjRFZGk"], check=True, timeout=600)
     vid = glob.glob("hunt/trailer.*")[0]
     os.makedirs("hunt/frames", exist_ok=True)
@@ -39,6 +52,5 @@ try:
     os.makedirs(f"{OUT}/frames", exist_ok=True)
     for f in frames:  # keep full frames, compressed, so the best one can be picked later
         Image.open(f).save(f"{OUT}/frames/{os.path.basename(f)}", quality=82)
-except Exception as e:
-    log.write(f"yt FAIL {e}\n")
+
 log.close()
