@@ -52,10 +52,10 @@ export function SiteHeader({ links, cta }: SiteHeaderProps) {
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#top" className="group flex items-center gap-3" aria-label="מארוול גיקים, חזרה לראש העמוד">
           <BrandLogo size={44} className="transition-transform duration-500 group-hover:scale-105" />
-          <span className="text-lg font-black tracking-tight">מארוול גיקים</span>
+          <span className="text-lg font-black tracking-tight whitespace-nowrap">מארוול גיקים</span>
         </a>
 
-        <nav aria-label="ניווט ראשי" className="hidden lg:block">
+        <nav aria-label="ניווט ראשי" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {links.map((l) => (
               <li key={l.href}>
@@ -84,7 +84,7 @@ export function SiteHeader({ links, cta }: SiteHeaderProps) {
 
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden" aria-label="פתיחת התפריט">
+              <Button variant="outline" size="icon" className="xl:hidden" aria-label="פתיחת התפריט">
                 <Menu aria-hidden />
               </Button>
             </DialogTrigger>

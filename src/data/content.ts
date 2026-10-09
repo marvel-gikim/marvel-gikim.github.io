@@ -52,6 +52,7 @@ export const SOURCES = S
 
 export const NAV_LINKS: NavLink[] = [
   { label: "ראשי", href: "#top" },
+  { label: "על העמוד", href: "#about-page" },
   { label: "על הסרט", href: "#about" },
   { label: "דמויות", href: "#characters" },
   { label: "טריילרים", href: "#trailers" },

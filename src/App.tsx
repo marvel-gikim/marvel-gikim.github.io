@@ -16,6 +16,7 @@ import { RumorFeature } from "@/components/rumor-feature"
 import { CastGallery } from "@/components/cast-gallery"
 import { ActorPage } from "@/components/actor-page"
 import { SecretWarsSection } from "@/components/secret-wars-section"
+import { AboutPageSection } from "@/components/about-page-section"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute } from "@/hooks/use-actor-route"
 import { SourceLink } from "@/components/source-link"
@@ -162,6 +163,9 @@ export default function App() {
         />
 
         <CreditsMarquee cast={CHARACTERS} />
+
+        {/* ===== About the page (Marvel Gikim) ===== */}
+        <AboutPageSection socials={SOCIALS} />
 
         {/* ===== About ===== */}
         <section id="about" aria-labelledby="about-title" className="relative overflow-hidden py-24 sm:py-32">
