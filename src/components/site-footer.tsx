@@ -68,6 +68,26 @@ export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
         )}
       </div>
       <div className="border-t border-border">
+        <div id="copyright" className="mx-auto max-w-7xl space-y-2 px-4 pt-5 text-xs leading-6 text-muted sm:px-6 lg:px-8">
+          <p>
+            <span className="font-bold text-foreground/80">זכויות יוצרים: </span>
+            כל הזכויות על הדמויות, השמות, התמונות, הסרטונים והחומרים של מארוול שמופיעים באתר שייכות לבעליהן, ובהם <bdi dir="ltr">Marvel</bdi> ו-
+            <bdi dir="ltr">Disney</bdi>. תמונות מאתרים אחרים שייכות לבעליהן ומופיעות עם קרדיט ומקור. אתר מעריצים עצמאי וללא מטרות רווח, לצורכי מידע ודיון.
+          </p>
+          <p>
+            <span className="font-bold text-foreground/80">רוצים שנסיר משהו? </span>
+            אם יש לכם זכויות בתמונה או בחומר שמופיע כאן ואתם רוצים שנסיר אותו, שלחו לנו הודעה{" "}
+            <a
+              href="https://www.instagram.com/marv.elgikim/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-brand-pale underline decoration-brand/50 underline-offset-4 hover:decoration-brand-pale"
+            >
+              באינסטגרם <bdi dir="ltr">@marv.elgikim</bdi>
+            </a>
+            , ונסיר אותו בהקדם.
+          </p>
+        </div>
         <p className="mx-auto max-w-7xl px-4 py-5 text-xs text-muted/80 sm:px-6 lg:px-8">
           עודכן לאחרונה: <time dateTime={lastReviewed}>{formatHebrewDate(lastReviewed)}</time> · התוכן נבדק ידנית. אין באתר עדכון חי.
         </p>
