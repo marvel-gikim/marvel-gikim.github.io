@@ -36,4 +36,5 @@ jobs:
           git add docs/cast public/cast docs/media public/media candidates
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Update cast photos and official media"
+          git pull --rebase origin main
           git push
