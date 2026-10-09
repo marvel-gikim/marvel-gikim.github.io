@@ -128,14 +128,14 @@ export default function App() {
           subtitle="כל המידע. כל הטריילרים. כל העדכונים."
           primaryButton={{ label: "צפו בטריילר", href: "#trailers" }}
           secondaryButton={{ label: "גלו את כל הפרטים", href: "#about" }}
-          background={{ src: HERO_IMAGE.src!, alt: HERO_IMAGE.altHe, focus: "50% 18%", width: HERO_IMAGE.width, height: HERO_IMAGE.height }}
+          background={{ src: HERO_IMAGE.src, alt: HERO_IMAGE.altHe, focus: "50% 30%", width: HERO_IMAGE.width, height: HERO_IMAGE.height }}
           infoItems={[
             { label: "בכורה", value: <>{formatHebrewDate(FILM.releaseDate)} <span className="text-sm font-normal text-muted">(ארה״ב)</span></> },
             { label: "בימוי", value: "האחים רוסו" },
             { label: "אולפן", value: <bdi dir="ltr">{FILM.studioEn}</bdi> },
           ]}
           aside={<ReleaseCountdown releaseDate={FILM.releaseDate} regionHe={FILM.releaseRegionHe} />}
-          imageCredit="תמונת הרקע: פוסטר הדמות של דוקטור דום, שהתקבל מהקהילה. מקור לא אומת. © Marvel"
+          imageCredit="תמונת הרקע: תמונת המפתח הרשמית מעמוד הסרט ב-marvel.com · © Marvel"
         />
 
         {/* ===== About ===== */}

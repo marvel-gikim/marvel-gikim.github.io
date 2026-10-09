@@ -8,6 +8,7 @@ import { SourceLink } from "@/components/source-link"
 
 const KIND_LABEL: Record<MediaKind, string> = {
   poster: "פוסטר",
+  "key-art": "תמונת מפתח רשמית",
   still: "תמונת סט רשמית",
   "trailer-frame": "פריים מטריילר",
   "trailer-thumbnail": "תמונה ממוזערת של טריילר",

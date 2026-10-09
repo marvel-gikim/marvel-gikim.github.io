@@ -106,11 +106,11 @@ export const GALLERY: GalleryImage[] = [
     remoteKey: "disney-trailer-poster",
     width: 1200,
     height: 630,
-    altHe: "התמונה הרשמית מהודעת העיתונות של דיסני על הטריילר והפוסטר החדשים",
-    captionHe: "התמונה הראשית של הודעת העיתונות של דיסני בבריטניה, ״הנוקמים: דומסדיי מציג טריילר ופוסטר חדשים״.",
-    kind: "poster",
+    altHe: "יד משוריינת מורמת ואוחזת בברק כחול, ודוקטור דום בברדס בצד התמונה",
+    captionHe: "סטילס רשמי מהטריילר: דום מרים יד משוריינת שאוחזת בברק כחול.",
+    kind: "still",
     provenance: "official",
-    provenanceNoteHe: "התמונה שהעמוד הרשמי של Disney UK Press מגדיר כתמונה הראשית שלו.",
+    provenanceNoteHe: "תמונת הסטילס שמופיעה בהודעת העיתונות הרשמית של Disney UK על הטריילר והפוסטר החדשים.",
     source: { label: "Disney UK Press", url: "https://press.disney.co.uk/news/marvel-studios-avengers-doomsday-debuts-new-trailer-and-poster" },
   },
   {
@@ -118,9 +118,9 @@ export const GALLERY: GalleryImage[] = [
     remoteKey: "marvel-keyart",
     width: 1200,
     height: 630,
-    altHe: "התמונה הרשמית מעמוד הסרט באתר מארוול",
-    captionHe: "התמונה הראשית של עמוד הסרט באתר marvel.com.",
-    kind: "poster",
+    altHe: "דוקטור דום בגלימה ירוקה ארוכה, בגבו אל הצופה, מול מדרגות חדר הכס ושני לפידים",
+    captionHe: "תמונת המפתח הרשמית: דום בגלימה ירוקה עומד מול מדרגות חדר הכס, ומסיכה בידו.",
+    kind: "key-art",
     provenance: "official",
     provenanceNoteHe: "התמונה שעמוד הסרט הרשמי ב-marvel.com מגדיר כתמונה הראשית שלו.",
     source: { label: "Marvel.com · עמוד הסרט", url: "https://www.marvel.com/movies/avengers-doomsday" },
@@ -199,7 +199,13 @@ export const GALLERY: GalleryImage[] = [
   },
 ]
 
-export const HERO_IMAGE = GALLERY[0]
+/** Official key art from marvel.com (downloaded by the GitHub Action into public/ and docs/) */
+export const HERO_IMAGE = {
+  src: "./media/fetched/marvel-keyart.jpg",
+  width: 1600,
+  height: 762,
+  altHe: "דוקטור דום בגלימה ירוקה מול מדרגות חדר הכס",
+}
 
 // ===== Trailers =====
 export const TRAILERS: Trailer[] = [

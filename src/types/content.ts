@@ -47,7 +47,7 @@ export interface Trailer {
   youtubeId?: string
 }
 
-export type MediaKind = "poster" | "still" | "trailer-frame" | "trailer-thumbnail"
+export type MediaKind = "poster" | "key-art" | "still" | "trailer-frame" | "trailer-thumbnail"
 
 export interface GalleryImage {
   id: string

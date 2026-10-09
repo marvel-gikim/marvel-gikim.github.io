@@ -32,7 +32,9 @@ def og_image(page_url):
         m = re.search(r'<meta[^>]+(?:property|name)=["\']%s["\'][^>]+content=["\']([^"\']+)' % prop, page) or \
             re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']%s["\']' % prop, page)
         if m:
-            return urllib.request.urljoin(page_url, html.unescape(m.group(1)))
+            url = urllib.request.urljoin(page_url, html.unescape(m.group(1)))
+            # Disney's CDN crops via ?region=...; drop it to get the full, uncropped image
+            return re.sub(r"[?&]region=[^&]*", "", url).replace("?&", "?").rstrip("?")
     raise ValueError("no og:image")
 
 
