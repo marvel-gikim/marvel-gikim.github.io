@@ -38,15 +38,22 @@ def meta(text, prop):
     return html.unescape(m.group(1)) if m else None
 
 
+# Marvel's image CDN: <base>/<variant>.<ext>; <base>.jpg is the original, full-size image
+MG = r'(?:https?:)?//(?:cdn\.marvel\.com|i\.annihil\.us)/u/prod/marvel/i/mg/[0-9a-f]/[0-9a-f]+/[0-9a-f]+(?:/[a-z_]+)?\.(?:jpg|webp)'
+
+
+def full_size(u):
+    base = re.sub(r"(/[a-z_]+)?\.(jpg|webp)$", "", u)
+    return [base + ".jpg", base + "/detail.jpg", u]
+
+
 def cover_candidates(issue_html, issue_url):
     urls = []
     # Marvel's image CDN: <path>/<variant>.jpg ; "detail" is the full-size cover
-    for m in re.finditer(r'(https?:)?//i\.annihil\.us/u/prod/marvel/i/mg/[0-9a-f/]+/[0-9a-f]+(?:/[a-z_]+)?\.jpg', issue_html):
+    for m in re.finditer(MG, issue_html):
         u = m.group(0)
         u = ("https:" + u) if u.startswith("//") else u
-        base = re.sub(r"/[a-z_]+\.jpg$", "", u)
-        base = re.sub(r"\.jpg$", "", base)
-        urls += [base + "/detail.jpg", base + ".jpg", u]
+        urls += full_size(u)
     og = meta(issue_html, "og:image")
     if og:
         urls.append(urllib.request.urljoin(issue_url, og))
@@ -80,7 +87,9 @@ def main():
         except Exception as e:
             log.append(f"issue {num} page failed: {e}")
             continue
-        for cand in cover_candidates(text, url):
+        cands = cover_candidates(text, url)
+        log.append(f"issue {num}: {len(text)} chars, {len(cands)} candidates")
+        for cand in cands:
             try:
                 result["covers"][num] = {**save(f"cover-{num}", fetch(cand)), "source": url, "imageUrl": cand,
                                          "onsale": (re.search(r'Published:\s*</strong>\s*([^<]+)', text) or [None, None])[1]}
@@ -113,11 +122,16 @@ def main():
             seen.add(src)
             alt = html.unescape((re.search(r'\balt=["\']([^"\']*)["\']', tag) or [None, ""])[1])
             full = re.sub(r"\?.*$", "", src)
-            for cand in (full, src):
+            # The nearest issue link around the image tells which comic a cover belongs to
+            around = text[max(0, m.start() - 1500): m.end() + 1500]
+            link = re.search(r'/comics/issue/\d+/[a-z0-9_]+', around)
+            cands = full_size(full) if re.fullmatch(MG, full) else [full, src]
+            for cand in cands:
                 try:
                     n += 1
                     key = f"article-{n:02d}"
-                    result["articles"].append({**save(key, fetch(cand), 400), "source": art, "imageUrl": cand, "alt": alt})
+                    result["articles"].append({**save(key, fetch(cand), 400), "source": art, "imageUrl": cand, "alt": alt,
+                                               "issueLink": link.group(0) if link else None})
                     print("article img", key, cand, alt)
                     break
                 except Exception as e:
