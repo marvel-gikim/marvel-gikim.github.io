@@ -132,11 +132,11 @@ function Spoiler({ text }: { text: string }) {
 
 /**
  * Article header over a muted, looping YouTube video (embedded from YouTube, not copied).
- * Has a pause button, and shows only the still image when the visitor prefers less motion.
+ * Has a pause button; starts paused only when the accessibility menu's "stop animations" is on.
  */
 function VideoHero({ videoId, poster, children }: { videoId: string; poster?: string; children: ReactNode }) {
-  const prefersStill =
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.classList.contains("a11y-no-motion")
+  // Plays by default; only the site's own "stop animations" accessibility option starts it paused
+  const prefersStill = document.documentElement.classList.contains("a11y-no-motion")
   const [playing, setPlaying] = useState(!prefersStill)
   const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`
   return (
