@@ -79,6 +79,14 @@
     "title": "Avengers: Doomsday | OFFICIAL SCREENX TRAILER 2",
     "channel": "SCREENX"
   },
+  "yt-live-1016": {
+    "file": "./media/fetched/yt-live-1016.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=f17J3AXVK5w",
+    "title": "AVENGERS: DOOMSDAY CLOCK",
+    "channel": "Marvel Entertainment"
+  },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
     "width": 1600,
