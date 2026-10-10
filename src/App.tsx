@@ -18,6 +18,7 @@ import { ActorPage } from "@/components/actor-page"
 import { SecretWarsSection } from "@/components/secret-wars-section"
 import { AboutPageSection } from "@/components/about-page-section"
 import { TicketsPromo } from "@/components/tickets-promo"
+import { FoxXmenSection } from "@/components/fox-xmen-section"
 import { PushCheck } from "@/components/push-check"
 import { AccessibilityMenu } from "@/components/accessibility-menu"
 import { AccessibilityStatement } from "@/components/accessibility-statement"
@@ -265,6 +266,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* ===== How Fox's X-Men joined the MCU ===== */}
+        <FoxXmenSection photo={photos["xmen-group"]} />
 
         {/* ===== Characters ===== */}
         <section id="characters" aria-labelledby="characters-title" className="border-y border-border bg-[linear-gradient(180deg,#050805,#0a120b_30%,#050805)] py-24 sm:py-32">

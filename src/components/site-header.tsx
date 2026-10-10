@@ -52,13 +52,13 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
         scrolled ? "border-b border-border bg-background/75 backdrop-blur-xl" : "bg-gradient-to-b from-black/70 to-transparent",
       )}
     >
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-[100rem] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#top" className="group flex items-center gap-3" aria-label="מארוול גיקים, חזרה לראש העמוד">
           <BrandLogo size={44} className="transition-transform duration-500 group-hover:scale-105" />
           <span className="text-lg font-black tracking-tight whitespace-nowrap">מארוול גיקים</span>
         </a>
 
-        <nav aria-label="ניווט ראשי" className="hidden min-[1360px]:block">
+        <nav aria-label="ניווט ראשי" className="hidden min-[1500px]:block">
           <ul className="flex items-center gap-0.5">
             {links.map((l) => (
               <li key={l.href}>
@@ -97,7 +97,7 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
 
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="icon" className="min-[1360px]:hidden" aria-label="פתיחת התפריט">
+              <Button variant="outline" size="icon" className="min-[1500px]:hidden" aria-label="פתיחת התפריט">
                 <Menu aria-hidden />
               </Button>
             </DialogTrigger>

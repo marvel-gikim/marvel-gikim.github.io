@@ -47,6 +47,12 @@ const S = {
   doomTickets: { label: "YouTube · Marvel Philippines", url: "https://www.youtube.com/watch?v=WKBvITriYxM" },
   tvaCast: { label: "Cinefilos · דיווח (באיטלקית)", url: "https://cinefilos.it/cinema-news/2026/avengers-doomsday-cinque-nuovi-attori-mcu-entrano-ufficialmente-nel-cast-723278" },
   phonesPromo: { label: "YouTube · Marvel Entertainment", url: "https://www.youtube.com/watch?v=nxDMRvDr4AQ" },
+  xmenFilm: { label: "Wikipedia · X-Men in film", url: "https://en.wikipedia.org/wiki/X-Men_in_film" },
+  xmenRightsHistory: { label: "Book Riot · הזכויות של מארוול", url: "https://bookriot.com/whats-the-deal-with-marvel-movies/" },
+  foxDeal: { label: "Dark Horizons · העסקה הושלמה", url: "https://www.darkhorizons.com/?p=114315" },
+  foxDealPrice: { label: "AllEars · דיסני רוכשת את פוקס", url: "https://allears.net/?p=205425" },
+  xmenDoomsday: { label: "Variety · שחקני האקס-מן בדומסדיי", url: "https://variety.com/lists/x-men-actors-avengers-doomsday-cast" },
+  xmenReturn: { label: "TheWrap · האקס-מן חוזרים", url: "https://www.thewrap.com/the-x-men-return-avengers-doomsday" },
   swRusso: { label: "TechRadar · ראיון עם האחים רוסו", url: "https://www.techradar.com/streaming/entertainment/we-will-draw-inspiration-joe-and-anthony-russo-reveal-which-of-marvels-secret-wars-comic-book-series-have-influenced-avengers-5-and-6s-plot" },
   posterCheck: { label: "Avengers Countdown · בדיקת מקור", url: "https://avengerscountdown.com/articles/avengers-doomsday-viral-doctor-doom-poster-image-check" },
 } satisfies Record<string, SourceLink>
@@ -57,6 +63,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "ראשי", href: "#top" },
   { label: "על העמוד", href: "#about-page" },
   { label: "על הסרט", href: "#about" },
+  { label: "האקס-מן", href: "#fox-xmen" },
   { label: "דמויות", href: "#characters" },
   { label: "טריילרים", href: "#trailers" },
   { label: "גלריה", href: "#gallery" },
@@ -692,6 +699,62 @@ export const MY_ARTICLES: MyArticle[] = [
     ],
   },
 ]
+
+// ===== How Fox's X-Men got into the MCU =====
+export const FOX_XMEN = {
+  introHe:
+    "במשך כמעט 20 שנה, האקס-מן לא יכלו לפגוש את הנוקמים על המסך, כי זכויות הקולנוע שלהם היו שייכות לאולפן אחר: 20th Century Fox. הנה איך זה השתנה, ולמה פרופסור X, מגנטו וסייקלופס של סרטי פוקס יכולים להופיע עכשיו בדומסדיי.",
+  steps: [
+    {
+      yearHe: "1994",
+      titleHe: "מארוול במשבר מוכרת את הזכויות",
+      textHe:
+        "באמצע שנות ה-90 מארוול הייתה במצוקה כלכלית קשה, ומכרה זכויות קולנוע של דמויות שלה לאולפנים אחרים. את הזכויות על האקס-מן קנה 20th Century Fox, ולפי הדיווחים בסכום של כ-2.6 מיליון דולר בלבד. גם ארבעת המופלאים הגיעו לפוקס.",
+      sources: [S.xmenRightsHistory, S.xmenFilm],
+    },
+    {
+      yearHe: "2000–2019",
+      titleHe: "עידן סרטי האקס-מן של פוקס",
+      textHe:
+        "פוקס הפיקה סדרה שלמה של סרטים, החל מ״אקס-מן״ ב-2000, עם פטריק סטיוארט בתפקיד פרופסור X, איאן מקלן בתפקיד מגנטו ויו ג׳קמן בתפקיד וולברין, ובהמשך גם את ״דדפול״. מכיוון שהזכויות היו אצל פוקס, הדמויות האלה לא יכלו להופיע בסרטי היקום הקולנועי של מארוול.",
+      sources: [S.xmenFilm],
+    },
+    {
+      yearHe: "2009",
+      titleHe: "דיסני קונה את מארוול, אבל לא את הזכויות",
+      textHe:
+        "ב-2009 דיסני קנתה את מארוול. אבל זכויות שכבר נמכרו לאולפנים אחרים נשארו אצלם, ולכן האקס-מן וארבעת המופלאים נשארו בפוקס.",
+      sources: [S.xmenRightsHistory],
+    },
+    {
+      yearHe: "2017–2019",
+      titleHe: "דיסני קונה את פוקס",
+      textHe:
+        "בדצמבר 2017 דיסני הגיעה להסכם לקנות את רוב העסקים של 21st Century Fox, כולל אולפני הקולנוע. אחרי מאבק מול קומקאסט, המחיר עלה ל-71.3 מיליארד דולר, והעסקה הושלמה ב-20 במרץ 2019. כך האקס-מן, ארבעת המופלאים ודדפול חזרו הביתה למארוול.",
+      sources: [S.foxDeal, S.foxDealPrice],
+    },
+    {
+      yearHe: "2022–2024",
+      titleHe: "הצעדים הראשונים ב-MCU",
+      textHe:
+        "מארוול התחילה לחבר את העולמות בהדרגה: פטריק סטיוארט הופיע כגרסה של פרופסור X ב״דוקטור סטריינג׳ בממד הטירוף״, קלסי גרמר חזר כביסט ב״הארוולס״, ו״דדפול ווולברין״ הביא את דדפול ואת וולברין של יו ג׳קמן ליקום של מארוול.",
+      sources: [S.xmenDoomsday],
+    },
+    {
+      yearHe: "2025–2026",
+      titleHe: "האקס-מן של פוקס בדומסדיי",
+      textHe:
+        "במרץ 2025 מארוול הכריזה שפטריק סטיוארט, איאן מקלן, ג׳יימס מרסדן, רבקה רומיין ואלן קאמינג חוזרים לתפקידים שלהם מסרטי פוקס, יחד עם קלסי גרמר כביסט וצ׳אנינג טייטום כגמביט.",
+      sources: [S.xmenReturn, S.xmenDoomsday],
+    },
+  ],
+  howHe: {
+    titleHe: "איך זה מסתדר בעלילה?",
+    textHe:
+      "בזכות המולטיוורס. דומסדיי הוא חלק מ״סאגת המולטיוורס״, שבה יקומים שונים נפגשים. כך הגרסאות של פוקס יכולות להגיע מהיקום שלהן ולפגוש את הנוקמים, בלי לבטל את מה שקרה בסרטים הקודמים. לפי Variety, בגלל חוקי המולטיוורס ייתכן גם שהשחקנים יגלמו גרסאות אחרות של הדמויות שלהם.",
+    source: S.xmenDoomsday,
+  },
+}
 
 // ===== News =====
 export const NEWS: NewsItem[] = [
