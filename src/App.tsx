@@ -21,6 +21,7 @@ import { TicketsPromo } from "@/components/tickets-promo"
 import { PushCheck } from "@/components/push-check"
 import { AccessibilityMenu } from "@/components/accessibility-menu"
 import { AccessibilityStatement } from "@/components/accessibility-statement"
+import { LegalPage } from "@/components/legal-page"
 import { NotifyButton } from "@/components/notify-button"
 import { CreditsMarquee } from "@/components/credits-marquee"
 import { useActorRoute, useHashRoute } from "@/hooks/use-actor-route"
@@ -428,6 +429,7 @@ export default function App() {
       <PushCheck />
       <AccessibilityMenu />
       <AccessibilityStatement />
+      <LegalPage />
 
       {activeArticle && <ArticlePage article={activeArticle} onClose={closeArticle} />}
 

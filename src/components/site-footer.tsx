@@ -92,11 +92,18 @@ export function SiteFooter({ links, lastReviewed, socials }: SiteFooterProps) {
             >
               <bdi dir="ltr">@marv.elgikim</bdi>
             </a>
-            , ונסיר אותו בהקדם.
+            , ונסיר אותו בהקדם.{" "}
+            <a href="#/legal" className="font-bold text-brand-pale underline underline-offset-4">
+              לעמוד המלא
+            </a>
           </p>
         </div>
         <p className="mx-auto max-w-7xl px-4 py-5 text-xs text-muted/80 sm:px-6 lg:px-8">
           עודכן לאחרונה: <time dateTime={lastReviewed}>{formatHebrewDate(lastReviewed)}</time> · התוכן נבדק ידנית. אין באתר עדכון חי.{" "}
+          ·{" "}
+          <a href="#/legal" className="font-bold text-brand-pale underline underline-offset-4">
+            פרטיות וזכויות יוצרים
+          </a>{" "}
           ·{" "}
           <a href="#/accessibility" className="font-bold text-brand-pale underline underline-offset-4">
             הצהרת נגישות
