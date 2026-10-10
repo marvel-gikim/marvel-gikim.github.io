@@ -80,8 +80,14 @@ def main():
         spec = {"person": spec} if isinstance(spec, str) else spec
         person = spec["person"]
         try:
-            res = commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 50,
-                           "srsearch": spec.get("query") or f'intitle:"{person}" filetype:bitmap'})["query"]["search"]
+            queries = spec.get("queries") or [f'intitle:"{person}" filetype:bitmap']
+            res, seen_titles = [], set()
+            for q in queries:
+                for hit in commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 30,
+                                    "srsearch": q})["query"]["search"]:
+                    if hit["title"] not in seen_titles:
+                        seen_titles.add(hit["title"])
+                        res.append(hit)
             if spec.get("candidates"):
                 # Save thumbnails of possible photos so a person can choose one (not published)
                 n = 0
