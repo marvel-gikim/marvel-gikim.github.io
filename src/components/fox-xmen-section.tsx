@@ -39,14 +39,14 @@ export function FoxXmenSection({ photo }: { photo?: CastPhoto }) {
               <figure className="reveal m-0 overflow-hidden rounded-[var(--radius-lg)] border border-brand/40 shadow-[0_30px_80px_-30px_rgb(70_214_44/0.5)]">
                 <img
                   src={photo.file}
-                  alt="שחקני סרטי האקס-מן יחד על הבמה"
+                  alt="שחקני ״אקס-מן: ימי העתיד שעבר״ עומדים יחד על הבמה בקומיק-קון 2013"
                   width={photo.width}
                   height={photo.height}
                   loading="lazy"
                   className="w-full object-cover"
                 />
                 <figcaption className="border-t border-border bg-surface/80 px-4 py-2 text-xs leading-5 text-muted">
-                  צילום: <bdi>{photo.author}</bdi> ·{" "}
+                  שחקני ״אקס-מן: ימי העתיד שעבר״ בקומיק-קון 2013 · צילום: <bdi>{photo.author}</bdi> ·{" "}
                   <a href={photo.licenseUrl || photo.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
                     <bdi dir="ltr">{photo.license}</bdi>
                   </a>{" "}

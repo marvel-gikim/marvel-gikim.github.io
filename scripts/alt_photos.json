@@ -13,13 +13,6 @@
   "xmen-group": {
     "person": "X-Men",
     "landscape": true,
-    "candidates": true,
-    "queries": [
-      "X-Men Days of Future Past cast Comic-Con",
-      "X-Men Apocalypse cast Comic-Con",
-      "X-Men cast panel Comic-Con",
-      "Deadpool Wolverine Comic-Con panel",
-      "Avengers Doomsday cast"
-    ]
+    "file": "File:SDCC13 - X-Men Days of Future Past cast (9348023102).jpg"
   }
 }
