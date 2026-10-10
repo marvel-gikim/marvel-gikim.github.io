@@ -1,10 +1,11 @@
-import { ArrowLeft, Clock, Feather, Instagram, MessageCircle, Music2 } from "lucide-react"
+import { ArrowLeft, Clock, Feather, Instagram, Lock, MessageCircle, Music2 } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { SectionHeading } from "@/components/section-heading"
 import { VerificationBadge } from "@/components/verification-badge"
 import { WhatsAppAlert } from "@/components/whatsapp-alert"
 import { WHATSAPP_URL } from "@/data/content"
 import { formatHebrewDate } from "@/lib/utils"
+import { formatCountdown, unlockLabel, useUnlocked } from "@/hooks/use-unlocked"
 
 /** Rough reading time in minutes (Hebrew ~200 words per minute) */
 export const readingMinutes = (a: MyArticle) => Math.max(1, Math.round(a.bodyHe.join(" ").split(/\s+/).length / 200))
@@ -67,6 +68,27 @@ export function MyArticlesSection({ articles, onOpen, socials }: { articles: MyA
 }
 
 function ArticleCard({ article: a, onOpen, featured }: { article: MyArticle; onOpen: (id: string) => void; featured?: boolean }) {
+  const { unlocked, msLeft } = useUnlocked(a.unlocksAt)
+  if (!unlocked && a.unlocksAt) {
+    return (
+      <article className={featured ? "reveal lg:col-span-3" : "reveal"}>
+        <div className="relative grid min-h-64 place-items-center overflow-hidden rounded-[var(--radius-lg)] border border-dashed border-brand/50 bg-surface p-8 text-center">
+          {a.cover && <img src={a.cover.src} alt="" aria-hidden className="absolute inset-0 size-full scale-110 object-cover opacity-25 blur-xl" />}
+          <div className="relative flex flex-col items-center gap-3">
+            <span className="grid size-16 place-items-center rounded-full border border-brand/60 bg-background/80 text-brand animate-float">
+              <Lock aria-hidden className="size-7" />
+            </span>
+            <p className="text-sm font-bold tracking-[0.18em] text-brand">כתבה נעולה</p>
+            {a.teaserHe && <Teaser text={a.teaserHe} />}
+            <p className="text-3xl font-black sm:text-4xl">תיפתח ב-{unlockLabel(a.unlocksAt)}</p>
+            <p className="text-lg text-muted" aria-live="off">
+              עוד <span className="font-black text-brand-pale tabular-nums">{formatCountdown(msLeft)}</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    )
+  }
   return (
     <article className={featured ? "reveal lg:col-span-3" : "reveal"}>
       <button
@@ -94,6 +116,7 @@ function ArticleCard({ article: a, onOpen, featured }: { article: MyArticle; onO
               {readingMinutes(a)} דק׳ קריאה
             </span>
           </span>
+          {a.teaserHe && <Teaser text={a.teaserHe} />}
           <span className={`font-black text-balance ${featured ? "text-3xl leading-tight sm:text-4xl" : "text-xl"}`}>{a.titleHe}</span>
           <span className="leading-7 text-muted">{a.excerptHe}</span>
           {a.tagsHe && a.tagsHe.length > 0 && (
@@ -112,5 +135,15 @@ function ArticleCard({ article: a, onOpen, featured }: { article: MyArticle; onO
         </span>
       </button>
     </article>
+  )
+}
+
+/** Small highlighted label (e.g. "מבט חדש על NYCC") */
+export function Teaser({ text }: { text: string }) {
+  return (
+    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/60 bg-brand/15 px-3.5 py-1 text-sm font-black text-brand-pale shadow-[0_0_24px_-6px_rgb(70_214_44/0.7)]">
+      <span aria-hidden className="size-2 animate-pulse rounded-full bg-brand" />
+      <bdi>{text}</bdi>
+    </span>
   )
 }

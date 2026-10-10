@@ -586,6 +586,27 @@ export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
 export const MY_ARTICLES: MyArticle[] = [
   {
+    id: "doomsday-clock-live",
+    titleHe: "שעון דומסדיי: השידור החי של מארוול",
+    excerptHe: "מארוול פתחה שידור חי רשמי ביוטיוב בשם ״Avengers: Doomsday Clock״, עם הכיתוב ״Doomsday is coming״. צפו בו כאן.",
+    publishedAt: "2026-10-10",
+    unlocksAt: "2026-10-10T16:00:00+03:00",
+    teaserHe: "מבט חדש על NYCC",
+    videoId: "f17J3AXVK5w",
+    tagsHe: ["דומסדיי", "שידור חי", "NYCC"],
+    cover: {
+      src: "./media/fetched/yt-live-1016.jpg",
+      altHe: "דוקטור דום בצללית מול ויטראז׳ ירוק, עם הכיתוב Doomsday is coming",
+      creditHe: "מתוך השידור החי הרשמי, ערוץ YouTube של Marvel Entertainment · © Marvel",
+      focus: "50% 40%",
+    },
+    postUrl: "https://www.youtube.com/watch?v=f17J3AXVK5w",
+    postLabelHe: "לצפייה בשידור ב-YouTube",
+    bodyHe: [
+      "מארוול פתחה שידור חי רשמי ביוטיוב בשם ״Avengers: Doomsday Clock״, עם הכיתוב ״Doomsday is coming״. צפו בו כאן.",
+    ],
+  },
+  {
     id: "doomsday-screenx",
     titleHe: "הנוקמים: דומסדיי יוצא גם ב-ScreenX",
     excerptHe: "״הנוקמים: דומסדיי״ יצא בצורה רשמית גם דרך מסך X, ב-17.12.26 בקולנוע.",

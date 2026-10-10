@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
-import { ArrowRight, Clock, ExternalLink, Eye, Pause, Play, Volume2, VolumeX } from "lucide-react"
+import { ArrowRight, Clock, ExternalLink, Eye, Lock, Pause, Play, Volume2, VolumeX } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
 import { WhatsAppAlert } from "@/components/whatsapp-alert"
 import { WHATSAPP_URL } from "@/data/content"
 import { Button } from "@/components/ui/button"
-import { readingMinutes } from "@/components/my-articles-section"
+import { readingMinutes, Teaser } from "@/components/my-articles-section"
+import { formatCountdown, unlockLabel, useUnlocked } from "@/hooks/use-unlocked"
 import { formatHebrewDate } from "@/lib/utils"
 
 /** Full-screen reader for one of our articles. Closing returns to the same spot on the site. */
 export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClose: () => void }) {
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const { unlocked, msLeft } = useUnlocked(a.unlocksAt)
 
   useEffect(() => {
     const prev = document.body.style.overflow
@@ -60,12 +62,47 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
         </div>
       </div>
 
+      {!unlocked && a.unlocksAt ? (
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 py-24 text-center sm:px-6">
+          <span className="grid size-20 place-items-center rounded-full border border-brand/60 bg-surface text-brand animate-float">
+            <Lock aria-hidden className="size-9" />
+          </span>
+          <h1 id="article-title" ref={headingRef} tabIndex={-1} className="text-4xl font-black outline-none sm:text-5xl">
+            הכתבה תיפתח ב-{unlockLabel(a.unlocksAt)}
+          </h1>
+          <p className="text-xl text-muted">
+            עוד <span className="font-black text-brand-pale tabular-nums">{formatCountdown(msLeft)}</span>
+          </p>
+          {a.teaserHe && <Teaser text={a.teaserHe} />}
+          <p className="text-muted">אפשר להישאר בעמוד: הכתבה תיפתח כאן לבד ברגע שהזמן יגיע.</p>
+        </div>
+      ) : (
+      <>
       {a.backgroundVideoId && <VideoHero videoId={a.backgroundVideoId} poster={a.cover?.src}>{header}</VideoHero>}
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
         {!a.backgroundVideoId && header}
 
-        {a.cover && !a.backgroundVideoId && (
+        {a.teaserHe && (
+          <div className="mt-8">
+            <Teaser text={a.teaserHe} />
+          </div>
+        )}
+
+        {a.videoId && (
+          <div className="mt-6 aspect-video overflow-hidden rounded-[var(--radius-lg)] border border-brand/40 bg-black shadow-[0_30px_80px_-30px_rgb(70_214_44/0.5)]">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${a.videoId}?rel=0&modestbranding=1&playsinline=1&hl=he`}
+              title={a.titleHe}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="size-full"
+            />
+          </div>
+        )}
+
+        {a.cover && !a.backgroundVideoId && !a.videoId && (
           <figure className="m-0 mt-10 animate-fade-slide-in animation-delay-300">
             <img
               src={a.cover.src}
@@ -104,6 +141,8 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
         )}
         <WhatsAppAlert href={WHATSAPP_URL} className="mt-14" />
       </article>
+      </>
+      )}
     </div>
   )
 }

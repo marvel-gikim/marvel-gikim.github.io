@@ -125,6 +125,12 @@ export interface MyArticle {
   /** Paragraphs of the article; "## " starts a sub-heading, "!! " marks a spoiler (hidden until clicked) */
   bodyHe: string[]
   cover?: { src: string; altHe: string; creditHe?: string; focus?: string }
+  /** Short highlighted line, shown on the card (also while locked) and at the top of the article */
+  teaserHe?: string
+  /** ISO date-time: until then the article is locked and shows a countdown */
+  unlocksAt?: string
+  /** YouTube video (or live stream) id embedded as a player inside the article */
+  videoId?: string
   /** YouTube video id played muted in the background of the article header */
   backgroundVideoId?: string
   /** Verification label, when the article is about a rumor or report */

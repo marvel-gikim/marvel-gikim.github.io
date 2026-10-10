@@ -4,6 +4,7 @@ Compares the current docs/articles.json with the version in the previous commit.
 Needs the ONESIGNAL_REST_API_KEY secret; without it, it only prints what it would send.
 """
 import json, os, subprocess, sys, urllib.request
+from datetime import datetime, timezone
 
 APP_ID = "f91c0142-927b-478b-9da6-f8e595bb42b3"
 SITE = "https://marvel-gikim.github.io/"
@@ -41,6 +42,11 @@ def main():
             "url": url,
             "chrome_web_icon": f"{SITE}brand/icon-192.png",
         }
+        # Locked article: OneSignal holds the notification until the article opens
+        if a.get("unlocksAt"):
+            at = datetime.fromisoformat(a["unlocksAt"]).astimezone(timezone.utc)
+            if at > datetime.now(timezone.utc):
+                body["send_after"] = at.strftime("%Y-%m-%d %H:%M:%S GMT+0000")
         if not key:
             print("ONESIGNAL_REST_API_KEY missing; would send:", json.dumps(body, ensure_ascii=False))
             continue

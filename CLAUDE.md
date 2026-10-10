@@ -44,7 +44,7 @@ GitHub Pages מתעדכן תוך כדקה. **תמיד לבנות לפני push**
 מוסיפים אובייקט **בראש** המערך `MY_ARTICLES` ב-`src/data/content.ts`:
 - `id` (באנגלית, קבוע; הוא חלק מהקישור), `titleHe`, `excerptHe`, `publishedAt` (YYYY-MM-DD), `bodyHe` (מערך פסקאות).
 - בתוך `bodyHe`: שורה שמתחילה ב-`"## "` היא כותרת משנה; שורה שמתחילה ב-`"!! "` היא ספוילר מוסתר.
-- אופציונלי: `backgroundVideoId` (מזהה סרטון יוטיוב שמתנגן מושתק ברקע הכותרת, עם כפתור עצירה), `status` (`rumor`/`report`/`official`), `tagsHe`, `cover` ({ src, altHe, creditHe, focus }), `postUrl` + `postLabelHe`.
+- אופציונלי: `unlocksAt` (ISO עם אזור זמן, למשל `2026-10-10T16:00:00+03:00`: הכתבה נעולה עם ספירה לאחור עד אז, וההתראה מתוזמנת ב-OneSignal לאותה שעה בדיוק; הנעילה היא בצד הדפדפן, אז לא לשים בה סודות), `teaserHe` (תווית קטנה מודגשת), `videoId` (נגן יוטיוב בתוך הכתבה), `backgroundVideoId` (מזהה סרטון יוטיוב שמתנגן מושתק ברקע הכותרת, עם כפתור עצירה), `status` (`rumor`/`report`/`official`), `tagsHe`, `cover` ({ src, altHe, creditHe, focus }), `postUrl` + `postLabelHe`.
 - תמונת כתבה: לשים ב-`public/media/articles/` (webp), או תמונה ממוזערת של יוטיוב דרך `scripts/media.json` (ראו למטה).
 - **אחרי push, התראת דפדפן נשלחת אוטומטית** לכל המנויים (ראו "התראות").
 
