@@ -9,7 +9,7 @@ import { MY_ARTICLES } from "./src/data/content"
 const articlesFeed = () => ({
   name: "articles-feed",
   generateBundle(this: { emitFile: (f: { type: "asset"; fileName: string; source: string }) => void }) {
-    const list = MY_ARTICLES.map(({ id, titleHe, excerptHe, publishedAt, unlocksAt }) => ({ id, titleHe, excerptHe, publishedAt, unlocksAt }))
+    const list = MY_ARTICLES.map(({ id, titleHe, excerptHe, publishedAt, unlocksAt, teaserHe }) => ({ id, titleHe, excerptHe, publishedAt, unlocksAt, teaserHe }))
     this.emitFile({ type: "asset", fileName: "articles.json", source: JSON.stringify(list, null, 2) })
   },
 })
