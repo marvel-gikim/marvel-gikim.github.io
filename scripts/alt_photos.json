@@ -9,5 +9,11 @@
   "maguire-alt": {
     "person": "Tobey Maguire",
     "file": "File:Tobey Maguire 3, 2013.jpg"
+  },
+  "xmen-group": {
+    "person": "X-Men",
+    "landscape": true,
+    "candidates": true,
+    "query": "intitle:\"X-Men\" (cast OR panel OR \"Comic-Con\" OR premiere) filetype:bitmap"
   }
 }

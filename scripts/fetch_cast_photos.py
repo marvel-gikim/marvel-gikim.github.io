@@ -81,15 +81,15 @@ def main():
         person = spec["person"]
         try:
             res = commons({"action": "query", "list": "search", "srnamespace": 6, "srlimit": 50,
-                           "srsearch": f'intitle:"{person}" filetype:bitmap'})["query"]["search"]
+                           "srsearch": spec.get("query") or f'intitle:"{person}" filetype:bitmap'})["query"]["search"]
             if spec.get("candidates"):
                 # Save thumbnails of possible photos so a person can choose one (not published)
                 n = 0
                 for hit in res:
                     try:
                         ci = commons({"action": "query", "titles": hit["title"], "prop": "imageinfo",
-                                      "iiprop": "url|size", "iiurlwidth": 320})["query"]["pages"][0]["imageinfo"][0]
-                        if ci["height"] < ci["width"] or ci["width"] < 800:
+                                      "iiprop": "url|size", "iiurlwidth": 480 if spec.get("landscape") else 320})["query"]["pages"][0]["imageinfo"][0]
+                        if (ci["height"] < ci["width"]) != bool(spec.get("landscape")) or ci["width"] < 800:
                             continue
                         with urllib.request.urlopen(urllib.request.Request(ci["thumburl"], headers=UA), timeout=60) as r:
                             open(os.path.join(cand_dir, f"{cid}-{n:02d}.jpg"), "wb").write(r.read())
@@ -103,8 +103,8 @@ def main():
                 res = [{"title": spec["file"]}]
             for hit in res:
                 info = commons({"action": "query", "titles": hit["title"], "prop": "imageinfo",
-                                "iiprop": "url|extmetadata|size", "iiurlwidth": 640})["query"]["pages"][0]["imageinfo"][0]
-                if not spec.get("file") and (info.get("descriptionurl") in used or info["height"] < info["width"] or info["width"] < 800):
+                                "iiprop": "url|extmetadata|size", "iiurlwidth": 1280 if spec.get("landscape") else 640})["query"]["pages"][0]["imageinfo"][0]
+                if not spec.get("file") and (info.get("descriptionurl") in used or (info["height"] < info["width"]) != bool(spec.get("landscape")) or info["width"] < 800):
                     continue  # want a different, portrait, decent-size photo
                 meta = info.get("extmetadata", {})
                 license_name = clean(meta.get("LicenseShortName", {}).get("value"))
@@ -112,7 +112,7 @@ def main():
                     continue
                 with urllib.request.urlopen(urllib.request.Request(info["thumburl"], headers=UA), timeout=60) as r:
                     img = Image.open(io.BytesIO(r.read())).convert("RGB")
-                img.thumbnail((640, 900))
+                img.thumbnail((1280, 900) if spec.get("landscape") else (640, 900))
                 img.save(os.path.join(OUT, cid + ".jpg"), "JPEG", quality=85, optimize=True)
                 credits[cid] = {
                     "file": f"./cast/{cid}.jpg",
