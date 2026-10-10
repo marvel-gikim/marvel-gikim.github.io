@@ -43,7 +43,7 @@ GitHub Pages מתעדכן תוך כדקה. **תמיד לבנות לפני push**
 מוסיפים אובייקט **בראש** המערך `MY_ARTICLES` ב-`src/data/content.ts`:
 - `id` (באנגלית, קבוע; הוא חלק מהקישור), `titleHe`, `excerptHe`, `publishedAt` (YYYY-MM-DD), `bodyHe` (מערך פסקאות).
 - בתוך `bodyHe`: שורה שמתחילה ב-`"## "` היא כותרת משנה; שורה שמתחילה ב-`"!! "` היא ספוילר מוסתר.
-- אופציונלי: `status` (`rumor`/`report`/`official`), `tagsHe`, `cover` ({ src, altHe, creditHe, focus }), `postUrl` + `postLabelHe`.
+- אופציונלי: `backgroundVideoId` (מזהה סרטון יוטיוב שמתנגן מושתק ברקע הכותרת, עם כפתור עצירה), `status` (`rumor`/`report`/`official`), `tagsHe`, `cover` ({ src, altHe, creditHe, focus }), `postUrl` + `postLabelHe`.
 - תמונת כתבה: לשים ב-`public/media/articles/` (webp), או תמונה ממוזערת של יוטיוב דרך `scripts/media.json` (ראו למטה).
 - **אחרי push, התראת דפדפן נשלחת אוטומטית** לכל המנויים (ראו "התראות").
 

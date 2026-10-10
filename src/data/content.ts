@@ -586,6 +586,27 @@ export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
 export const MY_ARTICLES: MyArticle[] = [
   {
+    id: "doomsday-screenx",
+    titleHe: "הנוקמים: דומסדיי יוצא גם ב-ScreenX",
+    excerptHe: "״הנוקמים: דומסדיי״ יצא בצורה רשמית גם דרך מסך X, ב-17.12.26 בקולנוע.",
+    publishedAt: "2026-10-10",
+    tagsHe: ["דומסדיי", "ScreenX", "קולנוע"],
+    backgroundVideoId: "CfmokZGmYoM",
+    cover: {
+      src: "./media/fetched/yt-screenx.jpg",
+      altHe: "אולם ScreenX שבו התמונה של דומסדיי ממשיכה גם על הקירות בצדדים",
+      creditHe: "מתוך הטריילר הרשמי של דומסדיי ל-ScreenX, ערוץ YouTube של SCREENX · © Marvel",
+      focus: "50% 45%",
+    },
+    postUrl: "https://www.youtube.com/watch?v=CfmokZGmYoM",
+    postLabelHe: "לצפייה בטריילר ScreenX ב-YouTube",
+    bodyHe: [
+      "״הנוקמים: דומסדיי״ יצא בצורה רשמית גם דרך מסך X, ב-17.12.26 בקולנוע.",
+      "## מה זה ScreenX?",
+      "אולם שבו הסרט לא נגמר במסך שמקדימה: התמונה ממשיכה גם על הקירות בצדדים, כך שהיא מקיפה את הצופים משלושה כיוונים.",
+    ],
+  },
+  {
     id: "vision-quest",
     titleHe: "ויז׳ן קווסט יוצא בעוד 4 וחצי ימים",
     excerptHe: "ויז׳ן קווסט יוצא ב-14.10.26. חזרתו של פול בטאני כוויז׳ן וג׳יימס ספיידר כאולטרון מעוררת ציפיות גדולות בקהל הרחב.",

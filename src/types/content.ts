@@ -125,6 +125,8 @@ export interface MyArticle {
   /** Paragraphs of the article; "## " starts a sub-heading, "!! " marks a spoiler (hidden until clicked) */
   bodyHe: string[]
   cover?: { src: string; altHe: string; creditHe?: string; focus?: string }
+  /** YouTube video id played muted in the background of the article header */
+  backgroundVideoId?: string
   /** Verification label, when the article is about a rumor or report */
   status?: VerificationStatus
   /** Optional link to the matching TikTok / Instagram post or a video */

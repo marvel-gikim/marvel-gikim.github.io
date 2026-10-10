@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react"
-import { ArrowRight, Clock, ExternalLink, Eye } from "lucide-react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { ArrowRight, Clock, ExternalLink, Eye, Pause, Play } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
@@ -27,6 +27,27 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
     }
   }, [a.titleHe, onClose])
 
+  const header = (
+    <>
+        <p className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted animate-fade-slide-in">
+        {a.status && <VerificationBadge status={a.status} />}
+        <span className="font-bold text-brand">מארוול גיקים</span>
+        <time dateTime={a.publishedAt}>{formatHebrewDate(a.publishedAt)}</time>
+        <span className="inline-flex items-center gap-1">
+          <Clock aria-hidden className="size-3.5" />
+          {readingMinutes(a)} דק׳ קריאה
+        </span>
+      </p>
+      <h1 id="article-title" ref={headingRef} tabIndex={-1} className="text-4xl leading-tight font-black text-balance outline-none sm:text-5xl animate-fade-slide-in animation-delay-100">
+        {a.titleHe}
+      </h1>
+      {a.bodyHe[0] !== a.excerptHe && (
+        <p className="mt-5 text-xl leading-9 text-foreground/80 animate-fade-slide-in animation-delay-200">{a.excerptHe}</p>
+      )}
+
+    </>
+  )
+
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="article-title" className="fixed inset-0 z-50 overflow-y-auto bg-background animate-fade-in">
       <div className="sticky top-0 z-10 border-b border-border bg-background/85 backdrop-blur-xl">
@@ -39,24 +60,12 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
         </div>
       </div>
 
-      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
-        <p className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted animate-fade-slide-in">
-          {a.status && <VerificationBadge status={a.status} />}
-          <span className="font-bold text-brand">מארוול גיקים</span>
-          <time dateTime={a.publishedAt}>{formatHebrewDate(a.publishedAt)}</time>
-          <span className="inline-flex items-center gap-1">
-            <Clock aria-hidden className="size-3.5" />
-            {readingMinutes(a)} דק׳ קריאה
-          </span>
-        </p>
-        <h1 id="article-title" ref={headingRef} tabIndex={-1} className="text-4xl leading-tight font-black text-balance outline-none sm:text-5xl animate-fade-slide-in animation-delay-100">
-          {a.titleHe}
-        </h1>
-        {a.bodyHe[0] !== a.excerptHe && (
-          <p className="mt-5 text-xl leading-9 text-foreground/80 animate-fade-slide-in animation-delay-200">{a.excerptHe}</p>
-        )}
+      {a.backgroundVideoId && <VideoHero videoId={a.backgroundVideoId} poster={a.cover?.src}>{header}</VideoHero>}
 
-        {a.cover && (
+      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
+        {!a.backgroundVideoId && header}
+
+        {a.cover && !a.backgroundVideoId && (
           <figure className="m-0 mt-10 animate-fade-slide-in animation-delay-300">
             <img
               src={a.cover.src}
@@ -118,5 +127,41 @@ function Spoiler({ text }: { text: string }) {
         </button>
       )}
     </div>
+  )
+}
+
+/**
+ * Article header over a muted, looping YouTube video (embedded from YouTube, not copied).
+ * Has a pause button, and shows only the still image when the visitor prefers less motion.
+ */
+function VideoHero({ videoId, poster, children }: { videoId: string; poster?: string; children: ReactNode }) {
+  const prefersStill =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.classList.contains("a11y-no-motion")
+  const [playing, setPlaying] = useState(!prefersStill)
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`
+  return (
+    <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden border-b border-border bg-black">
+      {poster && <img src={poster} alt="" aria-hidden className="absolute inset-0 -z-20 size-full object-cover opacity-70" />}
+      {playing && (
+        <iframe
+          src={src}
+          title="סרטון רקע"
+          aria-hidden
+          tabIndex={-1}
+          allow="autoplay; encrypted-media; picture-in-picture"
+          className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[56.25vw] min-h-full w-screen min-w-[177.78svh] -translate-x-1/2 -translate-y-1/2 scale-110"
+        />
+      )}
+      <span aria-hidden className="absolute inset-0 -z-[5] bg-gradient-to-t from-background via-background/60 to-black/30" />
+      <div className="mx-auto w-full max-w-3xl px-4 pt-24 pb-10 sm:px-6">{children}</div>
+      <button
+        type="button"
+        onClick={() => setPlaying((p) => !p)}
+        aria-label={playing ? "עצירת סרטון הרקע" : "הפעלת סרטון הרקע"}
+        className="absolute top-20 left-4 grid size-10 cursor-pointer place-items-center rounded-full border border-white/30 bg-black/60 text-white backdrop-blur transition hover:bg-black/80"
+      >
+        {playing ? <Pause aria-hidden className="size-4" /> : <Play aria-hidden className="size-4" />}
+      </button>
+    </section>
   )
 }
