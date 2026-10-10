@@ -22,6 +22,11 @@ jobs:
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
         run: |
           if [ -n "$ONESIGNAL_REST_API_KEY" ]; then echo "ONESIGNAL_REST_API_KEY: set"; else echo "ONESIGNAL_REST_API_KEY: MISSING"; fi
+      - name: Delivery report of recent notifications (manual runs)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+        run: python scripts/push_report.py
       - name: Send push for new articles
         if: github.event_name == 'push'
         env:
