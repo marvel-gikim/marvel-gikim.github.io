@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
-import { ArrowRight, Clock, ExternalLink, Eye, Pause, Play } from "lucide-react"
+import { ArrowRight, Clock, ExternalLink, Eye, Pause, Play, Volume2, VolumeX } from "lucide-react"
 import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
@@ -138,12 +138,32 @@ function VideoHero({ videoId, poster, children }: { videoId: string; poster?: st
   // Plays by default; only the site's own "stop animations" accessibility option starts it paused
   const prefersStill = document.documentElement.classList.contains("a11y-no-motion")
   const [playing, setPlaying] = useState(!prefersStill)
-  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`
+  const [muted, setMuted] = useState(true)
+  const frameRef = useRef<HTMLIFrameElement>(null)
+  // Browsers only allow autoplay without sound; the visitor turns sound on with a click (YouTube IFrame API commands)
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`
+  const command = (func: string, args: unknown[] = []) =>
+    frameRef.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args }), "*")
+  const toggleSound = () => {
+    if (!playing) setPlaying(true)
+    const next = !muted
+    setMuted(next)
+    // Give a freshly mounted player a moment before sending commands
+    window.setTimeout(() => {
+      if (next) command("mute")
+      else {
+        command("unMute")
+        command("setVolume", [80])
+        command("playVideo")
+      }
+    }, playing ? 0 : 1500)
+  }
   return (
     <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden border-b border-border bg-black">
       {poster && <img src={poster} alt="" aria-hidden className="absolute inset-0 -z-20 size-full object-cover opacity-70" />}
       {playing && (
         <iframe
+          ref={frameRef}
           src={src}
           title="סרטון רקע"
           aria-hidden
@@ -156,7 +176,19 @@ function VideoHero({ videoId, poster, children }: { videoId: string; poster?: st
       <div className="mx-auto w-full max-w-3xl px-4 pt-24 pb-10 sm:px-6">{children}</div>
       <button
         type="button"
-        onClick={() => setPlaying((p) => !p)}
+        onClick={toggleSound}
+        aria-pressed={!muted}
+        className="absolute top-20 right-4 inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/30 bg-black/60 px-4 py-2 text-sm font-bold text-white backdrop-blur transition hover:bg-black/80"
+      >
+        {muted ? <VolumeX aria-hidden className="size-4" /> : <Volume2 aria-hidden className="size-4" />}
+        {muted ? "הפעלת סאונד" : "השתקה"}
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          setPlaying((p) => !p)
+          setMuted(true)
+        }}
         aria-label={playing ? "עצירת סרטון הרקע" : "הפעלת סרטון הרקע"}
         className="absolute top-20 left-4 grid size-10 cursor-pointer place-items-center rounded-full border border-white/30 bg-black/60 text-white backdrop-blur transition hover:bg-black/80"
       >
