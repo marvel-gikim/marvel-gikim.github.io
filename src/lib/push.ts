@@ -6,7 +6,7 @@ type OneSignalApi = {
     requestPermission(): Promise<void>
     addEventListener(event: "permissionChange", cb: (granted: boolean) => void): void
   }
-  User: { PushSubscription: { optedIn?: boolean; optIn(): Promise<void> } }
+  User: { PushSubscription: { optedIn?: boolean; id?: string | null; optIn(): Promise<void> } }
 }
 
 declare global {

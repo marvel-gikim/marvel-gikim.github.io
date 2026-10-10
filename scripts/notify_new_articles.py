@@ -34,16 +34,19 @@ def send(body):
         print("sent", body["headings"]["he"], body.get("send_after", "now"), r.status, r.read().decode()[:200])
 
 
-def push(heading, text, url, send_after=None):
+def push(heading, text, url, send_after=None, only_ids=None):
     body = {
         "app_id": APP_ID,
         "target_channel": "push",
-        "included_segments": ["Total Subscriptions"],
         "headings": {"en": heading, "he": heading},
         "contents": {"en": text, "he": text},
         "url": url,
         "chrome_web_icon": f"{SITE}brand/icon-192.png",
     }
+    if only_ids:
+        body["include_subscription_ids"] = only_ids
+    else:
+        body["included_segments"] = ["Total Subscriptions"]
     if send_after:
         body["send_after"] = send_after
     send(body)
@@ -80,6 +83,11 @@ def notify_article(a):
 
 
 def main():
+    # Manual run with a device id (from #push-check): send a test notification to that device only
+    test_id = os.environ.get("TEST_SUBSCRIPTION_ID")
+    if test_id:
+        push("בדיקת התראות ✓", "אם אתם רואים את זה, ההתראות של מארוול גיקים עובדות במכשיר הזה.", SITE, only_ids=[test_id.strip()])
+        return 0
     # Manual run with an article id: send only the "saved for later" heads-up for it
     only = os.environ.get("ANNOUNCE_ID")
     if only:

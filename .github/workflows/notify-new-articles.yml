@@ -11,6 +11,10 @@ on:
         description: "Article id: send now the 'saved for later' heads-up for this locked article"
         required: false
         default: ""
+      test_subscription_id:
+        description: "Device id from #push-check: send a test notification to that device only"
+        required: false
+        default: ""
 
 jobs:
   notify:
@@ -37,6 +41,12 @@ jobs:
         env:
           ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
           ANNOUNCE_ID: ${{ inputs.announce_id }}
+        run: python scripts/notify_new_articles.py
+      - name: Test notification to one device (manual runs with test_subscription_id)
+        if: github.event_name == 'workflow_dispatch' && inputs.test_subscription_id != ''
+        env:
+          ONESIGNAL_REST_API_KEY: ${{ secrets.ONESIGNAL_REST_API_KEY }}
+          TEST_SUBSCRIPTION_ID: ${{ inputs.test_subscription_id }}
         run: python scripts/notify_new_articles.py
       - name: Send push for new articles
         if: github.event_name == 'push'

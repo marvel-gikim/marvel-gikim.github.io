@@ -10,6 +10,7 @@ export function PushCheck() {
   const [open, setOpen] = useState(() => window.location.hash === "#push-check")
   const [sdk, setSdk] = useState<string>("בטעינה…")
   const [optedIn, setOptedIn] = useState<string>("—")
+  const [subId, setSubId] = useState<string>("")
 
   useEffect(() => {
     const onHash = () => setOpen(window.location.hash === "#push-check")
@@ -23,7 +24,8 @@ export function PushCheck() {
     withOneSignal((os) => {
       done = true
       setSdk(os.Notifications.isPushSupported() ? "נטענה ✓ (הדפדפן תומך)" : "נטענה, אבל הדפדפן לא תומך בהתראות ✗")
-      setOptedIn(os.User.PushSubscription.optedIn ? "כן ✓" : "לא")
+      setOptedIn(os.User.PushSubscription.optedIn ? "כן ✓" : "לא ✗")
+      setSubId(os.User.PushSubscription.id || "")
     })
     const t = window.setTimeout(() => !done && setSdk("לא נטענה ✗ (חוסם פרסומות או בעיית רשת)"), 8000)
     return () => window.clearTimeout(t)
@@ -56,6 +58,10 @@ export function PushCheck() {
           </div>
         ))}
       </dl>
+      <p className="mt-3 text-sm">
+        <span className="text-muted">מזהה המכשיר: </span>
+        <bdi dir="ltr" className="font-mono font-bold break-all select-all">{subId || "אין (המכשיר לא רשום)"}</bdi>
+      </p>
       <p className="mt-3 text-xs break-all text-muted" dir="ltr">
         {navigator.userAgent}
       </p>
