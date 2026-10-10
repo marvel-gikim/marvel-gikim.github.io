@@ -71,6 +71,14 @@
     "title": "Avengers: Doomsday | Silence Your Phones | In Theaters December 18",
     "channel": "Marvel Entertainment"
   },
+  "yt-screenx": {
+    "file": "./media/fetched/yt-screenx.jpg",
+    "width": 1280,
+    "height": 720,
+    "source": "https://www.youtube.com/watch?v=CfmokZGmYoM",
+    "title": "Avengers: Doomsday | OFFICIAL SCREENX TRAILER 2",
+    "channel": "SCREENX"
+  },
   "disney-trailer-poster": {
     "file": "./media/fetched/disney-trailer-poster.jpg",
     "width": 1600,
