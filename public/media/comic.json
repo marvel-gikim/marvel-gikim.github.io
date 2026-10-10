@@ -304,12 +304,21 @@
       "width": 780,
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
+      "imageUrl": "https://cdn.marvel.com/content/1x/the_darkhold_yohann_schepacz_card.webp",
+      "alt": "‘Magic: The Gathering | Marvel Darkhold Destiny’ Presents an Original Story Set in the Marvel Universe",
+      "issueLink": null
+    },
+    {
+      "file": "./media/comic/article-27.jpg",
+      "width": 780,
+      "height": 438,
+      "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
       "imageUrl": "https://cdn.marvel.com/content/1x/midnightsm2026004_cloaked_card.webp",
       "alt": "The Clock Strikes Midnight with Fourth Issue Reveals for Marvel Comics’ Terrifying New Storytelling Universe",
       "issueLink": null
     },
     {
-      "file": "./media/comic/article-27.jpg",
+      "file": "./media/comic/article-28.jpg",
       "width": 780,
       "height": 438,
       "source": "https://www.marvel.com/articles/comics/secret-wars-and-battleworld-explained",
