@@ -388,11 +388,11 @@
   },
   "xmen-group": {
     "file": "./cast/xmen-group.jpg",
-    "width": 1280,
-    "height": 722,
-    "author": "Gage Skidmore",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:X-Men_Days_of_Future_Past_cast_by_Gage_Skidmore.jpg"
+    "width": 1200,
+    "height": 900,
+    "author": "William Tung from USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SDCC13_-_X-Men_Days_of_Future_Past_cast_(9348023102).jpg"
   }
 }
