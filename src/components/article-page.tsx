@@ -4,6 +4,7 @@ import type { MyArticle } from "@/types/content"
 import { BrandLogo } from "@/components/brand-logo"
 import { VerificationBadge } from "@/components/verification-badge"
 import { WhatsAppAlert } from "@/components/whatsapp-alert"
+import { plainText, RichText } from "@/components/rich-text"
 import { WHATSAPP_URL } from "@/data/content"
 import { Button } from "@/components/ui/button"
 import { readingMinutes, Teaser } from "@/components/my-articles-section"
@@ -43,7 +44,7 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
       <h1 id="article-title" ref={headingRef} tabIndex={-1} className="text-4xl leading-tight font-black text-balance outline-none sm:text-5xl animate-fade-slide-in animation-delay-100">
         {a.titleHe}
       </h1>
-      {a.bodyHe[0] !== a.excerptHe && (
+      {plainText(a.bodyHe[0] ?? "") !== a.excerptHe && (
         <p className="mt-5 text-xl leading-9 text-foreground/80 animate-fade-slide-in animation-delay-200">{a.excerptHe}</p>
       )}
 
@@ -123,7 +124,7 @@ export function ArticlePage({ article: a, onClose }: { article: MyArticle; onClo
             ) : p.startsWith("!! ") ? (
               <Spoiler key={i} text={p.slice(3)} />
             ) : (
-              <p key={i}>{p}</p>
+              <p key={i}><RichText text={p} /></p>
             ),
           )}
         </div>
@@ -153,7 +154,7 @@ function Spoiler({ text }: { text: string }) {
   return (
     <div className="relative">
       <p className={shown ? "transition duration-700" : "select-none blur-md transition duration-700"} aria-hidden={!shown || undefined}>
-        {text}
+        <RichText text={text} />
       </p>
       {!shown && (
         <button

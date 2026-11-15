@@ -593,6 +593,32 @@ export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.
 export const MY_ARTICLES: MyArticle[] = [
   {
+    id: "visionquest-doom-scarlet-witch",
+    titleHe: "הטוויסט המטורף של Marvel: דוקטור דום מחזיר את סקרלט וויץ׳?!",
+    excerptHe: "מעריצי מארוול קיבלו הפתעה ענקית בסצנת הפוסט־קרדיט של VisionQuest, שמחברת באופן ישיר את הסדרה לאירועי Avengers: Doomsday.",
+    publishedAt: "2026-11-15",
+    teaserHe: "ספוילרים לסיום ויז׳ן קווסט",
+    tagsHe: ["ויז׳ן קווסט", "סקרלט וויץ׳", "דוקטור דום"],
+    cover: {
+      src: "./media/articles/scarlet-witch-wandavision.webp",
+      altHe: "אליזבת׳ אולסן בתפקיד וונדה מקסימוף, בתמונה בשחור-לבן מתוך וונדה-ויז׳ן",
+      creditHe: "מתוך העמוד הרשמי של סקרלט וויץ׳ ב-Marvel.com · © Marvel",
+      focus: "45% 30%",
+    },
+    postUrl: "https://www.forbes.com/sites/oliviasingh/2026/11/11/visionquest-finale-answers-big-question-ahead-of-avengers-doomsday/",
+    postLabelHe: "לקריאה על שתי הסצנות ב-Forbes (באנגלית)",
+    bodyHe: [
+      "מעריצי מארוול קיבלו הפתעה ענקית בסצנת הפוסט־קרדיט של **VisionQuest**, שמחברת באופן ישיר את הסדרה לאירועי Avengers: Doomsday.",
+      "בסצנה הראשונה אנחנו חוזרים לאולטרון, ששרד את אירועי הסדרה. הוא נראה כשהוא מחזיק בכונן המכיל את שרידי התוכנה של ג׳וקסטה, מה שמרמז שהוא עשוי לנסות להחזיר אותה לחיים. כלומר, ייתכן שעדיין לא ראינו את סוף הסיפור של אולטרון ביקום הקולנועי של מארוול.",
+      "אבל הסצנה השנייה היא זאת שבאמת הצליחה להרעיד את המעריצים.",
+      "אנחנו חוזרים לרגע שבו וונדה מקסימוף נקברה תחת הריסות הר וונדגור בסיום הסרט Doctor Strange in the Multiverse of Madness. אלא שהפעם, דמות מסתורית מופיעה ומרימה את ההריסות באמצעות כוחותיה. במהרה מתברר שמדובר בדוקטור דום!",
+      "דום מוצא את וונדה ומכריז: **״סקרלט וויץ׳, התעוררי. הכוח שלך יהיה שלי!״**",
+      "עיניה של וונדה נפקחות, כשהן מוארות באור ירוק המזוהה עם דום.",
+      "המשמעות? וונדה חיה, ודוקטור דום ככל הנראה מתכנן להשתמש בכוחותיה למטרותיו. האם היא תהפוך לבת ברית שלו, או דווקא לקורבן נוסף של התוכניות שלו?",
+      "דבר אחד בטוח: Marvel בדיוק פתחה מחדש את אחד הסיפורים המסקרנים ביותר לקראת Avengers: Doomsday.",
+    ],
+  },
+  {
     id: "doomsday-clock-live",
     titleHe: "שעון דומסדיי: השידור החי של מארוול",
     excerptHe: "מארוול פתחה שידור חי רשמי ביוטיוב בשם ״Avengers: Doomsday Clock״, עם הכיתוב ״Doomsday is coming״. צפו בו כאן.",
