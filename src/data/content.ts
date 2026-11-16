@@ -1,4 +1,4 @@
-import type { Character, ComicChapter, MyArticle, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, Trailer } from "@/types/content"
+import type { Character, ComicChapter, MyArticle, FaqItem, FilmInfo, GalleryImage, NavLink, NewsItem, SourceLink, SpecialVideo, Trailer } from "@/types/content"
 
 /** Date of the last manual content review. The site has no live data feed. */
 export const LAST_REVIEWED = "2026-10-09"
@@ -71,6 +71,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "הכתבות שלי", href: "#my-articles" },
   { label: "עדכונים", href: "#news" },
   { label: "שאלות נפוצות", href: "#faq" },
+  { label: "ספיישל", href: "#/special" },
 ]
 
 export const FILM: FilmInfo = {
@@ -588,6 +589,19 @@ export const TICKETS = {
 
 /** WhatsApp group where every new article is posted */
 export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
+
+// ===== Special page (#/special) =====
+// Videos are downloaded from Google Drive by the "Fetch videos" GitHub Action (scripts/videos.json).
+// Add a new video at the top. A new id sends a notification to subscribers, like a new article.
+export const SPECIAL_VIDEOS: SpecialVideo[] = [
+  {
+    id: "course-intro",
+    titleHe: "המבוא לקורס שלי",
+    publishedAt: "2026-11-16",
+    src: "./media/video/course-intro.mp4",
+    poster: "./media/video/course-intro.jpg",
+  },
+]
 
 // ===== My articles (written by Marvel Gikim) =====
 // Add a new article at the top of the list. Empty list = the section shows a "coming soon" card.

@@ -104,6 +104,18 @@ export interface NavLink {
   href: `#${string}`
 }
 
+/** A video on the "ספיישל" page (#/special) */
+export interface SpecialVideo {
+  /** English id, fixed (also used for its notification) */
+  id: string
+  titleHe: string
+  descriptionHe?: string
+  /** ISO date */
+  publishedAt: string
+  src: string
+  poster: string
+}
+
 export interface ComicChapter {
   id: string
   titleHe: string

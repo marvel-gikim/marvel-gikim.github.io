@@ -72,6 +72,9 @@ def announce(a):
 
 
 def notify_article(a):
+    if a.get("url"):  # not an article (e.g. a new video on the Special page): its own page and heading
+        push(a.get("headingHe") or "חדש במארוול גיקים", a["titleHe"], SITE + a["url"])
+        return
     url = f"{SITE}#/article/{a['id']}"
     lock = unlock_time(a)
     if lock:

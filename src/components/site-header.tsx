@@ -28,7 +28,7 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
 
   // Highlight the link of the section currently in view
   useEffect(() => {
-    const sections = links.map((l) => document.querySelector(l.href)).filter(Boolean) as Element[]
+    const sections = links.filter((l) => !l.href.startsWith("#/")).map((l) => document.querySelector(l.href)).filter(Boolean) as Element[]
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => e.isIntersecting && setActive(`#${e.target.id}`))
@@ -41,8 +41,11 @@ export function SiteHeader({ links, cta, tickets }: SiteHeaderProps) {
 
   const navigate = (href: string) => {
     setOpen(false)
-    // Wait for the dialog to close (and restore scroll) before jumping
-    window.setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" }), 60)
+    // Wait for the dialog to close (and restore scroll) before jumping; "#/..." links open a page
+    window.setTimeout(() => {
+      if (href.startsWith("#/")) window.location.hash = href.slice(1)
+      else document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" })
+    }, 60)
   }
 
   return (

@@ -48,6 +48,11 @@ GitHub Pages מתעדכן תוך כדקה. **תמיד לבנות לפני push**
 - תמונת כתבה: לשים ב-`public/media/articles/` (webp), או תמונה ממוזערת של יוטיוב דרך `scripts/media.json` (ראו למטה).
 - **אחרי push, התראת דפדפן נשלחת אוטומטית** לכל המנויים (ראו "התראות").
 
+## דף "ספיישל" (`#/special`)
+- תוכן מיוחד, כרגע סרטונים: `SPECIAL_VIDEOS` ב-`src/data/content.ts` (החדש למעלה), הדף ב-`src/components/special-page.tsx`, וקישור "ספיישל" בתפריט.
+- סרטון מגוגל דרייב: מוסיפים ל-`scripts/videos.json` מפתח ← מזהה הקובץ (מה שאחרי `/file/d/` בקישור). הפעולה `fetch-videos.yml` מורידה, ממירה ל-MP4 קל לאתר (עד 720p) עם תמונת פתיחה, ושומרת ב-`public/media/video/` וב-`docs/media/video/` (`<key>.mp4` + `<key>.jpg`). היא רצה על כל ענף ושומרת לאותו ענף. הקובץ בדרייב צריך להיות משותף "לכל מי שיש לו את הקישור". מגבלה: עד 95MB אחרי ההמרה.
+- סרטון חדש ב-`SPECIAL_VIDEOS` שולח התראה כמו כתבה חדשה ("חדש בספיישל של מארוול גיקים"), שפותחת את `#/special`.
+
 ## התראות (OneSignal)
 - App ID: `f91c0142-927b-478b-9da6-f8e595bb42b3`. האתחול ב-`index.html`, ה-Service Worker ב-`public/OneSignalSDKWorker.js`, manifest ב-`public/manifest.webmanifest` (נדרש לאייפון).
 - כפתורים: `src/components/notify-button.tsx` (בפתיחה, בכותרת, בחלק הכתבות ובסוף כתבה). מטפל באייפון בלי מסך בית, בדפדפן פנימי של אפליקציות, בחסימה ובחוסם פרסומות.
