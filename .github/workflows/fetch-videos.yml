@@ -1,0 +1,33 @@
+name: Fetch videos from Google Drive
+
+# Runs when scripts/videos.json changes (on any branch) and commits the converted videos to that same branch.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/videos.json'
+      - 'scripts/fetch_videos.py'
+      - '.github/workflows/fetch-videos.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install gdown
+      - run: python scripts/fetch_videos.py
+      - name: Commit videos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/media/video docs/media/video
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Add videos from Google Drive"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
