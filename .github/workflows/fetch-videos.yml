@@ -20,6 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
       - run: pip install gdown
       - run: python scripts/fetch_videos.py
       - name: Commit videos
