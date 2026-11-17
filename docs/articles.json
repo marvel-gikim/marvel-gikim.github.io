@@ -39,6 +39,13 @@
     "publishedAt": "2026-10-09"
   },
   {
+    "id": "special-course-1",
+    "titleHe": "הקורס הראשון",
+    "publishedAt": "2026-11-17",
+    "url": "#/special",
+    "headingHe": "חדש בספיישל של מארוול גיקים"
+  },
+  {
     "id": "special-course-intro",
     "titleHe": "המבוא לקורס שלי",
     "publishedAt": "2026-11-16",

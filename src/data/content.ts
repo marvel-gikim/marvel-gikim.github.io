@@ -595,6 +595,13 @@ export const WHATSAPP_URL = "https://chat.whatsapp.com/DiTUX4k9wacAVdk5CNAFtE"
 // Add a new video at the top. A new id sends a notification to subscribers, like a new article.
 export const SPECIAL_VIDEOS: SpecialVideo[] = [
   {
+    id: "course-1",
+    titleHe: "הקורס הראשון",
+    publishedAt: "2026-11-17",
+    src: "./media/video/course-1.mp4",
+    poster: "./media/video/course-1.jpg",
+  },
+  {
     id: "course-intro",
     titleHe: "המבוא לקורס שלי",
     publishedAt: "2026-11-16",
