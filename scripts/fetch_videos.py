@@ -34,13 +34,26 @@ def main():
                 raise SystemExit(f"could not download {key}: is the Drive file shared with 'anyone with the link'?")
             run("ffprobe", "-hide_banner", src)
             out = os.path.join(tmp, key + ".mp4")
-            run("ffmpeg", "-hide_banner", "-y", "-i", src,
-                "-vf", "scale=-2:'min(720,ih)'", "-c:v", "libx264", "-preset", "slow", "-crf", "23", "-pix_fmt", "yuv420p",
-                "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out)
+            common_in = ["ffmpeg", "-hide_banner", "-y", "-i", src, "-vf", "scale=-2:'min(720,ih)'", "-c:v", "libx264", "-preset", "slow", "-pix_fmt", "yuv420p"]
+            common_out = ["-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", out]
+            run(*common_in, "-crf", "23", *common_out)
             mb = os.path.getsize(out) / 1e6
             print(f"{key}: {mb:.1f} MB", flush=True)
             if mb > MAX_MB:
-                raise SystemExit(f"{key} is {mb:.0f} MB after conversion, over the {MAX_MB} MB limit")
+                # Too big (a long video): encode again at the bitrate that fits the limit, in two passes for an exact size
+                duration = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src],
+                                                 capture_output=True, text=True, check=True).stdout.strip())
+                kbps = int(MAX_MB * 0.92 * 8000 / duration) - 128
+                print(f"{key}: {duration:.0f} s, re-encoding at {kbps} kb/s", flush=True)
+                if kbps < 250:
+                    raise SystemExit(f"{key} is too long to fit {MAX_MB} MB in good quality ({duration / 60:.0f} minutes)")
+                log = os.path.join(tmp, "pass")
+                run(*common_in, "-b:v", f"{kbps}k", "-pass", "1", "-passlogfile", log, "-an", "-f", "mp4", os.devnull)
+                run(*common_in, "-b:v", f"{kbps}k", "-pass", "2", "-passlogfile", log, *common_out)
+                mb = os.path.getsize(out) / 1e6
+                print(f"{key}: {mb:.1f} MB", flush=True)
+                if mb > MAX_MB:
+                    raise SystemExit(f"{key} is {mb:.0f} MB after conversion, over the {MAX_MB} MB limit")
             poster = os.path.join(tmp, key + ".jpg")
             run("ffmpeg", "-hide_banner", "-y", "-ss", "2", "-i", out, "-frames:v", "1", "-q:v", "3", poster)
             for d in OUT_DIRS:
